@@ -16,5 +16,11 @@ namespace Stuport.Login
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form RegisterForm = new StudentRegistration();
+            RegisterForm.Show();
+        }
     }
 }

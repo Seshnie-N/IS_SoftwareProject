@@ -45,6 +45,8 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.ttHints = new System.Windows.Forms.ToolTip(this.components);
+            this.lblStudNum = new System.Windows.Forms.Label();
+            this.txtStudNum = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -59,7 +61,7 @@
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(86, 94);
+            this.txtFName.Location = new System.Drawing.Point(88, 148);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(204, 20);
             this.txtFName.TabIndex = 1;
@@ -68,7 +70,7 @@
             // lblFName
             // 
             this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(83, 78);
+            this.lblFName.Location = new System.Drawing.Point(85, 132);
             this.lblFName.Name = "lblFName";
             this.lblFName.Size = new System.Drawing.Size(57, 13);
             this.lblFName.TabIndex = 2;
@@ -77,7 +79,7 @@
             // lblLName
             // 
             this.lblLName.AutoSize = true;
-            this.lblLName.Location = new System.Drawing.Point(83, 127);
+            this.lblLName.Location = new System.Drawing.Point(85, 181);
             this.lblLName.Name = "lblLName";
             this.lblLName.Size = new System.Drawing.Size(61, 13);
             this.lblLName.TabIndex = 4;
@@ -85,7 +87,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(86, 194);
+            this.txtEmail.Location = new System.Drawing.Point(88, 248);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(204, 20);
             this.txtEmail.TabIndex = 3;
@@ -94,7 +96,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(83, 178);
+            this.lblEmail.Location = new System.Drawing.Point(85, 232);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(73, 13);
             this.lblEmail.TabIndex = 6;
@@ -102,7 +104,7 @@
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(86, 143);
+            this.txtLName.Location = new System.Drawing.Point(88, 197);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(204, 20);
             this.txtLName.TabIndex = 5;
@@ -111,7 +113,7 @@
             // lblPhoneNo
             // 
             this.lblPhoneNo.AutoSize = true;
-            this.lblPhoneNo.Location = new System.Drawing.Point(83, 226);
+            this.lblPhoneNo.Location = new System.Drawing.Point(85, 280);
             this.lblPhoneNo.Name = "lblPhoneNo";
             this.lblPhoneNo.Size = new System.Drawing.Size(84, 13);
             this.lblPhoneNo.TabIndex = 8;
@@ -119,7 +121,7 @@
             // 
             // txtPhoneNo
             // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(86, 242);
+            this.txtPhoneNo.Location = new System.Drawing.Point(88, 296);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(204, 20);
             this.txtPhoneNo.TabIndex = 7;
@@ -128,7 +130,7 @@
             // lblPassword1
             // 
             this.lblPassword1.AutoSize = true;
-            this.lblPassword1.Location = new System.Drawing.Point(83, 276);
+            this.lblPassword1.Location = new System.Drawing.Point(85, 330);
             this.lblPassword1.Name = "lblPassword1";
             this.lblPassword1.Size = new System.Drawing.Size(53, 13);
             this.lblPassword1.TabIndex = 10;
@@ -136,7 +138,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(86, 292);
+            this.txtPassword.Location = new System.Drawing.Point(88, 346);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(204, 20);
             this.txtPassword.TabIndex = 9;
@@ -146,7 +148,7 @@
             // lblPassword2
             // 
             this.lblPassword2.AutoSize = true;
-            this.lblPassword2.Location = new System.Drawing.Point(83, 329);
+            this.lblPassword2.Location = new System.Drawing.Point(85, 383);
             this.lblPassword2.Name = "lblPassword2";
             this.lblPassword2.Size = new System.Drawing.Size(91, 13);
             this.lblPassword2.TabIndex = 12;
@@ -155,34 +157,59 @@
             // 
             // txtPasswordConf
             // 
-            this.txtPasswordConf.Location = new System.Drawing.Point(86, 345);
+            this.txtPasswordConf.Location = new System.Drawing.Point(88, 399);
             this.txtPasswordConf.Name = "txtPasswordConf";
             this.txtPasswordConf.Size = new System.Drawing.Size(204, 20);
             this.txtPasswordConf.TabIndex = 11;
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(135, 385);
+            this.btnRegister.Location = new System.Drawing.Point(137, 439);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 23);
             this.btnRegister.TabIndex = 13;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(135, 414);
+            this.btnCancel.Location = new System.Drawing.Point(137, 468);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 23);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // ttHints
+            // 
+            this.ttHints.Popup += new System.Windows.Forms.PopupEventHandler(this.TtHints_Popup);
+            // 
+            // lblStudNum
+            // 
+            this.lblStudNum.AutoSize = true;
+            this.lblStudNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblStudNum.Location = new System.Drawing.Point(85, 80);
+            this.lblStudNum.Name = "lblStudNum";
+            this.lblStudNum.Size = new System.Drawing.Size(84, 13);
+            this.lblStudNum.TabIndex = 15;
+            this.lblStudNum.Text = "Student Number";
+            // 
+            // txtStudNum
+            // 
+            this.txtStudNum.Location = new System.Drawing.Point(88, 97);
+            this.txtStudNum.Name = "txtStudNum";
+            this.txtStudNum.Size = new System.Drawing.Size(204, 20);
+            this.txtStudNum.TabIndex = 16;
             // 
             // StudentRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 469);
+            this.ClientSize = new System.Drawing.Size(388, 508);
+            this.Controls.Add(this.txtStudNum);
+            this.Controls.Add(this.lblStudNum);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lblPassword2);
@@ -200,6 +227,7 @@
             this.Controls.Add(this.label1);
             this.Name = "StudentRegistration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.StudentRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +251,7 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ToolTip ttHints;
+        private System.Windows.Forms.Label lblStudNum;
+        private System.Windows.Forms.TextBox txtStudNum;
     }
 }

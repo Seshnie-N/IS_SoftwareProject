@@ -26,5 +26,36 @@ namespace Stuport
         {
 
         }
+
+        private void StudentRegistration_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
+        {
+            StudentController SC = new StudentController();
+            String StudNum = txtStudNum.Text;
+            String Fname = txtFName.Text;
+            String Lname = txtLName.Text;
+            String Email = txtEmail.Text;
+            String Phone = txtEmail.Text;
+            String Password = txtPassword.Text;
+            //Validation
+
+
+            //Add Student;
+            SC.AddStudent(StudNum,Fname, Lname, Email, Phone, Password);
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void TtHints_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
     }
 }
