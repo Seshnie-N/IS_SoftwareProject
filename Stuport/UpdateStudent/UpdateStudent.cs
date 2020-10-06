@@ -12,17 +12,13 @@ namespace StuportApp
 {
     public partial class UpdateStudent : Form
     {
+
+        
+
         public UpdateStudent()
         {
             InitializeComponent();
             
-        }
-
-        private void UpdateStudent_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Student' table. You can move, or remove it, as needed.
-            this.studentTableAdapter.Fill(this.stuportDatabaseDataSet.Student);
-
         }
 
         private void lblLName_Click(object sender, EventArgs e)
