@@ -16,7 +16,7 @@ namespace Stuport
 
             String HashedPassword = Password.Sha256();
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\StuportDatabase.accdb");
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\Stuport\StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
            
             cmd.CommandText = "Insert into Student" +
@@ -29,9 +29,6 @@ namespace Stuport
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 10) { Value = Phone });
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = HashedPassword });
 
-
-
-    
         con.Open();
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
@@ -41,6 +38,106 @@ namespace Stuport
         }
 
 
+
+        public bool StudNumExists(String StudNum)
+        {
+
+            String chckStudNum = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\Stuport\StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = StudNum });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+              chckStudNum =  reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            if (!chckStudNum.Equals(""))
+            {
+                Console.WriteLine(false);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(false);
+                return false;
+            }
+
+        }
+
+
+
+        public bool EmailExists(String Email)
+        {
+
+            String chckEmail = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\Stuport\StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_Email From Student Where Student_Email =?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 100) { Value = Email});
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                chckEmail = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            if (!chckEmail.Equals(""))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool PasswordLengthCheck(String Password)
+        {
+            int length = Password.Length;
+            if (length >= 8)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool PhoneNumberLengthCheck(String Phone)
+        {
+            int length = Phone.Length;
+            if (length == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 

@@ -64,7 +64,7 @@
             this.txtFName.Location = new System.Drawing.Point(88, 148);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(204, 20);
-            this.txtFName.TabIndex = 1;
+            this.txtFName.TabIndex = 2;
             this.ttHints.SetToolTip(this.txtFName, "Enter Legal First Name. No Nicknames");
             // 
             // lblFName
@@ -73,7 +73,7 @@
             this.lblFName.Location = new System.Drawing.Point(85, 132);
             this.lblFName.Name = "lblFName";
             this.lblFName.Size = new System.Drawing.Size(57, 13);
-            this.lblFName.TabIndex = 2;
+            this.lblFName.TabIndex = 0;
             this.lblFName.Text = "First Name";
             // 
             // lblLName
@@ -90,7 +90,7 @@
             this.txtEmail.Location = new System.Drawing.Point(88, 248);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(204, 20);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 4;
             this.ttHints.SetToolTip(this.txtEmail, "Enter a Valid Email Address");
             // 
             // lblEmail
@@ -107,7 +107,7 @@
             this.txtLName.Location = new System.Drawing.Point(88, 197);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(204, 20);
-            this.txtLName.TabIndex = 5;
+            this.txtLName.TabIndex = 3;
             this.ttHints.SetToolTip(this.txtLName, "Enter Last Name ");
             // 
             // lblPhoneNo
@@ -124,7 +124,7 @@
             this.txtPhoneNo.Location = new System.Drawing.Point(88, 296);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(204, 20);
-            this.txtPhoneNo.TabIndex = 7;
+            this.txtPhoneNo.TabIndex = 5;
             this.ttHints.SetToolTip(this.txtPhoneNo, "Enter a Valid Phone Number");
             // 
             // lblPassword1
@@ -141,7 +141,7 @@
             this.txtPassword.Location = new System.Drawing.Point(88, 346);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(204, 20);
-            this.txtPassword.TabIndex = 9;
+            this.txtPassword.TabIndex = 6;
             this.ttHints.SetToolTip(this.txtPassword, "Password must be 8 or more characters. Must contain an uppercase character and a " +
         "lowercase character.");
             // 
@@ -160,14 +160,14 @@
             this.txtPasswordConf.Location = new System.Drawing.Point(88, 399);
             this.txtPasswordConf.Name = "txtPasswordConf";
             this.txtPasswordConf.Size = new System.Drawing.Size(204, 20);
-            this.txtPasswordConf.TabIndex = 11;
+            this.txtPasswordConf.TabIndex = 7;
             // 
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(137, 439);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 23);
-            this.btnRegister.TabIndex = 13;
+            this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
@@ -201,7 +201,7 @@
             this.txtStudNum.Location = new System.Drawing.Point(88, 97);
             this.txtStudNum.Name = "txtStudNum";
             this.txtStudNum.Size = new System.Drawing.Size(204, 20);
-            this.txtStudNum.TabIndex = 16;
+            this.txtStudNum.TabIndex = 1;
             // 
             // StudentRegistration
             // 
