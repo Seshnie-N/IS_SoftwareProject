@@ -46,15 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStaff\AddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStaff\AddStaff.Designer.cs">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminMenu\AdminMenu.Designer.cs">
       <DependentUpon>AdminMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Appointment\Appointment.cs" />
-    <Compile Include="Appointment\Appointment.Designer.cs">
-      <DependentUpon>Appointment.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateGroup\GroupCreate.cs">
       <SubType>Form</SubType>
@@ -92,15 +94,13 @@
     <Compile Include="MakeAppointment\MakeAppointment.Designer.cs">
       <DependentUpon>MakeAppointment.cs</DependentUpon>
     </Compile>
-    <Compile Include="Other_Services\Other_Services.cs" />
-    <Compile Include="Other_Services\Other_Services.Designer.cs">
-      <DependentUpon>Other_Services.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Resources.cs" />
-    <Compile Include="Resources\Resources.Designer.cs">
-      <DependentUpon>Resources.cs</DependentUpon>
+    <Compile Include="StaffPage\StaffPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffPage\StaffPage.Designer.cs">
+      <DependentUpon>StaffPage.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentAppointmentsHome\StudentAppointmentsHome.cs">
       <SubType>Form</SubType>
@@ -120,17 +120,23 @@
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateStaff\UpdateDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStaff\UpdateDetails.Designer.cs">
+      <DependentUpon>UpdateDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="UpdateStudent\UpdateStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UpdateStudent\UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddStaff\AddStaff.resx">
+      <DependentUpon>AddStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Appointment\Appointment.resx">
-      <DependentUpon>Appointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>
@@ -150,9 +156,6 @@
     <EmbeddedResource Include="MakeAppointment\MakeAppointment.resx">
       <DependentUpon>MakeAppointment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Other_Services\Other_Services.resx">
-      <DependentUpon>Other_Services.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -162,8 +165,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Resources\Resources.resx">
-      <DependentUpon>Resources.cs</DependentUpon>
+    <EmbeddedResource Include="StaffPage\StaffPage.resx">
+      <DependentUpon>StaffPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentAppointmentsHome\StudentAppointmentsHome.resx">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
@@ -173,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStaff\UpdateDetails.resx">
+      <DependentUpon>UpdateDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStudent\UpdateStudent.resx">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
