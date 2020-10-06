@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stuport.Login;
 
 namespace Stuport
 {
@@ -16,7 +17,7 @@ namespace Stuport
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new Login.Login());
         }
     }
 }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnUpdateStudenr = new System.Windows.Forms.Button();
             this.lblPassword1 = new System.Windows.Forms.Label();
@@ -44,16 +43,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAddStudent = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(569, 204);
-            this.dataGridView1.TabIndex = 0;
             // 
             // btnBack
             // 
@@ -63,10 +56,11 @@
             this.btnBack.TabIndex = 1;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnUpdateStudenr
             // 
-            this.btnUpdateStudenr.Location = new System.Drawing.Point(33, 445);
+            this.btnUpdateStudenr.Location = new System.Drawing.Point(620, 474);
             this.btnUpdateStudenr.Name = "btnUpdateStudenr";
             this.btnUpdateStudenr.Size = new System.Drawing.Size(156, 23);
             this.btnUpdateStudenr.TabIndex = 2;
@@ -92,7 +86,7 @@
             // lblPhoneNo
             // 
             this.lblPhoneNo.AutoSize = true;
-            this.lblPhoneNo.Location = new System.Drawing.Point(395, 328);
+            this.lblPhoneNo.Location = new System.Drawing.Point(364, 328);
             this.lblPhoneNo.Name = "lblPhoneNo";
             this.lblPhoneNo.Size = new System.Drawing.Size(84, 13);
             this.lblPhoneNo.TabIndex = 18;
@@ -100,7 +94,7 @@
             // 
             // txtPhoneNo
             // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(398, 344);
+            this.txtPhoneNo.Location = new System.Drawing.Point(367, 344);
             this.txtPhoneNo.Name = "txtPhoneNo";
             this.txtPhoneNo.Size = new System.Drawing.Size(204, 20);
             this.txtPhoneNo.TabIndex = 17;
@@ -108,7 +102,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(395, 280);
+            this.lblEmail.Location = new System.Drawing.Point(364, 280);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(73, 13);
             this.lblEmail.TabIndex = 16;
@@ -133,7 +127,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(398, 296);
+            this.txtEmail.Location = new System.Drawing.Point(367, 296);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(204, 20);
             this.txtEmail.TabIndex = 13;
@@ -179,11 +173,30 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Enter Student Number";
             // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(620, 445);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(156, 23);
+            this.btnAddStudent.TabIndex = 24;
+            this.btnAddStudent.Text = "Add Student Record";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(33, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(753, 209);
+            this.dataGridView1.TabIndex = 25;
+            // 
             // UpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(639, 513);
+            this.ClientSize = new System.Drawing.Size(812, 517);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStudentNo);
             this.Controls.Add(this.button1);
@@ -199,10 +212,8 @@
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.btnUpdateStudenr);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "UpdateStudent";
             this.Text = "UpdateStudent";
-            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,8 +221,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnUpdateStudenr;
         private System.Windows.Forms.Label lblPassword1;
@@ -227,5 +236,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

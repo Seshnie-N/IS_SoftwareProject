@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportStaff
+namespace Stuport.Groups
 {
-    public partial class UpdateDetails : Form
+    public partial class Groups : Form
     {
-        public UpdateDetails()
+        public Groups()
         {
             InitializeComponent();
         }
 
-        private void BtnUpdate_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void BtnCancel_Click(object sender, EventArgs e)
-        {
-            Close();
         }
     }
 }
