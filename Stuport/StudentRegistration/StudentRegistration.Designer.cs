@@ -1,4 +1,4 @@
-﻿namespace StuportApp
+﻿namespace Stuport
 {
     partial class StudentRegistration
     {

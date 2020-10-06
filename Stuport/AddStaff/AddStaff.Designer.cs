@@ -1,4 +1,4 @@
-﻿namespace StuportStaff
+﻿namespace Stuport
 {
     partial class AddStaff
     {
