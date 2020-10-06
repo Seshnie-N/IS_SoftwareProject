@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace StuportStaff
 {
-    public partial class AddStaff : Form
+    public partial class UpdateDetails : Form
     {
-        public AddStaff()
+        public UpdateDetails()
         {
             InitializeComponent();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddStaff_Load(object sender, EventArgs e)
+        private void BtnUpdate_Click(object sender, EventArgs e)
         {
 
         }
@@ -35,11 +25,6 @@ namespace StuportStaff
         private void BtnCancel_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void BtnConfirm_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
