@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminMenu\AdminMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMenu\AdminMenu.Designer.cs">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupPage\GroupPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,12 @@
     <Compile Include="GroupRequest\RequestGroup.Designer.cs">
       <DependentUpon>RequestGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeAppointment\MakeAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeAppointment\MakeAppointment.Designer.cs">
+      <DependentUpon>MakeAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentAppointmentsHome\StudentAppointmentsHome.cs">
@@ -66,11 +78,35 @@
     <Compile Include="StudentAppointmentsHome\StudentAppointmentsHome.Designer.cs">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentMenu\StudentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentMenu\StudentMenu.Designer.cs">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRegistration\StudentRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudent\UpdateStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStudent\UpdateStudent.Designer.cs">
+      <DependentUpon>UpdateStudent.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
+      <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupPage\GroupPage.resx">
       <DependentUpon>GroupPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupRequest\RequestGroup.resx">
       <DependentUpon>RequestGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeAppointment\MakeAppointment.resx">
+      <DependentUpon>MakeAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +119,15 @@
     </Compile>
     <EmbeddedResource Include="StudentAppointmentsHome\StudentAppointmentsHome.resx">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
+      <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStudent\UpdateStudent.resx">
+      <DependentUpon>UpdateStudent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
