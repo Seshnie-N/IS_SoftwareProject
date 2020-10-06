@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stuport.Groups
+namespace Stuport.Login
 {
-    public partial class Groups : Form
+    public partial class Login : Form
     {
-        public Groups()
+        public Login()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

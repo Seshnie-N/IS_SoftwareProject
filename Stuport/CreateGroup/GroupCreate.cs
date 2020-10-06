@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stuport.Groups
+namespace Stuport.CreateGroup
 {
-    public partial class Groups : Form
+    public partial class GroupCreate : Form
     {
-        public Groups()
+        public GroupCreate()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
