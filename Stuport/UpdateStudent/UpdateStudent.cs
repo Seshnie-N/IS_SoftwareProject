@@ -12,19 +12,25 @@ namespace StuportApp
 {
     public partial class UpdateStudent : Form
     {
+
+        
+
         public UpdateStudent()
         {
             InitializeComponent();
-        }
-
-        private void UpdateStudent_Load(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void lblLName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
         }
     }
 }

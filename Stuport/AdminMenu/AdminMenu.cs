@@ -16,5 +16,12 @@ namespace StuportApp
         {
             InitializeComponent();
         }
+
+        private void btnManageStudents_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            UpdateStudent updateStudent = new UpdateStudent();
+            updateStudent.Show();
+        }
     }
 }
