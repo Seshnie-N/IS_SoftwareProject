@@ -76,6 +76,12 @@
     <Compile Include="GroupRequest\RequestGroup.Designer.cs">
       <DependentUpon>RequestGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Groups\Groups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Groups\Groups.Designer.cs">
+      <DependentUpon>Groups.cs</DependentUpon>
+    </Compile>
     <Compile Include="MakeAppointment\MakeAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GroupRequest\RequestGroup.resx">
       <DependentUpon>RequestGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Groups\Groups.resx">
+      <DependentUpon>Groups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MakeAppointment\MakeAppointment.resx">
       <DependentUpon>MakeAppointment.cs</DependentUpon>
