@@ -11,39 +11,36 @@ namespace Stuport
 {
     class StudentController
     {
-        public void AddStudent(String FName, String LName, String Email, String Phone, String Password)
+        public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
         {
 
             String HashedPassword = Password.Sha256();
 
-            OleDbConnection con = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0;Data Source=StuportDatabase.accdb");
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
-            con.Open();
-            cmd.CommandText = "Insert into Student"+
-                "([Student_FirstName], [Student_LastName], [Student_Email], [Student_Phone], [Student_Password])" +
-                "Values(@FirstName, @LastName, @Email, @Phone, @Password)";
-
-            cmd.Parameters.AddRange(new OleDbParameter[]
-           {
-               new OleDbParameter("@FirstName", FName),
-               new OleDbParameter("@LastName", LName),
-              new OleDbParameter("@Email", Email),
-              new OleDbParameter("@Phone", Phone),
-              new OleDbParameter("@Password", HashedPassword)
-           });
+           
+            cmd.CommandText = "Insert into Student" +
+                "([Student_ID],[Student_FirstName], [Student_LastName], [Student_Email], [Student_Phone], [Student_Password])" +
+                "Values(?,?, ?, ?, ?, ?)";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = StudNum });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = FName });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = LName });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 100) { Value = Email });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 10) { Value = Phone });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = HashedPassword });
 
 
+
+    
+        con.Open();
             cmd.Connection = con;
             cmd.ExecuteNonQuery();
-        
+
             con.Close();
-           
+
+        }
 
 
-
-        } 
-
-     
 
     }
 
