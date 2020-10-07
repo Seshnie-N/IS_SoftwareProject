@@ -52,6 +52,7 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentController.cs" />
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
