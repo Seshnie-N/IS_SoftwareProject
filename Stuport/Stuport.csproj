@@ -115,6 +115,12 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentProfile\StudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentProfile\StudentProfile.Designer.cs">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.Designer.cs">
       <DependentUpon>UpdateDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStudentProfile\UpdateStudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateStudentProfile\UpdateStudentProfile.Designer.cs">
+      <DependentUpon>UpdateStudentProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateStudent\UpdateStudent.cs">
       <SubType>Form</SubType>
@@ -175,11 +187,17 @@
     <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentProfile\StudentProfile.resx">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStaff\UpdateDetails.resx">
       <DependentUpon>UpdateDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateStudentProfile\UpdateStudentProfile.resx">
+      <DependentUpon>UpdateStudentProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStudent\UpdateStudent.resx">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
