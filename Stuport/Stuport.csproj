@@ -120,6 +120,11 @@
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>
+    <Compile Include="StuportDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,10 +197,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StuportDatabaseDataSet.xsc">
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StuportDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StuportDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StuportDatabaseDataSet.xss">
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="StuportDatabase.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

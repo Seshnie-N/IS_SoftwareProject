@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnUpdateStudenr = new System.Windows.Forms.Button();
             this.lblPassword1 = new System.Windows.Forms.Label();
@@ -47,7 +48,19 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblStudentNumber = new System.Windows.Forms.Label();
             this.txtStudentNumber = new System.Windows.Forms.TextBox();
+            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter();
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -187,7 +200,17 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentIDDataGridViewTextBoxColumn,
+            this.studentFirstNameDataGridViewTextBoxColumn,
+            this.studentLastNameDataGridViewTextBoxColumn,
+            this.studentEmailDataGridViewTextBoxColumn,
+            this.studentPhoneDataGridViewTextBoxColumn,
+            this.studentPasswordDataGridViewTextBoxColumn,
+            this.groupIDDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.studentBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(33, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(753, 209);
@@ -208,6 +231,62 @@
             this.txtStudentNumber.Name = "txtStudentNumber";
             this.txtStudentNumber.Size = new System.Drawing.Size(204, 20);
             this.txtStudentNumber.TabIndex = 26;
+            // 
+            // stuportDatabaseDataSet
+            // 
+            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
+            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.stuportDatabaseDataSet;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "Student_ID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "Student_ID";
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            // 
+            // studentFirstNameDataGridViewTextBoxColumn
+            // 
+            this.studentFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Student_FirstName";
+            this.studentFirstNameDataGridViewTextBoxColumn.HeaderText = "Student_FirstName";
+            this.studentFirstNameDataGridViewTextBoxColumn.Name = "studentFirstNameDataGridViewTextBoxColumn";
+            // 
+            // studentLastNameDataGridViewTextBoxColumn
+            // 
+            this.studentLastNameDataGridViewTextBoxColumn.DataPropertyName = "Student_LastName";
+            this.studentLastNameDataGridViewTextBoxColumn.HeaderText = "Student_LastName";
+            this.studentLastNameDataGridViewTextBoxColumn.Name = "studentLastNameDataGridViewTextBoxColumn";
+            // 
+            // studentEmailDataGridViewTextBoxColumn
+            // 
+            this.studentEmailDataGridViewTextBoxColumn.DataPropertyName = "Student_Email";
+            this.studentEmailDataGridViewTextBoxColumn.HeaderText = "Student_Email";
+            this.studentEmailDataGridViewTextBoxColumn.Name = "studentEmailDataGridViewTextBoxColumn";
+            // 
+            // studentPhoneDataGridViewTextBoxColumn
+            // 
+            this.studentPhoneDataGridViewTextBoxColumn.DataPropertyName = "Student_Phone";
+            this.studentPhoneDataGridViewTextBoxColumn.HeaderText = "Student_Phone";
+            this.studentPhoneDataGridViewTextBoxColumn.Name = "studentPhoneDataGridViewTextBoxColumn";
+            // 
+            // studentPasswordDataGridViewTextBoxColumn
+            // 
+            this.studentPasswordDataGridViewTextBoxColumn.DataPropertyName = "Student_Password";
+            this.studentPasswordDataGridViewTextBoxColumn.HeaderText = "Student_Password";
+            this.studentPasswordDataGridViewTextBoxColumn.Name = "studentPasswordDataGridViewTextBoxColumn";
+            // 
+            // groupIDDataGridViewTextBoxColumn
+            // 
+            this.groupIDDataGridViewTextBoxColumn.DataPropertyName = "Group_ID";
+            this.groupIDDataGridViewTextBoxColumn.HeaderText = "Group_ID";
+            this.groupIDDataGridViewTextBoxColumn.Name = "groupIDDataGridViewTextBoxColumn";
             // 
             // UpdateStudent
             // 
@@ -235,7 +314,10 @@
             this.Controls.Add(this.btnBack);
             this.Name = "UpdateStudent";
             this.Text = "UpdateStudent";
+            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,5 +343,15 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblStudentNumber;
         private System.Windows.Forms.TextBox txtStudentNumber;
+        private Stuport.StuportDatabaseDataSet stuportDatabaseDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentPasswordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupIDDataGridViewTextBoxColumn;
     }
 }
