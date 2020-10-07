@@ -52,6 +52,12 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentController.cs" />
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
@@ -83,12 +89,6 @@
     <Compile Include="Groups %28AdminSide%29\Groups.Designer.cs">
       <DependentUpon>Groups.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="MakeAppointment\MakeAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,9 +115,7 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration\StudentRegistration.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="StudentRegistration\StudentRegistration.cs" />
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>

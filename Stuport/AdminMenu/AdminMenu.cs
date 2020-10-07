@@ -28,7 +28,7 @@ namespace Stuport
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login login = new Login();
+            Login.Login login = new Login.Login();
             login.Show();
         }
     }
