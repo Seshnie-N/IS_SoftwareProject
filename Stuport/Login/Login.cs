@@ -22,5 +22,12 @@ namespace Stuport.Login
             Form RegisterForm = new StudentRegistration();
             RegisterForm.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form menuForm = new StudentMenu();
+            menuForm.Show();
+            this.Hide();
+        }
     }
 }
