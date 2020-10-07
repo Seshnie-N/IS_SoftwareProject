@@ -32,5 +32,10 @@ namespace StuportApp
             AdminMenu adminMenu = new AdminMenu();
             adminMenu.Show();
         }
+
+        private void btnAddStudent_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
