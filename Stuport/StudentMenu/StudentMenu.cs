@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class StudentMenu : Form
     {
