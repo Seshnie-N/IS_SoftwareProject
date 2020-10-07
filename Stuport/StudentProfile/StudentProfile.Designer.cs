@@ -35,11 +35,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.stdNumtb = new System.Windows.Forms.TextBox();
+            this.fntb = new System.Windows.Forms.TextBox();
+            this.lntb = new System.Windows.Forms.TextBox();
+            this.emailtb = new System.Windows.Forms.TextBox();
+            this.phnumtb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // profilelbl
@@ -107,51 +107,52 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Phone No.:";
             // 
-            // textBox1
+            // stdNumtb
             // 
-            this.textBox1.Location = new System.Drawing.Point(182, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 12;
+            this.stdNumtb.Location = new System.Drawing.Point(182, 68);
+            this.stdNumtb.Name = "stdNumtb";
+            this.stdNumtb.Size = new System.Drawing.Size(100, 20);
+            this.stdNumtb.TabIndex = 12;
+            this.stdNumtb.TextChanged += new System.EventHandler(this.stdNumtb_TextChanged);
             // 
-            // textBox2
+            // fntb
             // 
-            this.textBox2.Location = new System.Drawing.Point(182, 114);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 13;
+            this.fntb.Location = new System.Drawing.Point(182, 114);
+            this.fntb.Name = "fntb";
+            this.fntb.Size = new System.Drawing.Size(100, 20);
+            this.fntb.TabIndex = 13;
             // 
-            // textBox3
+            // lntb
             // 
-            this.textBox3.Location = new System.Drawing.Point(182, 160);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 14;
+            this.lntb.Location = new System.Drawing.Point(182, 160);
+            this.lntb.Name = "lntb";
+            this.lntb.Size = new System.Drawing.Size(100, 20);
+            this.lntb.TabIndex = 14;
             // 
-            // textBox4
+            // emailtb
             // 
-            this.textBox4.Location = new System.Drawing.Point(182, 205);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 15;
+            this.emailtb.Location = new System.Drawing.Point(182, 205);
+            this.emailtb.Name = "emailtb";
+            this.emailtb.Size = new System.Drawing.Size(100, 20);
+            this.emailtb.TabIndex = 15;
             // 
-            // textBox5
+            // phnumtb
             // 
-            this.textBox5.Location = new System.Drawing.Point(182, 249);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 16;
+            this.phnumtb.Location = new System.Drawing.Point(182, 249);
+            this.phnumtb.Name = "phnumtb";
+            this.phnumtb.Size = new System.Drawing.Size(100, 20);
+            this.phnumtb.TabIndex = 16;
             // 
             // StudentProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(354, 350);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.phnumtb);
+            this.Controls.Add(this.emailtb);
+            this.Controls.Add(this.lntb);
+            this.Controls.Add(this.fntb);
+            this.Controls.Add(this.stdNumtb);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -175,10 +176,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox stdNumtb;
+        private System.Windows.Forms.TextBox fntb;
+        private System.Windows.Forms.TextBox lntb;
+        private System.Windows.Forms.TextBox emailtb;
+        private System.Windows.Forms.TextBox phnumtb;
     }
 }

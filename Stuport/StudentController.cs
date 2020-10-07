@@ -37,6 +37,33 @@ namespace Stuport
 
         }
 
+        public String getStudentNum()
+        {
+            String stdNum = "";
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\Stuport\StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = 20907029 });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                stdNum = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+
+            return stdNum;
+        }
+
 
 
         public bool StudNumExists(String StudNum)

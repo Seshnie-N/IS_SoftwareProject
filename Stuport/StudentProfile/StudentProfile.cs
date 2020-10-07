@@ -19,9 +19,15 @@ namespace Stuport.StudentMenu
 
         private void updatebtn_Click(object sender, EventArgs e)
         {
-            Form menuForm = new UpdateStudentProfile();
-            menuForm.Show();
-            this.Hide();
+            StudentController SC = new StudentController();
+            String stdNum = stdNumtb.Text;
+            stdNum = SC.getStudentNum();
+            stdNumtb.Text = stdNum;
+
+        }
+
+        private void stdNumtb_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
