@@ -36,7 +36,7 @@ namespace Stuport
             String Fname = txtFName.Text;
             String Lname = txtLName.Text;
             String Email = txtEmail.Text;
-            String Phone = txtPhoneNo.Text;
+            String Phone = txtPhone.Text;
             String Password = txtPassword.Text;
             String ConfirmPassword = txtPasswordConf.Text;
 
@@ -88,7 +88,7 @@ namespace Stuport
                 Validation = false;
                 PresenceCheckValidation = false;
             }
-            if (String.IsNullOrEmpty(txtPhoneNo.Text))
+            if (String.IsNullOrEmpty(txtPhone.Text))
             {
                 Validation = false;
                 PresenceCheckValidation = false;

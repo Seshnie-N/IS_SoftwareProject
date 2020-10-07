@@ -13,7 +13,7 @@ namespace Stuport
     {
         public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
         {
-            String ConnectionString = "Data Source = |Data Directory|\\ StuportDatabse.accdb";
+            //String ConnectionString = "Data Source = |Data Directory|\\ StuportDatabse.accdb";
             String HashedPassword = Password.Sha256();
 
 

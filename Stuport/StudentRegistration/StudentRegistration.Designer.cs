@@ -1,4 +1,7 @@
-﻿namespace Stuport
+﻿using System;
+using System.Windows.Forms;
+
+namespace Stuport
 {
     partial class StudentRegistration
     {
@@ -231,6 +234,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void MaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
