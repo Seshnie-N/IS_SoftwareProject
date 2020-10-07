@@ -45,9 +45,10 @@ namespace Stuport
             String Fname = txtFName.Text;
             String Lname = txtLName.Text;
             String Email = txtEmail.Text;
-            String Phone = txtEmail.Text;
+            String Phone = txtPhone.Text;
             String Password = txtPassword.Text;
             String ConfirmPassword = txtPasswordConf.Text;
+            Console.WriteLine(Phone.Length + Phone);
 
             //Validation
             if (SC.StudNumExists(StudNum))
@@ -116,6 +117,16 @@ namespace Stuport
         }
 
         private void TtHints_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void TxtPhoneNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MaskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }
