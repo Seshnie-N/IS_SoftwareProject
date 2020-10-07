@@ -51,20 +51,6 @@ namespace Stuport
             string strEmail = txtEmail.Text;
             string strContactNo = txtPhoneNo.Text;
 
-            conn.Open();
-            OleDbCommand cmd = new OleDbCommand("UPDATE Student SET Student_FirstName = @1, Student_LastName = @2," +
-                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6", conn);
-            cmd.Parameters.AddWithValue("@1", strFName);
-            cmd.Parameters.AddWithValue("@2", strLName);
-            cmd.Parameters.AddWithValue("@3", strEmail);
-            cmd.Parameters.AddWithValue("@4", strContactNo);
-            cmd.Parameters.AddWithValue("@5", strPassword);
-            cmd.Parameters.AddWithValue("@6", strStuNumber);
-
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            refreshGrid();
-            MessageBox.Show(strStuNumber +" record updated");
         }
 
         private void refreshGrid()
@@ -96,6 +82,31 @@ namespace Stuport
             txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
             txtStudentNumber.ReadOnly = true;
+        }
+
+        private void btnUpdateStudenr_Click(object sender, EventArgs e)
+        {
+            string strStuNumber = txtStudentNumber.Text;
+            string strFName = txtFName.Text;
+            string strLName = txtLName.Text;
+            string strPassword = txtPassword.Text;
+            string strEmail = txtEmail.Text;
+            string strContactNo = txtPhoneNo.Text;
+
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand("UPDATE Student SET Student_FirstName = @1, Student_LastName = @2," +
+                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6", conn);
+            cmd.Parameters.AddWithValue("@1", strFName);
+            cmd.Parameters.AddWithValue("@2", strLName);
+            cmd.Parameters.AddWithValue("@3", strEmail);
+            cmd.Parameters.AddWithValue("@4", strContactNo);
+            cmd.Parameters.AddWithValue("@5", strPassword);
+            cmd.Parameters.AddWithValue("@6", strStuNumber);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            refreshGrid();
+            MessageBox.Show("Update Successful");
         }
     }
 }

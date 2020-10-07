@@ -68,6 +68,7 @@
             this.btnUpdateStudenr.TabIndex = 2;
             this.btnUpdateStudenr.Text = "Update Student Record";
             this.btnUpdateStudenr.UseVisualStyleBackColor = true;
+            this.btnUpdateStudenr.Click += new System.EventHandler(this.btnUpdateStudenr_Click);
             // 
             // lblPassword1
             // 
