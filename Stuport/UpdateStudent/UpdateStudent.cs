@@ -13,13 +13,14 @@ namespace StuportApp
 {
     public partial class UpdateStudent : Form
     {
-        OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\StuportDatabase.accdb");
+        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\StuportDatabase.accdb"
+        OleDbConnection conn = new OleDbConnection(_path);
         
 
         public UpdateStudent()
         {
             InitializeComponent();
-           
+            refreshGrid();
             
         }
 
@@ -37,7 +38,9 @@ namespace StuportApp
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-          
+            if{ }
+            if{ }
+            if{ }
         }
 
         private void UpdateStudent_Load(object sender, EventArgs e)
@@ -63,7 +66,7 @@ namespace StuportApp
             cmd.ExecuteNonQuery();
             conn.Close();
             refreshGrid();
-            MessageBox.Show("1 record updated");
+            MessageBox.Show(strStuNumber +" record updated");
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
