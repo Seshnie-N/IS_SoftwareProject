@@ -50,7 +50,7 @@
             this.txtStudentNumber = new System.Windows.Forms.TextBox();
             this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter();
+            //this.studentTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -244,7 +244,7 @@
             // 
             // studentTableAdapter
             // 
-            this.studentTableAdapter.ClearBeforeFill = true;
+            ////this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -345,7 +345,7 @@
         private System.Windows.Forms.TextBox txtStudentNumber;
         private Stuport.StuportDatabaseDataSet stuportDatabaseDataSet;
         private System.Windows.Forms.BindingSource studentBindingSource;
-        private Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        //private Stuport.StuportDatabaseDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentFirstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentLastNameDataGridViewTextBoxColumn;
