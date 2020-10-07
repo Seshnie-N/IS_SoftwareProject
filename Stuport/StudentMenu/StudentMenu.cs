@@ -1,5 +1,4 @@
-﻿using Stuport.StudentMenu;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,9 +29,7 @@ namespace StuportApp
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentProfile studentProfile = new StudentProfile();
-            studentProfile.Show();
+            
 
         }
     }
