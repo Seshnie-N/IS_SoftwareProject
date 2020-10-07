@@ -13,7 +13,7 @@ namespace Stuport
 {
     public partial class UpdateStudent : Form
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\StuportDatabase.accdb";
+        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb";
         OleDbConnection conn = new OleDbConnection(_path);
         
 
