@@ -190,8 +190,10 @@
             this.dgvStudentUpdate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentUpdate.Location = new System.Drawing.Point(33, 55);
             this.dgvStudentUpdate.Name = "dgvStudentUpdate";
+            this.dgvStudentUpdate.ReadOnly = true;
             this.dgvStudentUpdate.Size = new System.Drawing.Size(753, 209);
             this.dgvStudentUpdate.TabIndex = 25;
+            this.dgvStudentUpdate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentUpdate_CellContentClick);
             // 
             // lblStudentNumber
             // 

@@ -67,22 +67,10 @@ namespace Stuport
             MessageBox.Show(strStuNumber +" record updated");
         }
 
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtStudentNumber.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtFName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtLName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtStudentNumber.ReadOnly = true;
-        }
-
         private void refreshGrid()
         {
             try
             {
-                //this.studentTableAdapter.Fill(this.stuportDatabaseDataSet.Student);
                 conn.Open();
                 DataTable dt = new DataTable();
                 OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Student", conn);
@@ -99,5 +87,15 @@ namespace Stuport
             }
         }
 
+        private void dgvStudentUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtStudentNumber.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtFName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtLName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtStudentNumber.ReadOnly = true;
+        }
     }
 }
