@@ -32,7 +32,7 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbxAdmin = new System.Windows.Forms.CheckBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -69,15 +69,15 @@
             this.textBox2.Size = new System.Drawing.Size(162, 20);
             this.textBox2.TabIndex = 8;
             // 
-            // checkBox1
+            // cbxAdmin
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(94, 194);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(61, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Admin?";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbxAdmin.AutoSize = true;
+            this.cbxAdmin.Location = new System.Drawing.Point(94, 194);
+            this.cbxAdmin.Name = "cbxAdmin";
+            this.cbxAdmin.Size = new System.Drawing.Size(61, 17);
+            this.cbxAdmin.TabIndex = 9;
+            this.cbxAdmin.Text = "Admin?";
+            this.cbxAdmin.UseVisualStyleBackColor = true;
             // 
             // btnRegister
             // 
@@ -106,13 +106,14 @@
             this.ClientSize = new System.Drawing.Size(363, 345);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbxAdmin);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +125,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbxAdmin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin;
     }

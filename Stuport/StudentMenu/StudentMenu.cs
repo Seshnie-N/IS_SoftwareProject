@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stuport.Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,6 +38,13 @@ namespace StuportApp
             this.Hide();
             StudentAppointmentsHome appointmentsHome = new StudentAppointmentsHome();
             appointmentsHome.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login login = new Login();
+            login.Show();
         }
     }
 }

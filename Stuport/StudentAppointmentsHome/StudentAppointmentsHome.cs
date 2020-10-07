@@ -23,5 +23,11 @@ namespace StuportApp
             StudentMenu studentMenu = new StudentMenu();
             studentMenu.Show();
         }
+
+        private void btnNewAppointment_Click(object sender, EventArgs e)
+        {
+            MakeAppointment makeAppointment = new MakeAppointment();
+            makeAppointment.ShowDialog();
+        }
     }
 }

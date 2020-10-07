@@ -45,6 +45,7 @@
             this.btnNewAppointment.TabIndex = 0;
             this.btnNewAppointment.Text = "New Appointment";
             this.btnNewAppointment.UseVisualStyleBackColor = true;
+            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
             // 
             // bntCancelAppointment
             // 

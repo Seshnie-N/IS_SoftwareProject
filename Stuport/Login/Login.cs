@@ -32,12 +32,19 @@ namespace Stuport.Login
                 studentMenu.Show();
 
             }
-            else
+            else if (cbxAdmin.Checked)
             {
                 this.Hide();
                 AdminMenu adminMenu = new AdminMenu();
                 adminMenu.Show();
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }
