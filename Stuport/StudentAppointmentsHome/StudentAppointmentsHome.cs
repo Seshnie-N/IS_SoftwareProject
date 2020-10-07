@@ -16,5 +16,12 @@ namespace StuportApp
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StudentMenu studentMenu = new StudentMenu();
+            studentMenu.Show();
+        }
     }
 }
