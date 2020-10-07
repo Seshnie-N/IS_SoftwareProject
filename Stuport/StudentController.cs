@@ -37,8 +37,6 @@ namespace Stuport
 
         }
 
-
-
         public bool StudNumExists(String StudNum)
         {
 
