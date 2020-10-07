@@ -37,7 +37,6 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtLName = new System.Windows.Forms.TextBox();
             this.lblPhoneNo = new System.Windows.Forms.Label();
-            this.txtPhoneNo = new System.Windows.Forms.TextBox();
             this.lblPassword1 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword2 = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.ttHints = new System.Windows.Forms.ToolTip(this.components);
             this.lblStudNum = new System.Windows.Forms.Label();
             this.txtStudNum = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -117,14 +117,6 @@
             this.lblPhoneNo.Size = new System.Drawing.Size(84, 13);
             this.lblPhoneNo.TabIndex = 8;
             this.lblPhoneNo.Text = "Contact Number";
-            // 
-            // txtPhoneNo
-            // 
-            this.txtPhoneNo.Location = new System.Drawing.Point(88, 296);
-            this.txtPhoneNo.Name = "txtPhoneNo";
-            this.txtPhoneNo.Size = new System.Drawing.Size(204, 20);
-            this.txtPhoneNo.TabIndex = 5;
-            this.ttHints.SetToolTip(this.txtPhoneNo, "Enter a Valid Phone Number");
             // 
             // lblPassword1
             // 
@@ -201,11 +193,22 @@
             this.txtStudNum.Size = new System.Drawing.Size(204, 20);
             this.txtStudNum.TabIndex = 1;
             // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(88, 296);
+            this.txtPhone.Mask = "000 000 0000";
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(204, 20);
+            this.txtPhone.TabIndex = 16;
+            this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
+            // 
             // StudentRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 508);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtStudNum);
             this.Controls.Add(this.lblStudNum);
             this.Controls.Add(this.btnCancel);
@@ -215,7 +218,6 @@
             this.Controls.Add(this.lblPassword1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPhoneNo);
-            this.Controls.Add(this.txtPhoneNo);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtLName);
             this.Controls.Add(this.lblLName);
@@ -241,7 +243,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtLName;
         private System.Windows.Forms.Label lblPhoneNo;
-        private System.Windows.Forms.TextBox txtPhoneNo;
         private System.Windows.Forms.Label lblPassword1;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword2;
@@ -251,5 +252,6 @@
         private System.Windows.Forms.ToolTip ttHints;
         private System.Windows.Forms.Label lblStudNum;
         private System.Windows.Forms.TextBox txtStudNum;
+        private System.Windows.Forms.MaskedTextBox txtPhone;
     }
 }

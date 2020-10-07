@@ -13,10 +13,13 @@ namespace Stuport
     {
         public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
         {
-
+            String ConnectionString = "Data Source = |Data Directory|\\ StuportDatabse.accdb";
             String HashedPassword = Password.Sha256();
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb");
+
+            //   OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Nabeel\Desktop\Second Year\Information System\Programming\Seshnie-N\IS_SoftwareProject\Stuport\StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
            
             cmd.CommandText = "Insert into Student" +
@@ -43,8 +46,7 @@ namespace Stuport
         {
 
             String chckStudNum = "";
-
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb");
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
@@ -65,7 +67,7 @@ namespace Stuport
             con.Close();
             if (!chckStudNum.Equals(""))
             {
-                Console.WriteLine(false);
+            
                 return true;
             }
             else
@@ -129,13 +131,14 @@ namespace Stuport
         public bool PhoneNumberLengthCheck(String Phone)
         {
             int length = Phone.Length;
-            if (length == 10)
+            Console.Write(length);
+            if (length != 10)
             {
-                return true;
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
 
