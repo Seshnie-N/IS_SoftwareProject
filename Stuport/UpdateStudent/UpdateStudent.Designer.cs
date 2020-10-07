@@ -45,7 +45,7 @@
             this.txtStudentNo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStudentUpdate = new System.Windows.Forms.DataGridView();
             this.lblStudentNumber = new System.Windows.Forms.Label();
             this.txtStudentNumber = new System.Windows.Forms.TextBox();
             this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
@@ -58,7 +58,7 @@
             this.studentPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -198,11 +198,11 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // dataGridView1
+            // dgvStudentUpdate
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStudentUpdate.AutoGenerateColumns = false;
+            this.dgvStudentUpdate.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentUpdate.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.studentIDDataGridViewTextBoxColumn,
             this.studentFirstNameDataGridViewTextBoxColumn,
             this.studentLastNameDataGridViewTextBoxColumn,
@@ -210,11 +210,11 @@
             this.studentPhoneDataGridViewTextBoxColumn,
             this.studentPasswordDataGridViewTextBoxColumn,
             this.groupIDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.studentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(753, 209);
-            this.dataGridView1.TabIndex = 25;
+            this.dgvStudentUpdate.DataSource = this.studentBindingSource;
+            this.dgvStudentUpdate.Location = new System.Drawing.Point(33, 55);
+            this.dgvStudentUpdate.Name = "dgvStudentUpdate";
+            this.dgvStudentUpdate.Size = new System.Drawing.Size(753, 209);
+            this.dgvStudentUpdate.TabIndex = 25;
             // 
             // lblStudentNumber
             // 
@@ -295,7 +295,7 @@
             this.ClientSize = new System.Drawing.Size(812, 517);
             this.Controls.Add(this.lblStudentNumber);
             this.Controls.Add(this.txtStudentNumber);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStudentUpdate);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStudentNo);
@@ -315,7 +315,7 @@
             this.Name = "UpdateStudent";
             this.Text = "UpdateStudent";
             this.Load += new System.EventHandler(this.UpdateStudent_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -340,7 +340,7 @@
         private System.Windows.Forms.TextBox txtStudentNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStudentUpdate;
         private System.Windows.Forms.Label lblStudentNumber;
         private System.Windows.Forms.TextBox txtStudentNumber;
         private Stuport.StuportDatabaseDataSet stuportDatabaseDataSet;
