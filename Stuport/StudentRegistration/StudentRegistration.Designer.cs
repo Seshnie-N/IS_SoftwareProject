@@ -57,7 +57,6 @@
             this.label1.Size = new System.Drawing.Size(321, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please Enter The Following Details To Create A #Stuport Account ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtFName
             // 
@@ -153,7 +152,6 @@
             this.lblPassword2.Size = new System.Drawing.Size(91, 13);
             this.lblPassword2.TabIndex = 12;
             this.lblPassword2.Text = "Confirm Password";
-            this.lblPassword2.Click += new System.EventHandler(this.lblPassword2_Click);
             // 
             // txtPasswordConf
             // 

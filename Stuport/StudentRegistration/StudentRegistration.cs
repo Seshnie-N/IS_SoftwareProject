@@ -17,17 +17,7 @@ namespace Stuport
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StudentRegistration_Load(object sender, EventArgs e)
+                private void StudentRegistration_Load(object sender, EventArgs e)
         {
 
         }
@@ -40,12 +30,13 @@ namespace Stuport
             bool PasswordValidation = true;
             bool ConfirmPasswordValidation = true;
             bool PhoneValidation = true;
+            bool PresenceCheckValidation = true;
             StudentController SC = new StudentController();
             String StudNum = txtStudNum.Text;
             String Fname = txtFName.Text;
             String Lname = txtLName.Text;
             String Email = txtEmail.Text;
-            String Phone = txtEmail.Text;
+            String Phone = txtPhoneNo.Text;
             String Password = txtPassword.Text;
             String ConfirmPassword = txtPasswordConf.Text;
 
@@ -77,6 +68,31 @@ namespace Stuport
             }
 
             //Add Validation For Empty Boxes
+            if (String.IsNullOrEmpty(txtStudNum.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtFName.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtLName.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtPhoneNo.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
 
             //Add Student;
             if (Validation)
@@ -86,13 +102,21 @@ namespace Stuport
             }
             else
             {
-                if (!EmailValidation)
+                if(!PresenceCheckValidation)
                 {
-                    MessageBox.Show("An Account With This Email Address Already Exists");
+                    MessageBox.Show("All fields must be populated.");
                 }
                 if (!StudNumValidation)
                 {
                     MessageBox.Show("An Account With This Student Number Already Exists");
+                }
+                if (!EmailValidation)
+                {
+                    MessageBox.Show("An Account With This Email Address Already Exists");
+                }
+                if (!PhoneValidation)
+                {
+                    MessageBox.Show("Phone Number must be 10 Digits");
                 }
                 if (!ConfirmPasswordValidation)
                 {
@@ -101,11 +125,8 @@ namespace Stuport
                 if (!PasswordValidation)
                 {
                     MessageBox.Show("Password must be atleast 8 characters");
-                }
-                if (!PhoneValidation)
-                {
-                    MessageBox.Show("Phone Number must be 10 Digits");
-                }
+               }
+                          
             }
     
         }
