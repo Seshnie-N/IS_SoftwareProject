@@ -229,6 +229,7 @@ namespace Stuport
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.label1);
             this.Name = "StudentRegistration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.StudentRegistration_Load);
             this.ResumeLayout(false);

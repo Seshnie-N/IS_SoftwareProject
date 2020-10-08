@@ -25,14 +25,11 @@ namespace Stuport.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "s")
-            {
-                this.Hide();
-                StudentMenu studentMenu = new StudentMenu();
-                studentMenu.Show();
-
-            }
-            else if (cbxAdmin.Checked)
+            this.Hide();
+            StudentMenu studentMenu = new StudentMenu();
+            studentMenu.Show();
+            
+            if (cbxAdmin.Checked)
             {
                 this.Hide();
                 AdminMenu adminMenu = new AdminMenu();

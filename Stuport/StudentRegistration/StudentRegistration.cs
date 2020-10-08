@@ -17,7 +17,7 @@ namespace Stuport
             InitializeComponent();
         }
 
-                private void StudentRegistration_Load(object sender, EventArgs e)
+        private void StudentRegistration_Load(object sender, EventArgs e)
         {
 
         }
@@ -98,7 +98,9 @@ namespace Stuport
             if (Validation)
             {
                 SC.AddStudent(StudNum, Fname, Lname, Email, Phone, Password);
+                ClearText();
                 MessageBox.Show("Registered Successfully");
+                this.Close();
             }
             else
             {
@@ -129,6 +131,17 @@ namespace Stuport
                           
             }
     
+        }
+
+        private void ClearText()
+        {
+            txtStudNum.Clear();
+            txtFName.Clear();
+            txtLName.Clear();
+            txtEmail.Clear();
+            txtPhone.Clear();
+            txtPassword.Clear();
+            txtPasswordConf.Clear();
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
