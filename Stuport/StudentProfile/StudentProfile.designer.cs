@@ -43,10 +43,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.backbtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+         
             this.stuportDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,12 +170,11 @@
             // 
             // stuportDatabaseDataSet
             // 
-            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
-            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            
             // 
             // stuportDatabaseDataSetBindingSource
             // 
-            this.stuportDatabaseDataSetBindingSource.DataSource = this.stuportDatabaseDataSet;
+            
             this.stuportDatabaseDataSetBindingSource.Position = 0;
             // 
             // StudentProfile
@@ -201,7 +200,7 @@
             this.Text = "StudentProfile";
             this.Load += new System.EventHandler(this.StudentProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+        
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -225,6 +224,6 @@
         private System.Windows.Forms.Button backbtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource stuportDatabaseDataSetBindingSource;
-        private StuportDatabaseDataSet stuportDatabaseDataSet;
+
     }
 }
