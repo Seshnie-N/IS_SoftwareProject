@@ -80,6 +80,7 @@
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // AdminMenu
             // 

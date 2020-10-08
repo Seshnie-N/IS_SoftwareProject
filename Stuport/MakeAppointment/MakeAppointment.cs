@@ -21,5 +21,12 @@ namespace Stuport
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StudentAppointmentsHome appointmentsHome = (StudentAppointmentsHome)Application.OpenForms["StudentAppointmentsHome"];
+            appointmentsHome.Show();
+        }
     }
 }
