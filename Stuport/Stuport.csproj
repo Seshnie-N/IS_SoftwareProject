@@ -121,10 +121,10 @@
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="UpdateDetails\UpdateDetails.cs">
+    <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UpdateDetails\UpdateDetails.Designer.cs">
+    <Compile Include="UpdateStaff\UpdateDetails.Designer.cs">
       <DependentUpon>UpdateDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateStudent\UpdateStudent.cs">
@@ -178,7 +178,7 @@
     <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UpdateDetails\UpdateDetails.resx">
+    <EmbeddedResource Include="UpdateStaff\UpdateDetails.resx">
       <DependentUpon>UpdateDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateStudent\UpdateStudent.resx">

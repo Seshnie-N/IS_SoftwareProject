@@ -8,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Stuport
+namespace Stuport.StudentMenu
 {
-    public partial class AdminMenu : Form
+    public partial class StudentProfile : Form
     {
-        public AdminMenu()
+        public StudentProfile()
         {
             InitializeComponent();
         }
 
-        private void btnManageStudents_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            UpdateStudent updateStudent = new UpdateStudent();
-            updateStudent.Show();
+
         }
     }
 }

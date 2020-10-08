@@ -70,6 +70,7 @@
             this.btnManageStudents.TabIndex = 4;
             this.btnManageStudents.Text = "Manage Students";
             this.btnManageStudents.UseVisualStyleBackColor = true;
+            this.btnManageStudents.Click += new System.EventHandler(this.btnManageStudents_Click);
             // 
             // btnLogout
             // 
