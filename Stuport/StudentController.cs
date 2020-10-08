@@ -37,6 +37,142 @@ namespace Stuport
 
         }
 
+        //getters
+        public String getStdNum()
+        {
+            String stdnum = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                stdnum = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return stdnum;
+        }
+
+        public String getFname()
+        {
+            String fname = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                fname = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return fname;
+        }
+
+        public String getLname()
+        {
+            String lname = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_LastName From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lname = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return lname;
+        }
+
+        public String getPhone()
+        {
+            String phone = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_Phone From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                phone = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return phone;
+        }
+
+        public String getEmail()
+        {
+            String stdEmail = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_Email From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                stdEmail = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            return stdEmail;
+        }
+
+
         public bool StudNumExists(String StudNum)
         {
 
@@ -164,4 +300,7 @@ namespace Stuport
             }
         }
     }
+
+
+
 }

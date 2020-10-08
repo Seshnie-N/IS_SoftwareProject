@@ -30,7 +30,9 @@ namespace Stuport
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-           
+            StudentProfile stdprofile = new StudentProfile();
+            stdprofile.Show();
+            this.Hide();
         }
 
         private void btnAppointments_Click(object sender, EventArgs e)

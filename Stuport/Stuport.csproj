@@ -115,6 +115,10 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentProfile\StudentProfile.cs" />
+    <Compile Include="StudentProfile\StudentProfile.designer.cs">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.cs" />
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
@@ -177,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
       <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentProfile\StudentProfile.resx">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
