@@ -115,11 +115,15 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentProfile\StudentProfile.cs" />
+    <Compile Include="StudentProfile\StudentProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentProfile\StudentProfile.designer.cs">
       <DependentUpon>StudentProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration\StudentRegistration.cs" />
+    <Compile Include="StudentRegistration\StudentRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>
