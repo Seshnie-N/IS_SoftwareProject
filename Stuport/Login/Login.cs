@@ -23,11 +23,21 @@ namespace Stuport.Login
             RegisterForm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form menuForm = new StudentMenu();
-            menuForm.Show();
-            this.Hide();
+            if (txtUsername.Text == "s")
+            {
+                this.Hide();
+                StudentMenu studentMenu = new StudentMenu();
+                studentMenu.Show();
+
+            }
+            else if (cbxAdmin.Checked)
+            {
+                this.Hide();
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.Show();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stuport.Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,8 +30,23 @@ namespace Stuport
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            StudentProfile stdprofile = new StudentProfile();
+            stdprofile.Show();
+            this.Hide();
+        }
 
+        private void btnAppointments_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StudentAppointmentsHome appointmentsHome = new StudentAppointmentsHome();
+            appointmentsHome.Show();
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login.Login login = new Login.Login();
+            login.Show();
         }
     }
 }
