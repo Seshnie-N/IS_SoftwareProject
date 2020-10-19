@@ -93,6 +93,7 @@
             this.Controls.Add(this.btnManageGroups);
             this.Controls.Add(this.btnManageAppointments);
             this.Name = "AdminMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminMenu";
             this.ResumeLayout(false);
 
