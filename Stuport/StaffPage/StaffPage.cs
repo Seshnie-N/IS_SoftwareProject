@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportStaff
+namespace Stuport
 {
     public partial class StaffPage : Form
     {

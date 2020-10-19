@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.cbxAdmin = new System.Windows.Forms.CheckBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -62,12 +62,12 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Password";
             // 
-            // textBox2
+            // txtPassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(94, 153);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtPassword.Location = new System.Drawing.Point(94, 153);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(162, 20);
+            this.txtPassword.TabIndex = 8;
             // 
             // cbxAdmin
             // 
@@ -81,17 +81,17 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(99, 262);
+            this.btnRegister.Location = new System.Drawing.Point(99, 271);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(157, 23);
             this.btnRegister.TabIndex = 10;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegister.Click += new System.EventHandler(this.Button1_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(97, 233);
+            this.btnLogin.Location = new System.Drawing.Point(99, 242);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(157, 23);
             this.btnLogin.TabIndex = 11;
@@ -107,13 +107,12 @@
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.cbxAdmin);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +123,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.CheckBox cbxAdmin;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnLogin;

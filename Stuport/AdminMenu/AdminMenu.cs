@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class AdminMenu : Form
     {
@@ -28,7 +28,7 @@ namespace StuportApp
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login login = new Login();
+            Login.Login login = new Login.Login();
             login.Show();
         }
     }

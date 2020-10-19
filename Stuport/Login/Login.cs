@@ -1,5 +1,4 @@
-﻿using StuportApp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +17,10 @@ namespace Stuport.Login
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            
+            Form RegisterForm = new StudentRegistration();
+            RegisterForm.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,12 +39,5 @@ namespace Stuport.Login
                 adminMenu.Show();
             }
         }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-    
     }
 }

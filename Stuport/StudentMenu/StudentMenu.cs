@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class StudentMenu : Form
     {
@@ -30,7 +30,9 @@ namespace StuportApp
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-           
+            StudentProfile stdprofile = new StudentProfile();
+            stdprofile.Show();
+            this.Hide();
         }
 
         private void btnAppointments_Click(object sender, EventArgs e)
@@ -43,7 +45,7 @@ namespace StuportApp
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
-            Login login = new Login();
+            Login.Login login = new Login.Login();
             login.Show();
         }
     }
