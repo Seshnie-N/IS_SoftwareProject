@@ -28,94 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lblGroups = new System.Windows.Forms.Label();
+            this.dgvGroups = new System.Windows.Forms.DataGridView();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.cmbFilter = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
+            // lblGroups
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(353, 22);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 25);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Groups";
+            this.lblGroups.AutoSize = true;
+            this.lblGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGroups.Location = new System.Drawing.Point(353, 22);
+            this.lblGroups.Name = "lblGroups";
+            this.lblGroups.Size = new System.Drawing.Size(76, 25);
+            this.lblGroups.TabIndex = 7;
+            this.lblGroups.Text = "Groups";
             // 
-            // dataGridView1
+            // dgvGroups
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 63);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 212);
-            this.dataGridView1.TabIndex = 8;
+            this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroups.Location = new System.Drawing.Point(12, 63);
+            this.dgvGroups.Name = "dgvGroups";
+            this.dgvGroups.Size = new System.Drawing.Size(776, 212);
+            this.dgvGroups.TabIndex = 8;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.Location = new System.Drawing.Point(12, 292);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBack.Location = new System.Drawing.Point(12, 292);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.Text = "back";
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.Location = new System.Drawing.Point(170, 292);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(170, 292);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnRemove
             // 
-            this.button3.Location = new System.Drawing.Point(312, 292);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "remove";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnRemove.Location = new System.Drawing.Point(312, 292);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 11;
+            this.btnRemove.Text = "remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblFilter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(506, 292);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "filter:";
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Location = new System.Drawing.Point(506, 292);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(29, 13);
+            this.lblFilter.TabIndex = 12;
+            this.lblFilter.Text = "filter:";
             // 
-            // comboBox1
+            // cmbFilter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(541, 292);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.Location = new System.Drawing.Point(541, 292);
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(121, 21);
+            this.cmbFilter.TabIndex = 13;
             // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 353);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cmbFilter);
+            this.Controls.Add(this.lblFilter);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.dgvGroups);
+            this.Controls.Add(this.lblGroups);
             this.Name = "Groups";
             this.Text = "Groups";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,12 +121,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lblGroups;
+        private System.Windows.Forms.DataGridView dgvGroups;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.ComboBox cmbFilter;
     }
 }
