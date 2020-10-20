@@ -52,6 +52,13 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentController.cs" />
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,10 +71,10 @@
     <Compile Include="CreateGroup\GroupCreate.Designer.cs">
       <DependentUpon>GroupCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupPage\GroupPage.cs">
+    <Compile Include="GroupPage %28StudentSide%29\GroupPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GroupPage\GroupPage.Designer.cs">
+    <Compile Include="GroupPage %28StudentSide%29\GroupPage.Designer.cs">
       <DependentUpon>GroupPage.cs</DependentUpon>
     </Compile>
     <Compile Include="GroupRequest\RequestGroup.cs">
@@ -76,17 +83,11 @@
     <Compile Include="GroupRequest\RequestGroup.Designer.cs">
       <DependentUpon>RequestGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Groups\Groups.cs">
+    <Compile Include="Groups %28AdminSide%29\Groups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Groups\Groups.Designer.cs">
+    <Compile Include="Groups %28AdminSide%29\Groups.Designer.cs">
       <DependentUpon>Groups.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="MakeAppointment\MakeAppointment.cs">
       <SubType>Form</SubType>
@@ -114,16 +115,17 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration\StudentRegistration.cs">
+    <Compile Include="StudentProfile\StudentProfile.cs" >
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentProfile\StudentProfile.designer.cs">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRegistration\StudentRegistration.cs" >
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StuportDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
@@ -146,13 +148,13 @@
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GroupPage\GroupPage.resx">
+    <EmbeddedResource Include="GroupPage %28StudentSide%29\GroupPage.resx">
       <DependentUpon>GroupPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GroupRequest\RequestGroup.resx">
       <DependentUpon>RequestGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Groups\Groups.resx">
+    <EmbeddedResource Include="Groups %28AdminSide%29\Groups.resx">
       <DependentUpon>Groups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
@@ -179,6 +181,9 @@
     <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentProfile\StudentProfile.resx">
+      <DependentUpon>StudentProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentRegistration\StudentRegistration.resx">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </EmbeddedResource>
@@ -197,25 +202,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="StuportDatabaseDataSet.xsc">
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StuportDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StuportDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StuportDatabaseDataSet.xss">
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="StuportDatabase.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class MakeAppointment : Form
     {
@@ -20,6 +20,13 @@ namespace StuportApp
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            StudentAppointmentsHome appointmentsHome = (StudentAppointmentsHome)Application.OpenForms["StudentAppointmentsHome"];
+            appointmentsHome.Show();
         }
     }
 }

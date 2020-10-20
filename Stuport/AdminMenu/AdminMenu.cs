@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Stuport.Login;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class AdminMenu : Form
     {
@@ -22,6 +23,13 @@ namespace StuportApp
             this.Hide();
             UpdateStudent updateStudent = new UpdateStudent();
             updateStudent.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Login.Login login = new Login.Login();
+            login.Show();
         }
     }
 }

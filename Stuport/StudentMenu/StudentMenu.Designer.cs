@@ -1,4 +1,4 @@
-﻿namespace StuportApp
+﻿namespace Stuport
 {
     partial class StudentMenu
     {
@@ -44,6 +44,7 @@
             this.btnAppointments.TabIndex = 0;
             this.btnAppointments.Text = "Appointments";
             this.btnAppointments.UseVisualStyleBackColor = true;
+            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // btnOtherServices
             // 
@@ -81,6 +82,7 @@
             this.btnLogout.TabIndex = 5;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProfile
             // 
@@ -104,6 +106,7 @@
             this.Controls.Add(this.btnOtherServices);
             this.Controls.Add(this.btnAppointments);
             this.Name = "StudentMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);

@@ -9,11 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StuportApp
+namespace Stuport
 {
     public partial class UpdateStudent : Form
     {
+<<<<<<< HEAD
         static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\StuportDatabase.accdb";
+=======
+        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb";
+>>>>>>> main
         OleDbConnection conn = new OleDbConnection(_path);
         
 
@@ -38,12 +42,58 @@ namespace StuportApp
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> main
         }
 
         private void UpdateStudent_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Student' table. You can move, or remove it, as needed.
+            string strStuNumber = txtStudentNumber.Text;
+            string strFName = txtFName.Text;
+            string strLName = txtLName.Text;
+            string strPassword = txtPassword.Text;
+            string strEmail = txtEmail.Text;
+            string strContactNo = txtPhoneNo.Text;
+
+        }
+
+        private void refreshGrid()
+        {
+            try
+            {
+                conn.Open();
+                DataTable dt = new DataTable();
+                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Student", conn);
+                da.Fill(dt);
+                dgvStudentUpdate.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error", "Error Message: " + ex);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void dgvStudentUpdate_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtStudentNumber.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtFName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtLName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtStudentNumber.ReadOnly = true;
+        }
+
+        private void btnUpdateStudenr_Click(object sender, EventArgs e)
+        {
             string strStuNumber = txtStudentNumber.Text;
             string strFName = txtFName.Text;
             string strLName = txtLName.Text;
@@ -64,40 +114,7 @@ namespace StuportApp
             cmd.ExecuteNonQuery();
             conn.Close();
             refreshGrid();
-            MessageBox.Show(strStuNumber +" record updated");
+            MessageBox.Show("Update Successful");
         }
-
-        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtStudentNumber.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[0].Value.ToString();
-            txtFName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtLName.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtStudentNumber.ReadOnly = true;
-        }
-
-        private void refreshGrid()
-        {
-            try
-            {
-                //this.studentTableAdapter.Fill(this.stuportDatabaseDataSet.Student);
-                conn.Open();
-                DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Student", conn);
-                da.Fill(dt);
-                dgvStudentUpdate.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error", "Error Message: " + ex);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
-
     }
 }

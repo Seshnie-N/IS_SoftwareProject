@@ -1,4 +1,4 @@
-﻿namespace StuportApp
+﻿namespace Stuport
 {
     partial class StudentAppointmentsHome
     {
@@ -45,6 +45,7 @@
             this.btnNewAppointment.TabIndex = 0;
             this.btnNewAppointment.Text = "New Appointment";
             this.btnNewAppointment.UseVisualStyleBackColor = true;
+            this.btnNewAppointment.Click += new System.EventHandler(this.btnNewAppointment_Click);
             // 
             // bntCancelAppointment
             // 
@@ -63,6 +64,7 @@
             this.btnBack.TabIndex = 2;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // dataGridView1
             // 

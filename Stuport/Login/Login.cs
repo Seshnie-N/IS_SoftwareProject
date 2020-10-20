@@ -16,5 +16,25 @@ namespace Stuport.Login
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            Form RegisterForm = new StudentRegistration();
+            RegisterForm.Show();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            StudentMenu studentMenu = new StudentMenu();
+            studentMenu.Show();
+            
+            if (cbxAdmin.Checked)
+            {
+                this.Hide();
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.Show();
+            }
+        }
     }
 }
