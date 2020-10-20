@@ -237,6 +237,7 @@
             this.Controls.Add(this.btnUpdateStudenr);
             this.Controls.Add(this.btnBack);
             this.Name = "UpdateStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateStudent";
             this.Load += new System.EventHandler(this.UpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).EndInit();
