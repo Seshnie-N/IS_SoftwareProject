@@ -11,17 +11,13 @@ using System.Windows.Forms;
 
 namespace Stuport.Login
 { 
-    static class Global
-    {
-        public static string Token;
-    }
-
+   
     public partial class Login : Form
     {
         public Login()
         {
             InitializeComponent();
-        }       
+        }
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -76,6 +72,6 @@ namespace Stuport.Login
             }
         }
 
-
+        
     }
 }

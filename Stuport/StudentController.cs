@@ -6,9 +6,16 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using Stuport.Login;
 
 namespace Stuport
 {
+
+    static class Global
+    {
+        public static string Token;
+    }
+
     class StudentController
     {
         public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
@@ -46,7 +53,7 @@ namespace Stuport
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Login.Global.Token});
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token});
 
             OleDbDataReader reader = cmd.ExecuteReader();
 
@@ -73,7 +80,7 @@ namespace Stuport
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Login.Global.Token });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
 
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -99,7 +106,7 @@ namespace Stuport
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_LastName From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Login.Global.Token });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
 
             OleDbDataReader reader = cmd.ExecuteReader();
 
@@ -126,7 +133,7 @@ namespace Stuport
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Phone From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Login.Global.Token });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
 
             OleDbDataReader reader = cmd.ExecuteReader();
 
@@ -153,7 +160,7 @@ namespace Stuport
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Email From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Login.Global.Token });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
 
             OleDbDataReader reader = cmd.ExecuteReader();
 
