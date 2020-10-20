@@ -4,18 +4,24 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Stuport.Login
-{
+{ 
+    static class Global
+    {
+        public static string Token;
+    }
+
     public partial class Login : Form
     {
         public Login()
         {
             InitializeComponent();
-        }
+        }       
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -52,6 +58,7 @@ namespace Stuport.Login
                 {
                     if (SC.ValidLogin(username, password))
                     {
+                        Global.Token = username;
                         this.Hide();
                         StudentMenu studentMenu = new StudentMenu();
                         studentMenu.Show();
