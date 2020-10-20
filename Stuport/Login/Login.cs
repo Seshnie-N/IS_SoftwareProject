@@ -25,16 +25,50 @@ namespace Stuport.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            StudentMenu studentMenu = new StudentMenu();
-            studentMenu.Show();
-            
+
+            string username = txtUsername.Text;
+            string password = txtPassword.Text.Trim();
+            StudentController SC = new StudentController();
+
+            //Admin Login
             if (cbxAdmin.Checked)
             {
-                this.Hide();
-                AdminMenu adminMenu = new AdminMenu();
-                adminMenu.Show();
+                if ((username.Equals("admin"))&&(password.Equals("0000")))
+                {
+                    this.Hide();
+                    AdminMenu adminMenu = new AdminMenu();
+                    adminMenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Admin Login Details");
+                }
+
+            }
+            else
+            {
+                //Student Login
+                if (SC.StudNumExists(username))
+                {
+                    if (SC.ValidLogin(username, password))
+                    {
+                        this.Hide();
+                        StudentMenu studentMenu = new StudentMenu();
+                        studentMenu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect Password Entered. Try Again");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Username/Student number not found. Try Again or create an account.");
+                }
             }
         }
+
+
     }
 }

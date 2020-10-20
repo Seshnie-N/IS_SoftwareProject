@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Data.OleDb;
-
+using System.Windows.Forms;
 
 namespace Stuport
 {
@@ -273,6 +273,41 @@ namespace Stuport
             }
         }
 
+        public bool ValidLogin(string StudNum, string password)
+        {
+            string PassCheck = "";
+
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Student_Password From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = StudNum });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                PassCheck = reader.GetString(0).Trim();
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            if (PassCheck.Equals(password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
     }
 
     public static class HashExtensions
@@ -301,6 +336,6 @@ namespace Stuport
         }
     }
 
-
+    
 
 }
