@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUpdateDetails = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
@@ -41,17 +40,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cmbxType = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
+            this.lblUpdateDetails = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblUpdateDetails
-            // 
-            this.lblUpdateDetails.AutoSize = true;
-            this.lblUpdateDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdateDetails.Location = new System.Drawing.Point(95, 43);
-            this.lblUpdateDetails.Name = "lblUpdateDetails";
-            this.lblUpdateDetails.Size = new System.Drawing.Size(193, 31);
-            this.lblUpdateDetails.TabIndex = 0;
-            this.lblUpdateDetails.Text = "Update Details";
             // 
             // lblPhone
             // 
@@ -71,26 +61,27 @@
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email Address";
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(230, 180);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtPhone.Location = new System.Drawing.Point(230, 180);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.TabIndex = 3;
+            this.txtPhone.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(230, 151);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 12;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(230, 125);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 11;
+            this.txtLastName.TabIndex = 1;
             // 
             // lblLastName
             // 
@@ -106,7 +97,7 @@
             this.txtFirstName.Location = new System.Drawing.Point(230, 99);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 15;
+            this.txtFirstName.TabIndex = 0;
             // 
             // lblFirstName
             // 
@@ -122,7 +113,7 @@
             this.btnCancel.Location = new System.Drawing.Point(241, 265);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 21;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -132,7 +123,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(67, 265);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
@@ -147,7 +138,7 @@
             this.cmbxType.Location = new System.Drawing.Point(230, 208);
             this.cmbxType.Name = "cmbxType";
             this.cmbxType.Size = new System.Drawing.Size(100, 21);
-            this.cmbxType.TabIndex = 23;
+            this.cmbxType.TabIndex = 4;
             // 
             // lblType
             // 
@@ -157,6 +148,16 @@
             this.lblType.Size = new System.Drawing.Size(31, 13);
             this.lblType.TabIndex = 22;
             this.lblType.Text = "Type";
+            // 
+            // lblUpdateDetails
+            // 
+            this.lblUpdateDetails.AutoSize = true;
+            this.lblUpdateDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateDetails.Location = new System.Drawing.Point(95, 43);
+            this.lblUpdateDetails.Name = "lblUpdateDetails";
+            this.lblUpdateDetails.Size = new System.Drawing.Size(193, 31);
+            this.lblUpdateDetails.TabIndex = 1;
+            this.lblUpdateDetails.Text = "Update Details";
             // 
             // UpdateDetails
             // 
@@ -172,7 +173,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblUpdateDetails);
@@ -184,11 +185,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblUpdateDetails;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblLastName;
@@ -198,5 +197,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.ComboBox cmbxType;
         private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblUpdateDetails;
     }
 }

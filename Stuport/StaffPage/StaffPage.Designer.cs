@@ -39,9 +39,20 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homePageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+            this.personnelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personnelTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.PersonnelTableAdapter();
+            this.personnelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personnelFirstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personnelLastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personnelEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personnelPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personnelTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.StaffTableGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personnelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // StaffLabel
@@ -57,7 +68,16 @@
             // 
             // StaffTableGridView
             // 
+            this.StaffTableGridView.AutoGenerateColumns = false;
             this.StaffTableGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StaffTableGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.personnelIDDataGridViewTextBoxColumn,
+            this.personnelFirstNameDataGridViewTextBoxColumn,
+            this.personnelLastNameDataGridViewTextBoxColumn,
+            this.personnelEmailDataGridViewTextBoxColumn,
+            this.personnelPhoneDataGridViewTextBoxColumn,
+            this.personnelTypeDataGridViewTextBoxColumn});
+            this.StaffTableGridView.DataSource = this.personnelBindingSource;
             this.StaffTableGridView.Location = new System.Drawing.Point(76, 114);
             this.StaffTableGridView.Name = "StaffTableGridView";
             this.StaffTableGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
@@ -69,10 +89,6 @@
             // staffBindingSource
             // 
             this.staffBindingSource.DataMember = "Staff";
-            // 
-            // 
-            // staffTableAdapter
-            // 
             // 
             // btnAddStaff
             // 
@@ -137,6 +153,56 @@
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
+            // stuportDatabaseDataSet
+            // 
+            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
+            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // personnelBindingSource
+            // 
+            this.personnelBindingSource.DataMember = "Personnel";
+            this.personnelBindingSource.DataSource = this.stuportDatabaseDataSet;
+            // 
+            // personnelTableAdapter
+            // 
+            this.personnelTableAdapter.ClearBeforeFill = true;
+            // 
+            // personnelIDDataGridViewTextBoxColumn
+            // 
+            this.personnelIDDataGridViewTextBoxColumn.DataPropertyName = "Personnel_ID";
+            this.personnelIDDataGridViewTextBoxColumn.HeaderText = "Personnel_ID";
+            this.personnelIDDataGridViewTextBoxColumn.Name = "personnelIDDataGridViewTextBoxColumn";
+            // 
+            // personnelFirstNameDataGridViewTextBoxColumn
+            // 
+            this.personnelFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Personnel_FirstName";
+            this.personnelFirstNameDataGridViewTextBoxColumn.HeaderText = "Personnel_FirstName";
+            this.personnelFirstNameDataGridViewTextBoxColumn.Name = "personnelFirstNameDataGridViewTextBoxColumn";
+            // 
+            // personnelLastNameDataGridViewTextBoxColumn
+            // 
+            this.personnelLastNameDataGridViewTextBoxColumn.DataPropertyName = "Personnel_LastName";
+            this.personnelLastNameDataGridViewTextBoxColumn.HeaderText = "Personnel_LastName";
+            this.personnelLastNameDataGridViewTextBoxColumn.Name = "personnelLastNameDataGridViewTextBoxColumn";
+            // 
+            // personnelEmailDataGridViewTextBoxColumn
+            // 
+            this.personnelEmailDataGridViewTextBoxColumn.DataPropertyName = "Personnel_Email";
+            this.personnelEmailDataGridViewTextBoxColumn.HeaderText = "Personnel_Email";
+            this.personnelEmailDataGridViewTextBoxColumn.Name = "personnelEmailDataGridViewTextBoxColumn";
+            // 
+            // personnelPhoneDataGridViewTextBoxColumn
+            // 
+            this.personnelPhoneDataGridViewTextBoxColumn.DataPropertyName = "Personnel_Phone";
+            this.personnelPhoneDataGridViewTextBoxColumn.HeaderText = "Personnel_Phone";
+            this.personnelPhoneDataGridViewTextBoxColumn.Name = "personnelPhoneDataGridViewTextBoxColumn";
+            // 
+            // personnelTypeDataGridViewTextBoxColumn
+            // 
+            this.personnelTypeDataGridViewTextBoxColumn.DataPropertyName = "Personnel_Type";
+            this.personnelTypeDataGridViewTextBoxColumn.HeaderText = "Personnel_Type";
+            this.personnelTypeDataGridViewTextBoxColumn.Name = "personnelTypeDataGridViewTextBoxColumn";
+            // 
             // StaffPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personnelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,6 +241,15 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem homePageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private StuportDatabaseDataSet stuportDatabaseDataSet;
+        private System.Windows.Forms.BindingSource personnelBindingSource;
+        private StuportDatabaseDataSetTableAdapters.PersonnelTableAdapter personnelTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelFirstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelLastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelEmailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn personnelTypeDataGridViewTextBoxColumn;
     }
 }
 

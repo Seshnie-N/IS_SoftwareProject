@@ -31,5 +31,11 @@ namespace Stuport
             Login.Login login = new Login.Login();
             login.Show();
         }
+
+        private void BtnManageStaff_Click(object sender, EventArgs e)
+        {
+            StaffPage staffPage = new StaffPage();
+            staffPage.Show();
+        }
     }
 }

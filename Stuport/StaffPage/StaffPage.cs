@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Configuration;
 
 namespace Stuport
 {
     public partial class StaffPage : Form
     {
+        int staffID =0;
         public StaffPage()
         {
             InitializeComponent();
@@ -19,8 +22,10 @@ namespace Stuport
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Personnel' table. You can move, or remove it, as needed.
+            this.personnelTableAdapter.Fill(this.stuportDatabaseDataSet.Personnel);
             // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Staff' table. You can move, or remove it, as needed.
-          
+
 
         }
 
@@ -31,7 +36,8 @@ namespace Stuport
 
         private void StaffTableGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-   
+
+            
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -47,8 +53,29 @@ namespace Stuport
 
         private void BtnUpdateDetails_Click(object sender, EventArgs e)
         {
-            Form UpdateStaff = new UpdateDetails();
+            
+            if (StaffTableGridView.SelectedRows.Count == 1 )
+            {
+                DataGridViewSelectedRowCollection row = StaffTableGridView.SelectedRows;
+                staffID = (int)row[0].Cells[0].Value;
+            }
+            else {
+                MessageBox.Show("Please Select A Single Row");
+            }
+           
+            if (staffID>0)
+            {
+            Form UpdateStaff = new UpdateDetails(staffID);
             UpdateStaff.ShowDialog();
+            }
+
+        }
+
+        public void loaddata()
+        {
+
+            this.personnelTableAdapter.Fill(this.stuportDatabaseDataSet.Personnel);
+
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
