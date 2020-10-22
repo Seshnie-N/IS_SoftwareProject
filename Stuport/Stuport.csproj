@@ -115,17 +115,22 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentProfile\StudentProfile.cs" >
+    <Compile Include="StudentProfile\StudentProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentProfile\StudentProfile.designer.cs">
       <DependentUpon>StudentProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration\StudentRegistration.cs" >
+    <Compile Include="StudentRegistration\StudentRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StuportDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
@@ -202,6 +207,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StuportDatabaseDataSet.xsc">
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StuportDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StuportDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StuportDatabaseDataSet.xss">
+      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

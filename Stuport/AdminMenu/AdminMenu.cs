@@ -1,4 +1,5 @@
-﻿using Stuport.Login;
+﻿using Stuport.Groups;
+using Stuport.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,13 @@ namespace Stuport
             this.Close();
             Login.Login login = new Login.Login();
             login.Show();
+        }
+
+        private void btnManageGroups_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Groups.Groups groups = new Groups.Groups();
+            groups.Show();
         }
     }
 }

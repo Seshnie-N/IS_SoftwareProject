@@ -52,6 +52,7 @@
             this.btnManageGroups.TabIndex = 2;
             this.btnManageGroups.Text = "Manage Groups";
             this.btnManageGroups.UseVisualStyleBackColor = true;
+            this.btnManageGroups.Click += new System.EventHandler(this.btnManageGroups_Click);
             // 
             // btnManageStaff
             // 
