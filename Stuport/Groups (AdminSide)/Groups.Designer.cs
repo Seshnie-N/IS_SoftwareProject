@@ -35,7 +35,6 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.lblFilter = new System.Windows.Forms.Label();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
-            this.calDate = new System.Windows.Forms.MonthCalendar();
             this.lblDate = new System.Windows.Forms.Label();
             this.cmbService = new System.Windows.Forms.ComboBox();
             this.lblService = new System.Windows.Forms.Label();
@@ -44,7 +43,10 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbStaff = new System.Windows.Forms.ComboBox();
             this.lblStaff = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtVenue = new System.Windows.Forms.TextBox();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +67,11 @@
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.Size = new System.Drawing.Size(776, 212);
             this.dgvGroups.TabIndex = 8;
+            this.dgvGroups.SelectionChanged += new System.EventHandler(this.dgvGroups_SelectionChanged);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(15, 487);
+            this.btnBack.Location = new System.Drawing.Point(15, 456);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 9;
@@ -77,7 +80,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(716, 487);
+            this.btnEdit.Location = new System.Drawing.Point(716, 456);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 10;
@@ -87,7 +90,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(635, 487);
+            this.btnRemove.Location = new System.Drawing.Point(635, 456);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 11;
@@ -112,20 +115,14 @@
             this.cmbFilter.Size = new System.Drawing.Size(121, 21);
             this.cmbFilter.TabIndex = 13;
             // 
-            // calDate
-            // 
-            this.calDate.Location = new System.Drawing.Point(349, 307);
-            this.calDate.Name = "calDate";
-            this.calDate.TabIndex = 17;
-            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(346, 291);
+            this.lblDate.Location = new System.Drawing.Point(346, 331);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 13);
+            this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 16;
-            this.lblDate.Text = "Select Date";
+            this.lblDate.Text = "Date";
             // 
             // cmbService
             // 
@@ -161,7 +158,7 @@
             "Inactive",
             "Closed",
             "Full"});
-            this.cmbStatus.Location = new System.Drawing.Point(15, 427);
+            this.cmbStatus.Location = new System.Drawing.Point(349, 387);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(227, 21);
             this.cmbStatus.TabIndex = 25;
@@ -169,7 +166,7 @@
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Location = new System.Drawing.Point(12, 411);
+            this.lblStatus.Location = new System.Drawing.Point(346, 371);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(37, 13);
             this.lblStatus.TabIndex = 24;
@@ -178,7 +175,7 @@
             // cmbStaff
             // 
             this.cmbStaff.FormattingEnabled = true;
-            this.cmbStaff.Location = new System.Drawing.Point(15, 387);
+            this.cmbStaff.Location = new System.Drawing.Point(13, 387);
             this.cmbStaff.Name = "cmbStaff";
             this.cmbStaff.Size = new System.Drawing.Size(227, 21);
             this.cmbStaff.TabIndex = 23;
@@ -192,25 +189,51 @@
             this.lblStaff.TabIndex = 22;
             this.lblStaff.Text = "Staff";
             // 
-            // textBox1
+            // txtVenue
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 348);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(229, 20);
-            this.textBox1.TabIndex = 26;
+            this.txtVenue.Location = new System.Drawing.Point(13, 348);
+            this.txtVenue.Name = "txtVenue";
+            this.txtVenue.Size = new System.Drawing.Size(229, 20);
+            this.txtVenue.TabIndex = 26;
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpTime.Location = new System.Drawing.Point(349, 304);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(227, 20);
+            this.dtpTime.TabIndex = 27;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(349, 288);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(30, 13);
+            this.lblTime.TabIndex = 28;
+            this.lblTime.Text = "Time";
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Location = new System.Drawing.Point(349, 348);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(227, 20);
+            this.dtpDate.TabIndex = 29;
             // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 522);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(806, 488);
+            this.Controls.Add(this.dtpDate);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.dtpTime);
+            this.Controls.Add(this.txtVenue);
             this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cmbStaff);
             this.Controls.Add(this.lblStaff);
             this.Controls.Add(this.lblVenue);
-            this.Controls.Add(this.calDate);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.cmbService);
             this.Controls.Add(this.lblService);
@@ -238,7 +261,6 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.ComboBox cmbFilter;
-        private System.Windows.Forms.MonthCalendar calDate;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ComboBox cmbService;
         private System.Windows.Forms.Label lblService;
@@ -247,6 +269,9 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbStaff;
         private System.Windows.Forms.Label lblStaff;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtVenue;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.DateTimePicker dtpDate;
     }
 }

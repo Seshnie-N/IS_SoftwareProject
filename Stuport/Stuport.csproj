@@ -52,6 +52,8 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Groups %28AdminSide%29\Model\PersonnelType.cs" />
+    <Compile Include="Groups %28AdminSide%29\Model\ServiceType.cs" />
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,5 +224,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

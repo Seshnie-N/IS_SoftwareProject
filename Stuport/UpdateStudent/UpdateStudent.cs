@@ -16,7 +16,13 @@ namespace Stuport
         static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb";
 
         OleDbConnection conn = new OleDbConnection(_path);
-        
+
+        string strStuNumber;
+        string strFName;
+        string strLName;
+        string strPassword;
+        string strEmail;
+        string strContactNo;
 
         public UpdateStudent()
         {
@@ -39,19 +45,54 @@ namespace Stuport
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
+            strStuNumber = txtStudentNumber.Text;
+            strFName = txtFName.Text;
+            strLName = txtLName.Text;
+            strPassword = txtPassword.Text;
+            strEmail = txtEmail.Text;
+            strContactNo = txtPhoneNo.Text;
 
+
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand("ADD Student SET Student_FirstName = @1, Student_LastName = @2," +
+                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6", conn);
+            cmd.Parameters.AddWithValue("@1", strFName);
+            cmd.Parameters.AddWithValue("@2", strLName);
+            cmd.Parameters.AddWithValue("@3", strEmail);
+            cmd.Parameters.AddWithValue("@4", strContactNo);
+            cmd.Parameters.AddWithValue("@5", strPassword);
+            cmd.Parameters.AddWithValue("@6", strStuNumber);
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            refreshGrid();
+            MessageBox.Show("Update Successful");
         }
 
-        private void UpdateStudent_Load(object sender, EventArgs e)
+        private bool validate()
         {
-            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Student' table. You can move, or remove it, as needed.
-            string strStuNumber = txtStudentNumber.Text;
-            string strFName = txtFName.Text;
-            string strLName = txtLName.Text;
-            string strPassword = txtPassword.Text;
-            string strEmail = txtEmail.Text;
-            string strContactNo = txtPhoneNo.Text;
-
+            bool bValid = true;
+            if (String.IsNullOrEmpty(strStuNumber))
+            {
+                bValid = false;
+            }
+            if (String.IsNullOrEmpty(strFName))
+            {
+                bValid = false;
+            }
+            if (String.IsNullOrEmpty(strLName))
+            {
+                bValid = false;
+            }
+            if (String.IsNullOrEmpty(strEmail))
+            {
+                bValid = false;
+            }
+            if (String.IsNullOrEmpty(strContactNo))
+            {
+                bValid = false;
+            }
+            return bValid;
         }
 
         private void refreshGrid()
@@ -87,12 +128,12 @@ namespace Stuport
 
         private void btnUpdateStudenr_Click(object sender, EventArgs e)
         {
-            string strStuNumber = txtStudentNumber.Text;
-            string strFName = txtFName.Text;
-            string strLName = txtLName.Text;
-            string strPassword = txtPassword.Text;
-            string strEmail = txtEmail.Text;
-            string strContactNo = txtPhoneNo.Text;
+            strStuNumber = txtStudentNumber.Text;
+            strFName = txtFName.Text;
+            strLName = txtLName.Text;
+            strPassword = txtPassword.Text;
+            strEmail = txtEmail.Text;
+            strContactNo = txtPhoneNo.Text;
 
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("UPDATE Student SET Student_FirstName = @1, Student_LastName = @2," +
