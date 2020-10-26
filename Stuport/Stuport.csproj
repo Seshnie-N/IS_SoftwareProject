@@ -52,6 +52,12 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.Designer.cs">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Groups %28AdminSide%29\Model\PersonnelType.cs" />
     <Compile Include="Groups %28AdminSide%29\Model\ServiceType.cs" />
     <Compile Include="Login\Login.cs">
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment %28AdminSide%29\frmAppointmentAdmin.resx">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>

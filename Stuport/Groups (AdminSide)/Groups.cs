@@ -200,32 +200,35 @@ namespace Stuport.Groups
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string strService;
             string strVenue;
-            string strStaff;
             string strStatus;
             DateTime dtDate;
             DateTime dtTime;
 
-            strService = cmbService.SelectedItem.ToString();
+            if (dgvGroups.CurrentRow == null)
+                return;
+            var serviceId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
+            var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
+            var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
+            var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+
             strVenue = txtVenue.Text;
-            strStaff = cmbStaff.SelectedItem.ToString();
             strStatus = cmbStatus.SelectedItem.ToString();
             dtDate = dtpDate.Value;
             dtTime = dtpTime.Value;
 
-            MessageBox.Show("service: " + strService);
+            //MessageBox.Show("service: " + strService);
             MessageBox.Show("Venue: " + strVenue);
-            MessageBox.Show("Staff: " + strStaff);
+            //MessageBox.Show("Staff: " + strStaff);
             MessageBox.Show("Time: " + dtTime.ToString());
             MessageBox.Show("Date: " + dtDate.ToString());
             MessageBox.Show("status: " + strStatus);
 
             conn.Open();
             OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
-                " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn);
-            cmd.Parameters.AddWithValue("@1", strService);
-            cmd.Parameters.AddWithValue("@2", strStaff);
+                " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
+            cmd.Parameters.AddWithValue("@1", serviceId);
+            cmd.Parameters.AddWithValue("@2", PersonnelID);
             cmd.Parameters.AddWithValue("@3", strVenue);
             cmd.Parameters.AddWithValue("@4", dtTime);
             cmd.Parameters.AddWithValue("@5", dtDate);

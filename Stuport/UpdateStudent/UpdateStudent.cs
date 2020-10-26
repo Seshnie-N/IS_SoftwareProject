@@ -52,10 +52,17 @@ namespace Stuport
             strEmail = txtEmail.Text;
             strContactNo = txtPhoneNo.Text;
 
+            bool bVailid = validate();
+
+            if (bVailid == false)
+            {
+                MessageBox.Show("Error");
+                return;
+            }
 
             conn.Open();
-            OleDbCommand cmd = new OleDbCommand("ADD Student SET Student_FirstName = @1, Student_LastName = @2," +
-                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6", conn);
+            OleDbCommand cmd = new OleDbCommand("INSERT INTO Student (Student_ID, Student_FirstName, Student_LastName," +
+                " Student_Email, Student_Phone, Student_Password) VALUES (@6,@1,@2,@3,@4,@5)", conn);
             cmd.Parameters.AddWithValue("@1", strFName);
             cmd.Parameters.AddWithValue("@2", strLName);
             cmd.Parameters.AddWithValue("@3", strEmail);
