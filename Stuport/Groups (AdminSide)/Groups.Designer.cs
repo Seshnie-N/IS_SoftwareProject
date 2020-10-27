@@ -54,7 +54,7 @@
             // 
             this.lblGroups.AutoSize = true;
             this.lblGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroups.Location = new System.Drawing.Point(353, 9);
+            this.lblGroups.Location = new System.Drawing.Point(356, 11);
             this.lblGroups.Name = "lblGroups";
             this.lblGroups.Size = new System.Drawing.Size(76, 25);
             this.lblGroups.TabIndex = 7;
@@ -63,7 +63,7 @@
             // dgvGroups
             // 
             this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroups.Location = new System.Drawing.Point(15, 37);
+            this.dgvGroups.Location = new System.Drawing.Point(18, 39);
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.Size = new System.Drawing.Size(776, 212);
             this.dgvGroups.TabIndex = 8;
@@ -71,7 +71,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(15, 456);
+            this.btnBack.Location = new System.Drawing.Point(18, 458);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 9;
@@ -80,7 +80,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(716, 456);
+            this.btnEdit.Location = new System.Drawing.Point(719, 458);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 10;
@@ -90,7 +90,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(635, 456);
+            this.btnRemove.Location = new System.Drawing.Point(638, 458);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 11;
@@ -118,7 +118,7 @@
             // lblDate
             // 
             this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(346, 331);
+            this.lblDate.Location = new System.Drawing.Point(349, 333);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(30, 13);
             this.lblDate.TabIndex = 16;
@@ -127,7 +127,7 @@
             // cmbService
             // 
             this.cmbService.FormattingEnabled = true;
-            this.cmbService.Location = new System.Drawing.Point(15, 307);
+            this.cmbService.Location = new System.Drawing.Point(18, 309);
             this.cmbService.Name = "cmbService";
             this.cmbService.Size = new System.Drawing.Size(227, 21);
             this.cmbService.TabIndex = 15;
@@ -135,7 +135,7 @@
             // lblService
             // 
             this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(12, 291);
+            this.lblService.Location = new System.Drawing.Point(15, 293);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(43, 13);
             this.lblService.TabIndex = 14;
@@ -144,7 +144,7 @@
             // lblVenue
             // 
             this.lblVenue.AutoSize = true;
-            this.lblVenue.Location = new System.Drawing.Point(12, 331);
+            this.lblVenue.Location = new System.Drawing.Point(15, 333);
             this.lblVenue.Name = "lblVenue";
             this.lblVenue.Size = new System.Drawing.Size(38, 13);
             this.lblVenue.TabIndex = 20;
@@ -175,7 +175,7 @@
             // cmbStaff
             // 
             this.cmbStaff.FormattingEnabled = true;
-            this.cmbStaff.Location = new System.Drawing.Point(13, 387);
+            this.cmbStaff.Location = new System.Drawing.Point(16, 389);
             this.cmbStaff.Name = "cmbStaff";
             this.cmbStaff.Size = new System.Drawing.Size(227, 21);
             this.cmbStaff.TabIndex = 23;
@@ -183,7 +183,7 @@
             // lblStaff
             // 
             this.lblStaff.AutoSize = true;
-            this.lblStaff.Location = new System.Drawing.Point(12, 371);
+            this.lblStaff.Location = new System.Drawing.Point(15, 373);
             this.lblStaff.Name = "lblStaff";
             this.lblStaff.Size = new System.Drawing.Size(29, 13);
             this.lblStaff.TabIndex = 22;
@@ -191,7 +191,7 @@
             // 
             // txtVenue
             // 
-            this.txtVenue.Location = new System.Drawing.Point(13, 348);
+            this.txtVenue.Location = new System.Drawing.Point(16, 350);
             this.txtVenue.Name = "txtVenue";
             this.txtVenue.Size = new System.Drawing.Size(229, 20);
             this.txtVenue.TabIndex = 26;
@@ -199,7 +199,7 @@
             // dtpTime
             // 
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(349, 304);
+            this.dtpTime.Location = new System.Drawing.Point(352, 306);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(227, 20);
             this.dtpTime.TabIndex = 27;
@@ -207,7 +207,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(349, 288);
+            this.lblTime.Location = new System.Drawing.Point(352, 290);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(30, 13);
             this.lblTime.TabIndex = 28;
@@ -215,7 +215,7 @@
             // 
             // dtpDate
             // 
-            this.dtpDate.Location = new System.Drawing.Point(349, 348);
+            this.dtpDate.Location = new System.Drawing.Point(352, 350);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(227, 20);
             this.dtpDate.TabIndex = 29;

@@ -26,7 +26,7 @@ namespace Stuport.Groups
 
 
         //private robsDatabase controller;
-        string strGroupID;
+        int strGroupID;
 
 
         public Groups()
@@ -80,7 +80,7 @@ namespace Stuport.Groups
         private void dgvGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
   
-            strGroupID = dgvGroups.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //strGroupID = dgvGroups.Rows[e.RowIndex].Cells[0].Value;
             //strService = dgvGroups.Rows[e.RowIndex].Cells[1].Value.ToString();
             //strStaff = dgvGroups.Rows[e.RowIndex].Cells[2].Value.ToString();
             //strStatus = dgvGroups.Rows[e.RowIndex].Cells[6].Value.ToString();
@@ -207,7 +207,7 @@ namespace Stuport.Groups
 
             if (dgvGroups.CurrentRow == null)
                 return;
-            var serviceId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
+            var serviceId = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
             var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
             var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
@@ -246,7 +246,7 @@ namespace Stuport.Groups
         {
             if (dgvGroups.CurrentRow == null)
                 return;
-            strGroupID = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
+            strGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
             var serviceTypeName =  (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
             var serviceType = serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
