@@ -13,7 +13,7 @@ namespace Stuport.AdminController
 {
     class AdminController
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\ReposUni\IS_SoftwareProject\Stuport\bin\Debug\StuportDatabase-Updated-v2.accdb";
+        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= D:\ReposUni\IS_SoftwareProject\Stuport\StuportDatabase.accdb";
 
         public List<ServiceType> serviceTypesList { get; set; }
 
