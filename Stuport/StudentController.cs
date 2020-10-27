@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Xml;
 using System.Globalization;
+using System.Configuration;
 
 namespace Stuport
 {
@@ -17,8 +18,8 @@ namespace Stuport
         {
 
             String HashedPassword = Password.Sha256();
-
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
            
             cmd.CommandText = "Insert into Student" +
@@ -42,7 +43,8 @@ namespace Stuport
         {
 
             //make placeholder 00 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
 
 
 
@@ -69,7 +71,8 @@ namespace Stuport
         {
             String stdnum = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
@@ -96,7 +99,9 @@ namespace Stuport
         {
             String fname = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";
@@ -122,7 +127,8 @@ namespace Stuport
         {
             String lname = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_LastName From Student Where Student_ID=?";
@@ -149,7 +155,8 @@ namespace Stuport
         {
             String phone = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Phone From Student Where Student_ID=?";
@@ -175,8 +182,8 @@ namespace Stuport
         public String getEmail()
         {
             String stdEmail = "";
-
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Email From Student Where Student_ID=?";
@@ -205,7 +212,8 @@ namespace Stuport
 
             String chckStudNum = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
@@ -244,7 +252,9 @@ namespace Stuport
 
             String chckEmail = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Email From Student Where Student_Email =?";
