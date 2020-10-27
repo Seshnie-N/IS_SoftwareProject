@@ -57,7 +57,7 @@ namespace Stuport.Groups_Service
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            bool confirm = comfirmMessage();
+            bool confirm = comfirmMessage("Are you sure you want to delete this group");
             if (confirm == true)
             {
                 intGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
@@ -67,10 +67,8 @@ namespace Stuport.Groups_Service
             }
         }
 
-        private bool comfirmMessage()
-        {
-         
-            string message = "Are you sure you want to delete this group";
+        private bool comfirmMessage(string message)
+        {         
             string caption = "Warning!";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -129,11 +127,11 @@ namespace Stuport.Groups_Service
 
             if (dgvGroups.CurrentRow == null)
                 return;
-            var serviceId = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
+            var serviceType = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
-            //var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
-            //var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
-
+            var ServiceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceType);
+            var Serviceid = (int)ServiceType.ServiceId;
+            
             strVenue = txtVenue.Text;
             strStatus = txtStatus.Text;
             dtDate = dtpDate.Value;
@@ -143,40 +141,13 @@ namespace Stuport.Groups_Service
             if (b == false)
                 return;
 
-            //MessageBox.Show("service: " + strService);
-            MessageBox.Show("Venue: " + strVenue);
-            //MessageBox.Show("Staff: " + strStaff);
-            MessageBox.Show("Time: " + dtTime.ToString());
-            MessageBox.Show("Date: " + dtDate.ToString());
-            MessageBox.Show("status: " + strStatus);
-
-            bool confirm = comfirmMessage();
+            bool confirm = comfirmMessage("Are you sure you want to update this group!");
             if (confirm == false)
                 return;
 
-            //try
-            //{
-            //    conn.Open();
-            //    OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
-            //        " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
-            //    cmd.Parameters.AddWithValue("@1", serviceId);
-            //    cmd.Parameters.AddWithValue("@2", PersonnelID);
-            //    cmd.Parameters.AddWithValue("@3", strVenue);
-            //    cmd.Parameters.AddWithValue("@4", dtTime);
-            //    cmd.Parameters.AddWithValue("@5", dtDate);
-            //    cmd.Parameters.AddWithValue("@6", strStatus);
-            //    cmd.Parameters.AddWithValue("@7", strGroupID);
-
-            //    cmd.ExecuteNonQuery();
-            //    conn.Close();
-            //    RefreshGrid();
-            //    MessageBox.Show("Update Successful");
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("UpdateError! " + ex);
-            //}
-            
+            AC.updateGroup(intGroupID, Serviceid, personnelId, dtDate, dtTime, strStatus, strVenue);
+            RefreshGrid();
+            MessageBox.Show("Group Updated Successfully", "Success");
 
         } //TODO
 
@@ -201,15 +172,6 @@ namespace Stuport.Groups_Service
             txtVenue.Text = GroupVenue;  
         } 
 
-        private bool StatusValidate(String status)
-        {
-            bool b = false;
-            if (status == "Active") { b = true; }
-            if (status == "Inactive") { b = true; }
-            if (status == "Full") { b = true; }
-            if (status == "Closed") { b = true; }
-            return b;
-        } 
 
         private bool Validate(string strVenue, string strStatus, DateTime dtDate)
         {
@@ -238,11 +200,6 @@ namespace Stuport.Groups_Service
             {
                 bValid = false;
                 MessageBox.Show("Select a Personnel Member", "Input error");
-            }
-            if (StatusValidate(strStatus)) 
-            {
-                bValid = false;
-                MessageBox.Show("Status must be: Active, Inactive, Full or Closed", "Input error");
             }
             return (bValid);
         } 

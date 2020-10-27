@@ -53,7 +53,7 @@ namespace Stuport
                 MessageBox.Show("Student Already Exists", "Error");
                 return;
             }
-
+            if (!comfirmMessage("Add this student?")) { return; }
             AC.addStudent(strStuNumber,strFName,strLName,strPassword,strEmail,strContactNo);
 
             refreshGrid();
@@ -143,6 +143,7 @@ namespace Stuport
                 MessageBox.Show("Student Does not exsist", "Error");
                 return;
             }
+            if (!comfirmMessage("Update this student?")){ return; }
 
             AC.updateStudent(strStuNumber, strFName, strLName, strPassword, strEmail, strContactNo);
             refreshGrid();
@@ -159,6 +160,27 @@ namespace Stuport
             }
 
             return true;
+        }
+
+        private bool comfirmMessage(string message)
+        {
+            string caption = "Warning!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

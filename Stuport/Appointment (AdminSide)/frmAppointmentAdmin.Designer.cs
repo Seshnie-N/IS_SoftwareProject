@@ -73,6 +73,7 @@
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 32;
             this.btnBack.Text = "back";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnEdit
             // 

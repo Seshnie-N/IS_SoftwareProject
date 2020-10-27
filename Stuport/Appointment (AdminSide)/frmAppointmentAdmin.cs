@@ -17,7 +17,7 @@ namespace Stuport.Appointment__AdminSide_
     {
         AdminController.AdminController AC = new AdminController.AdminController();
 
-        string strAppointmentID;
+        int intAppointmentID;
 
         public frmAppointmentAdmin()
         {
@@ -54,8 +54,37 @@ namespace Stuport.Appointment__AdminSide_
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            string strStudent;
+            string strStatus;
+            DateTime dtDate;
+            DateTime dtTime;
 
-        } //TODO
+            if (dgvAppointments.CurrentRow == null)
+                return;
+            var serviceType = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
+            var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
+            var ServiceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceType);
+            var id = (int)ServiceType.ServiceId;
+
+
+            strStudent = txtStudent.Text;
+            strStatus = txtStatus.Text;
+            dtDate = dtpDate.Value;
+            dtTime = dtpTime.Value;
+
+            bool b = Validate(strStatus, dtDate);
+            if (b == false)
+                return;
+
+            bool confirm = comfirmMessage("Are you sure you want to update this group!");
+            if (confirm == false)
+                return;
+
+            AC.updateAppointment(intAppointmentID, id, personnelId, dtDate, dtTime, strStatus, strStudent);
+            RefreshGrid();
+
+            MessageBox.Show("Appointment Updated", "Success!");
+        } 
 
         public void Filler()
         {
@@ -92,7 +121,7 @@ namespace Stuport.Appointment__AdminSide_
         {
             if (dgvAppointments.CurrentRow == null)
                 return;
-            strAppointmentID = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
+            intAppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
             var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
             var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
@@ -111,7 +140,7 @@ namespace Stuport.Appointment__AdminSide_
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            bool confirm = comfirmMessage();
+            bool confirm = comfirmMessage("Are you sure you want to delete this Appointment");
             if (confirm == true)
             {
                 var AppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
@@ -144,25 +173,17 @@ namespace Stuport.Appointment__AdminSide_
                 bValid = false;
                 MessageBox.Show("Select a Personnel Member", "Input error");
             }
-            if (StatusValidate(strStatus))
-            {
-                bValid = false;
-                MessageBox.Show("Status must be: Active, Inactive, Full or Closed", "Input error");
-            }
             return (bValid);
         } 
 
-        private bool comfirmMessage()
+        private bool comfirmMessage(string message)
         {
-
-            string message = "Are you sure you want to delete this group";
             string caption = "Warning!";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
             result = MessageBox.Show(this, message, caption, buttons,
                 MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
                 MessageBoxOptions.RightAlign);
-
             if (result == DialogResult.Yes)
             {
                 return true;
@@ -175,15 +196,11 @@ namespace Stuport.Appointment__AdminSide_
 
         }
 
-        private bool StatusValidate(String status)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            bool b = false;
-            if (status == "Active") { b = true; }
-            if (status == "Inactive") { b = true; }
-            if (status == "Full") { b = true; }
-            if (status == "Closed") { b = true; }
-            return b;
+            this.Hide();
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
         }
-
     }
 }

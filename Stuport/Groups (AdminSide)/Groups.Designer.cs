@@ -33,8 +33,6 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.cmbFilter = new System.Windows.Forms.ComboBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.cmbService = new System.Windows.Forms.ComboBox();
             this.lblService = new System.Windows.Forms.Label();
@@ -97,23 +95,6 @@
             this.btnRemove.Text = "remove";
             this.btnRemove.UseVisualStyleBackColor = true;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(12, 260);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(29, 13);
-            this.lblFilter.TabIndex = 12;
-            this.lblFilter.Text = "filter:";
-            // 
-            // cmbFilter
-            // 
-            this.cmbFilter.FormattingEnabled = true;
-            this.cmbFilter.Location = new System.Drawing.Point(47, 257);
-            this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(121, 21);
-            this.cmbFilter.TabIndex = 13;
             // 
             // lblDate
             // 
@@ -231,8 +212,6 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.cmbService);
             this.Controls.Add(this.lblService);
-            this.Controls.Add(this.cmbFilter);
-            this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
@@ -253,8 +232,6 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnRemove;
-        private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.ComboBox cmbService;
         private System.Windows.Forms.Label lblService;

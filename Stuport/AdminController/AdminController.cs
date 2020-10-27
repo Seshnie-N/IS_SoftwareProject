@@ -25,7 +25,7 @@ namespace Stuport.AdminController
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
             string query = $"SELECT [Group_ID], [Service_Description], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status], [Std_Counter]" +
-                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
+                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] = [Service].[Service_ID]" +
                    "ORDER BY Group_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
@@ -121,10 +121,24 @@ namespace Stuport.AdminController
             conn.Close();
         } 
 
-        public void updateGroup()
+        public void updateGroup(int GroupId, int ServiceId, int PersonnelId, DateTime Date, DateTime Time, string Status, string Venue)
         {
-
-        } //TODO
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            conn.Open();
+            string query = $"UPDATE [Group] SET [Service_ID] = @1, [Personnel_ID] = @2," +
+                "[Group_Venue] = @3, [Group_Time] = @4, [Group_Date] = @5, [Group_Status] = @6  WHERE [Group_ID] = @7";
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue("@1", ServiceId);
+            cmd.Parameters.AddWithValue("@2", PersonnelId);
+            cmd.Parameters.AddWithValue("@3", Venue);
+            cmd.Parameters.AddWithValue("@4", Time);
+            cmd.Parameters.AddWithValue("@5", Date);
+            cmd.Parameters.AddWithValue("@6", Status);
+            cmd.Parameters.AddWithValue("@7", GroupId);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public void removeGroup(int intGroupID) 
         {
@@ -137,10 +151,23 @@ namespace Stuport.AdminController
             conn.Close();
         } 
 
-        public void updateAppointment()
+        public void updateAppointment(int AppointmentId, int ServiceId, int PersonnelId, DateTime Date, DateTime Time, string Status, string Student)
         {
-
-        } //TODO
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            conn.Open();
+            string query = $"UPDATE [Appointment] SET [Service_ID] = @1, [Personnel_ID] = @2," +
+                " [Appointment_Time] = @4, [Appointment_Date] = @5, [Appointment_Status] = @6  WHERE [Appointment_ID] = @7";
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue("@1", ServiceId);
+            cmd.Parameters.AddWithValue("@2", PersonnelId);
+            cmd.Parameters.AddWithValue("@4", Time);
+            cmd.Parameters.AddWithValue("@5", Date);
+            cmd.Parameters.AddWithValue("@6", Status);
+            cmd.Parameters.AddWithValue("@7", AppointmentId);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public void removeAppointment(int AppointmentId)
         {
