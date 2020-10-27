@@ -22,9 +22,6 @@ namespace Stuport
         String activeGroupName;
         String groupID1;
         String groupID2;
-        String groupCounter;
-        int counter;
-        String updatedCounter;
 
         public GroupPage()
         {
