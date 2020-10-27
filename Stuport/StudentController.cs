@@ -36,6 +36,10 @@ namespace Stuport
             con.Close();
 
         }
+        public String RequestAppointment(String Date,String ServiceType,String Time)
+        {
+
+        }
 
         //getters
         public String getStdNum()

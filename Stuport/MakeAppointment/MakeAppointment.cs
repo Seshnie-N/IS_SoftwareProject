@@ -60,7 +60,8 @@ namespace Stuport
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
-                
+                StudentController sc = new StudentController();
+                sc.RequestAppointment()
                 
 
             }
