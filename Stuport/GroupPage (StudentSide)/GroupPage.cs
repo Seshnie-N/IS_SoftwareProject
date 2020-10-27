@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
@@ -15,7 +16,7 @@ namespace Stuport
     {
         string username = Login.Global.Token;
 
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb";
+        static string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         OleDbConnection conn = new OleDbConnection(_path);
 
         String activeGroupName;
@@ -80,7 +81,8 @@ namespace Stuport
             {
                 DataTable dt = new DataTable();
 
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+                string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                OleDbConnection con = new OleDbConnection(connectionString);
                 OleDbCommand cmd = con.CreateCommand();
                 con.Open();
                 cmd.CommandText = "SELECT Service_Description AS [Group Topic], Personnel_FirstName & ' ' & Personnel_LastName as Iinvigilator,Group_Venue as Venue,Group_Time & '  ' & Group_Date AS[Date - Time] FROM[Group], Service, Personnel, StudentGroup WHERE Group.Service_ID = Service.Service_ID And Group.Personnel_ID = Personnel.Personnel_ID And Group.Group_ID = StudentGroup.Group_ID And StudentGroup.Student_ID =?";
@@ -169,8 +171,8 @@ namespace Stuport
                 bool cfnmsg = confirmMessage();
                 if (cfnmsg == true)
                 {
-                    OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
-                    OleDbCommand cmd = con.CreateCommand();
+                    string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                    OleDbConnection con = new OleDbConnection(connectionString); OleDbCommand cmd = con.CreateCommand();
 
                     int gID = Convert.ToInt32(groupID1);
 
@@ -200,7 +202,8 @@ namespace Stuport
 
             try
             {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+                string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                OleDbConnection con = new OleDbConnection(connectionString);
                 OleDbCommand cmd = con.CreateCommand();
 
                 int gID = Convert.ToInt32(groupID2);
@@ -227,7 +230,8 @@ namespace Stuport
             {
                 if (cfnmsg == true)
                 {
-                    OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+                    string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                    OleDbConnection con = new OleDbConnection(connectionString);
                     OleDbCommand cmd = con.CreateCommand();
 
                     int gID = Convert.ToInt32(groupID2);

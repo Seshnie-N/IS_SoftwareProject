@@ -17,7 +17,6 @@ namespace Stuport
         public void AddStudent(String StudNum, String FName, String LName, String Email, String Phone, String Password)
         {
             String HashedPassword = Password.Sha256();
-
             string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
             OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
