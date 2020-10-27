@@ -24,6 +24,7 @@ namespace Stuport
         String stdLname = "";
         String stdEmail = "";
         String stdPhone = "";
+        String username = Login.Global.Token;
 
         static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb";
         OleDbConnection conn = new OleDbConnection(_path);
@@ -31,45 +32,23 @@ namespace Stuport
         private void StudentProfile_Load(object sender, EventArgs e)
         {
 
-            stdNum = SC.getStdNum();
+            stdNum = SC.getStdNum(username);
             stdnumtb.Text = stdNum;
 
-            stdFname = SC.getFname();
+            stdFname = SC.getFname(username);
             fntb.Text = stdFname;
 
-            stdLname = SC.getLname();
+            stdLname = SC.getLname(username);
             lntb.Text = stdLname;
 
-            stdEmail = SC.getEmail();
+            stdEmail = SC.getEmail(username);
             emailtb.Text = stdEmail;
 
-            stdPhone = SC.getPhone();
+            stdPhone = SC.getPhone(username);
             phnumtb.Text = stdPhone;
 
-            refreshGrid();
-
-
         }
 
-        private void refreshGrid()
-        {
-            try
-            {
-                conn.Open();
-                DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter("SELECT Student_ID, Student_FirstName,Student_LastName,Student_Email, Student_Phone FROM Student", conn);
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error", "Error Message: " + ex);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
 
         private void backbtn_Click(object sender, EventArgs e)
         {
@@ -97,7 +76,6 @@ namespace Stuport
 
             cmd.ExecuteNonQuery();
             conn.Close();
-            refreshGrid();
             MessageBox.Show("Update Successful");
 
 

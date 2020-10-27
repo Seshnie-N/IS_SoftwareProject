@@ -30,7 +30,7 @@
         {
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.txtLastName.Location = new System.Drawing.Point(256, 129);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(100, 20);
-            this.txtLastName.TabIndex = 0;
+            this.txtLastName.TabIndex = 1;
             this.txtLastName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // txtEmail
@@ -56,21 +56,22 @@
             this.txtEmail.Location = new System.Drawing.Point(256, 155);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 2;
             // 
-            // textBox3
+            // txtPhone
             // 
-            this.textBox3.Location = new System.Drawing.Point(256, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtPhone.Location = new System.Drawing.Point(256, 184);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.TabIndex = 3;
+            this.txtPhone.TextChanged += new System.EventHandler(this.TextBox3_TextChanged_1);
             // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(256, 103);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(100, 20);
-            this.txtFirstName.TabIndex = 4;
+            this.txtFirstName.TabIndex = 0;
             // 
             // lblLastName
             // 
@@ -123,7 +124,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(82, 277);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirm.TabIndex = 11;
+            this.btnConfirm.TabIndex = 5;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
@@ -133,7 +134,7 @@
             this.btnCancel.Location = new System.Drawing.Point(256, 277);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 12;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
@@ -158,7 +159,7 @@
             this.cmbxType.Location = new System.Drawing.Point(256, 213);
             this.cmbxType.Name = "cmbxType";
             this.cmbxType.Size = new System.Drawing.Size(100, 21);
-            this.cmbxType.TabIndex = 14;
+            this.cmbxType.TabIndex = 4;
             // 
             // AddStaff
             // 
@@ -175,7 +176,7 @@
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
             this.Name = "AddStaff";
@@ -190,7 +191,7 @@
 
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;

@@ -12,6 +12,7 @@ namespace Stuport
 {
     public partial class AddStaff : Form
     {
+        StaffPage sp = (StaffPage)Application.OpenForms["StaffPage"];
         public AddStaff()
         {
             InitializeComponent();
@@ -38,6 +39,93 @@ namespace Stuport
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
+        {
+            bool Validation = true;
+            bool EmailValidation = true;
+            bool PhoneValidation = true;
+            bool PresenceCheckValidation = true;
+            StaffController SC = new StaffController();
+            String Fname = txtFirstName.Text;
+            String Lname = txtLastName.Text;
+            String Email = txtEmail.Text;
+            String Phone = txtPhone.Text;
+            String Type = cmbxType.Text;
+
+            //Validation
+
+            if (SC.EmailExists(Email))
+            {
+                Validation = false;
+                EmailValidation = false;
+            }
+
+            if (!SC.PhoneNumberLengthCheck(Phone))
+            {
+                Validation = false;
+                PhoneValidation = false;
+            }
+
+            //Add Validation For Empty Boxes
+
+            if (String.IsNullOrEmpty(txtFirstName.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtLastName.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtEmail.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+            if (String.IsNullOrEmpty(txtPhone.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+
+            if (String.IsNullOrEmpty(cmbxType.Text))
+            {
+                Validation = false;
+                PresenceCheckValidation = false;
+            }
+
+            //Add Student;
+            if (Validation)
+            {
+                SC.AddStaff(Fname, Lname, Email, Phone, Type);
+                MessageBox.Show("Registered Successfully");
+                sp.loaddata();
+                Close();
+            }
+            else
+            {
+                if (!PresenceCheckValidation)
+                {
+                    MessageBox.Show("All fields must be populated.");
+                }
+                if (!EmailValidation)
+                {
+                    MessageBox.Show("An Account With This Email Address Already Exists");
+                }
+                if (!PhoneValidation)
+                {
+                    MessageBox.Show("Phone Number must be 10 Digits");
+                }
+
+            }
+        }
+
+        private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox3_TextChanged_1(object sender, EventArgs e)
         {
 
         }

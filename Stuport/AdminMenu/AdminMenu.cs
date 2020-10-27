@@ -1,4 +1,5 @@
-﻿using Stuport.Login;
+﻿using Stuport.Groups_Service;
+using Stuport.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stuport.Appointment__AdminSide_;
 
 namespace Stuport
 {
@@ -30,6 +32,26 @@ namespace Stuport
             this.Close();
             Login.Login login = new Login.Login();
             login.Show();
+        }
+
+        private void btnManageGroups_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Groups_Service.Groups groups = new Groups_Service.Groups();
+            groups.Show();
+        }
+
+        private void btnManageAppointments_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Appointment__AdminSide_.frmAppointmentAdmin Appointments = new Appointment__AdminSide_.frmAppointmentAdmin();
+            Appointments.Show();
+        }
+
+        private void BtnManageStaff_Click(object sender, EventArgs e)
+        {
+            StaffPage staffPage = new StaffPage();
+            staffPage.Show();
         }
     }
 }

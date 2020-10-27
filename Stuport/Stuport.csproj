@@ -65,19 +65,25 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminController\AdminController.cs" />
+    <Compile Include="AdminController\Model\PersonnelType.cs" />
+    <Compile Include="AdminController\Model\ServiceType.cs" />
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.Designer.cs">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment %28AdminSide%29\Model\PersonnelType.cs" />
+    <Compile Include="Appointment %28AdminSide%29\Model\ServiceType.cs" />
+    <Compile Include="Groups %28AdminSide%29\Model\PersonnelType.cs" />
+    <Compile Include="Groups %28AdminSide%29\Model\ServiceType.cs" />
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="StudentController.cs" />
     <Compile Include="AdminMenu\AdminMenu.cs">
       <SubType>Form</SubType>
@@ -147,11 +153,6 @@
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
     </Compile>
-    <Compile Include="StuportDatabaseDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,11 +165,19 @@
     <Compile Include="UpdateStudent\UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="_StuportDatabase_Updated_v2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_StuportDatabase_Updated_v2DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddStaff\AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment %28AdminSide%29\frmAppointmentAdmin.resx">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>
@@ -228,38 +237,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="StuportDatabaseDataSet.xsc">
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="StuportDatabaseDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>StuportDatabaseDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="StuportDatabaseDataSet.xss">
-      <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StuportDatabase.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

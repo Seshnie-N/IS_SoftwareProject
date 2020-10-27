@@ -92,6 +92,7 @@
             this.btnGroupSessions.TabIndex = 5;
             this.btnGroupSessions.Text = "View Group Sessions";
             this.btnGroupSessions.UseVisualStyleBackColor = true;
+            this.btnGroupSessions.Click += new System.EventHandler(this.btnGroupSessions_Click);
             // 
             // StudentAppointmentsHome
             // 
