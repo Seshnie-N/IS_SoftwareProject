@@ -173,7 +173,7 @@ namespace Stuport.AdminController
             cmd.Connection = conn;
             cmd.ExecuteNonQuery();
             conn.Close();
-        } //SQL
+        } 
 
         public void updateStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
         {
@@ -191,7 +191,7 @@ namespace Stuport.AdminController
             cmd.Parameters.AddWithValue("@6", strStuNumber);
             cmd.ExecuteNonQuery();
             conn.Close();
-        } //SQL
+        } 
 
         public bool StudentExist(string StudentNum)
         {
@@ -201,7 +201,7 @@ namespace Stuport.AdminController
             OleDbCommand cmd = conn.CreateCommand();
             conn.Open();
             cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = StudentNum });
 
             OleDbDataReader reader = cmd.ExecuteReader();
 

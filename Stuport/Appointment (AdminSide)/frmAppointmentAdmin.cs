@@ -121,10 +121,36 @@ namespace Stuport.Appointment__AdminSide_
             }
         } 
 
-        private bool Validate()
+        private bool Validate( string strStatus, DateTime dtDate)
         {
-            return false;
-        } //TODO
+            bool bValid = true;
+            if (String.IsNullOrEmpty(strStatus))
+            {
+                bValid = false;
+                MessageBox.Show("Select a meeting status", "Input Error");
+            }
+            if (dtDate <= DateTime.Now)
+            {
+                bValid = false;
+                MessageBox.Show("Date must be in the future", "Input error");
+            }
+            if (cmbService.SelectedIndex == 0)
+            {
+                bValid = false;
+                MessageBox.Show("Select a Servise Type", "Input error");
+            }
+            if (cmbStaff.SelectedIndex == 0)
+            {
+                bValid = false;
+                MessageBox.Show("Select a Personnel Member", "Input error");
+            }
+            if (StatusValidate(strStatus))
+            {
+                bValid = false;
+                MessageBox.Show("Status must be: Active, Inactive, Full or Closed", "Input error");
+            }
+            return (bValid);
+        } 
 
         private bool comfirmMessage()
         {
@@ -147,6 +173,16 @@ namespace Stuport.Appointment__AdminSide_
                 return false;
             }
 
+        }
+
+        private bool StatusValidate(String status)
+        {
+            bool b = false;
+            if (status == "Active") { b = true; }
+            if (status == "Inactive") { b = true; }
+            if (status == "Full") { b = true; }
+            if (status == "Closed") { b = true; }
+            return b;
         }
 
     }

@@ -51,6 +51,7 @@ namespace Stuport
             if (AC.StudentExist(strStuNumber))
             {
                 MessageBox.Show("Student Already Exists", "Error");
+                return;
             }
 
             AC.addStudent(strStuNumber,strFName,strLName,strPassword,strEmail,strContactNo);
@@ -66,25 +67,40 @@ namespace Stuport
             if (String.IsNullOrEmpty(strStuNumber))
             {
                 bValid = false;
+                MessageBox.Show("Student Number Cannot be Empty", "Input Error");
             }
             if (String.IsNullOrEmpty(strFName))
             {
                 bValid = false;
+                MessageBox.Show("First Name Cannot be Empty", "Input Error");
             }
             if (String.IsNullOrEmpty(strLName))
             {
                 bValid = false;
+                MessageBox.Show("Last Name Cannot be Empty", "Input Error");
             }
             if (String.IsNullOrEmpty(strEmail))
             {
                 bValid = false;
+                MessageBox.Show("Email Cannot be Empty", "Input Error");
             }
             if (String.IsNullOrEmpty(strContactNo))
             {
                 bValid = false;
+                MessageBox.Show("Contact number Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strPassword))
+            {
+                bValid = false;
+                MessageBox.Show("Password Cannot be Empty", "Input Error");
+            }
+            if (IsDigitsOnly(strContactNo))
+            {
+                bValid = false;
+                MessageBox.Show("Contact number must only be digits form 0-9 ", "Input Error");
             }
             return bValid;
-        } //TODO
+        }
 
         private void refreshGrid()
         {
@@ -125,12 +141,24 @@ namespace Stuport
             if (!(AC.StudentExist(strStuNumber)))
             {
                 MessageBox.Show("Student Does not exsist", "Error");
+                return;
             }
 
             AC.updateStudent(strStuNumber, strFName, strLName, strPassword, strEmail, strContactNo);
             refreshGrid();
 
             MessageBox.Show("Update Successful");
-        } 
+        }
+
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9' || c == '+')
+                    return false;
+            }
+
+            return true;
+        }
     }
 }
