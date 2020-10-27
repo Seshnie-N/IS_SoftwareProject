@@ -33,6 +33,7 @@
             this.btnManageStaff = new System.Windows.Forms.Button();
             this.btnManageStudents = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnManageAppointments
@@ -82,11 +83,21 @@
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(214, 308);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Weekly Report";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 343);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnManageStudents);
             this.Controls.Add(this.btnManageStaff);
@@ -106,5 +117,6 @@
         private System.Windows.Forms.Button btnManageStaff;
         private System.Windows.Forms.Button btnManageStudents;
         private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button button1;
     }
 }

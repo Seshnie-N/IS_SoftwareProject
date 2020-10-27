@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -304,7 +305,7 @@ namespace Stuport
 
             con.Close();
 
-            if (PassCheck.Equals(password))
+            if (PassCheck.Equals(HashExtensions.Sha256(password)))
             {
                 return true;
             }
