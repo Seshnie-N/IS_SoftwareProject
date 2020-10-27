@@ -157,6 +157,11 @@
     <Compile Include="UpdateStudent\UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="_StuportDatabase_Updated_v2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_StuportDatabase_Updated_v2DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddStaff\AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +238,17 @@
     </None>
     <None Include="StuportDatabaseDataSet.xss">
       <DependentUpon>StuportDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_StuportDatabase_Updated_v2DataSet.xsc">
+      <DependentUpon>_StuportDatabase_Updated_v2DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_StuportDatabase_Updated_v2DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_StuportDatabase_Updated_v2DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_StuportDatabase_Updated_v2DataSet.xss">
+      <DependentUpon>_StuportDatabase_Updated_v2DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

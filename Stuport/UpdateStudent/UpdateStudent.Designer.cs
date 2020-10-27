@@ -126,7 +126,6 @@
             this.lblLName.Size = new System.Drawing.Size(61, 13);
             this.lblLName.TabIndex = 14;
             this.lblLName.Text = "Last Name ";
-            this.lblLName.Click += new System.EventHandler(this.lblLName_Click);
             // 
             // txtEmail
             // 

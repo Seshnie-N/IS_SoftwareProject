@@ -12,7 +12,7 @@ namespace Stuport.AdminController
 {
     class AdminController
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\ReposUni\IS_SoftwareProject\Stuport\bin\Debug\StuportDatabase.accdb";
+        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\ReposUni\IS_SoftwareProject\Stuport\bin\Debug\StuportDatabase-Updated-v2.accdb";
 
         public List<ServiceType> serviceTypesList { get; set; }
 
@@ -23,14 +23,14 @@ namespace Stuport.AdminController
             dt = new DataTable();
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
-            string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
+            string query = $"SELECT [Group_ID], [Service_Description], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status], [Std_Counter]" +
                    "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
                    "ORDER BY Group_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
-        }
+        } //NEW FIELDS
 
-        public void RefreshAppointment(ref DataTable dt)
+        public void RefreshGridAppointment(ref DataTable dt)
         {
             dt = new DataTable();
             OleDbConnection conn;
@@ -40,7 +40,17 @@ namespace Stuport.AdminController
                    "ORDER BY Group_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
-        }
+        } //NEW FIELDS
+
+        public void RefreshGridStudent(ref DataTable dt)
+        {
+            dt = new DataTable();
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            string query = $"SELECT * FROM Student";
+            var da = new OleDbDataAdapter(query, conn);
+            da.Fill(dt);
+        } //NEW FIELDS
 
         public void FillerService()
         {
@@ -49,7 +59,7 @@ namespace Stuport.AdminController
             OleDbConnection conn;
             OleDbCommand dbCommand;
 
-            string query = "SELECT Service_ID, Service_Type FROM Service ORDER BY Service_Type";
+            string query = "SELECT Service_ID, Service_Description FROM Service ORDER BY Service_Type";
 
             conn = new OleDbConnection(_path);
             conn.Open();
@@ -67,13 +77,13 @@ namespace Stuport.AdminController
                 {
                     ServiceId = (int)reader["Service_ID"],
                 };
-                if (!reader["Service_Type"].Equals(DBNull.Value))
-                    serviceType.ServiceTypeName = (string)reader["Service_Type"];
+                if (!reader["Service_Description"].Equals(DBNull.Value))
+                    serviceType.ServiceTypeName = (string)reader["Service_Description"];
                 serviceTypesList.Add(serviceType);
             }
             reader.Close();
             conn.Close();
-        }
+        } 
 
         public void FillerPersonnel()
         {
@@ -101,11 +111,80 @@ namespace Stuport.AdminController
                     PersonnelId = (int)reader["Personnel_ID"],
                 };
                 if (!reader["Personnel_FirstName"].Equals(DBNull.Value))
-                    personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"];
+                {
+                    personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"]; 
+                }
                 personnelTypesList.Add(personnelType);
             }
             reader.Close();
             conn.Close();
-        }
+        } //CELLS
+
+        public void updateGroup()
+        {
+
+        } //TODO
+
+        public void removeGroup(int intGroupID) 
+        {
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM [Group] WHERE Group_ID = @1", conn);
+            cmd.Parameters.AddWithValue("@1", intGroupID);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        } 
+
+        public void updateAppointment()
+        {
+
+        } //TODO
+
+        public void removeAppointment(int intGroupID)
+        {
+
+        } //TODO
+
+        public void addStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
+        {
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            OleDbCommand cmd = conn.CreateCommand();
+
+            cmd.CommandText = "Insert into Student" +
+                "([Student_ID],[Student_FirstName], [Student_LastName], [Student_Email], [Student_Phone], [Student_Password])" +
+                "Values(?,?, ?, ?, ?, ?)";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = strStuNumber });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = strFName });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = strLName });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 100) { Value = strEmail });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 10) { Value = strContactNo });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = strPassword });
+
+            conn.Open();
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        } //SQL
+
+        public void updateStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
+        {
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            conn.Open();
+            string query = $"UPDATE Student SET Student_FirstName = @1, Student_LastName = @2," +
+                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6";
+            OleDbCommand cmd = new OleDbCommand(query, conn);
+            cmd.Parameters.AddWithValue("@1", strFName);
+            cmd.Parameters.AddWithValue("@2", strLName);
+            cmd.Parameters.AddWithValue("@3", strEmail);
+            cmd.Parameters.AddWithValue("@4", strContactNo);
+            cmd.Parameters.AddWithValue("@5", strPassword);
+            cmd.Parameters.AddWithValue("@6", strStuNumber);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        } //SQL
+
     }
 }

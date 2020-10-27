@@ -39,7 +39,6 @@
             this.cmbService = new System.Windows.Forms.ComboBox();
             this.lblService = new System.Windows.Forms.Label();
             this.lblVenue = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.cmbStaff = new System.Windows.Forms.ComboBox();
             this.lblStaff = new System.Windows.Forms.Label();
@@ -47,6 +46,7 @@
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,19 +150,6 @@
             this.lblVenue.TabIndex = 20;
             this.lblVenue.Text = "Venue";
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Items.AddRange(new object[] {
-            "Active",
-            "Inactive",
-            "Closed",
-            "Full"});
-            this.cmbStatus.Location = new System.Drawing.Point(349, 387);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(227, 21);
-            this.cmbStatus.TabIndex = 25;
-            // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
@@ -220,16 +207,23 @@
             this.dtpDate.Size = new System.Drawing.Size(227, 20);
             this.dtpDate.TabIndex = 29;
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(349, 389);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(230, 20);
+            this.txtStatus.TabIndex = 30;
+            // 
             // Groups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 488);
+            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.txtVenue);
-            this.Controls.Add(this.cmbStatus);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.cmbStaff);
             this.Controls.Add(this.lblStaff);
@@ -265,7 +259,6 @@
         private System.Windows.Forms.ComboBox cmbService;
         private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.Label lblVenue;
-        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.ComboBox cmbStaff;
         private System.Windows.Forms.Label lblStaff;
@@ -273,5 +266,6 @@
         private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }

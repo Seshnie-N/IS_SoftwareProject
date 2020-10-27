@@ -19,8 +19,7 @@ namespace Stuport.Groups_Service
     public partial class Groups : Form
     {
         AdminController.AdminController AC = new AdminController.AdminController();
-        int strGroupID;
-
+        int intGroupID;
         public Groups()
         {
             try
@@ -56,31 +55,16 @@ namespace Stuport.Groups_Service
             adminMenu.Show();
         }
 
-        private void dgvGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-  
-            //strGroupID = dgvGroups.Rows[e.RowIndex].Cells[0].Value;
-            //strService = dgvGroups.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //strStaff = dgvGroups.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //strStatus = dgvGroups.Rows[e.RowIndex].Cells[6].Value.ToString();
-            //strDate= dgvGroups.Rows[e.RowIndex].Cells[5].Value.ToString();
-            //strVenue = dgvGroups.Rows[e.RowIndex].Cells[3].Value.ToString();
-            //strTime = dgvGroups.Rows[e.RowIndex].Cells[4].Value.ToString();
-        }
-
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            //bool confirm = comfirmMessage();
-            //if (confirm == true)
-            //{
-            //    conn.Open();
-            //    OleDbCommand cmd = new OleDbCommand("DELETE FROM [Group] WHERE Group_ID = @1", conn);
-            //    cmd.Parameters.AddWithValue("@1", strGroupID);
-            //    cmd.ExecuteNonQuery();
-            //    conn.Close();
-            //    RefreshGrid();
-            //    MessageBox.Show("Group has been removed");
-            //}   
+            bool confirm = comfirmMessage();
+            if (confirm == true)
+            {
+                intGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
+                AC.removeAppointment(intGroupID);
+                RefreshGrid();
+                MessageBox.Show("Group has been removed");
+            }
         }
 
         private bool comfirmMessage()
@@ -151,7 +135,7 @@ namespace Stuport.Groups_Service
             //var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
 
             strVenue = txtVenue.Text;
-            strStatus = cmbStatus.SelectedItem.ToString();
+            strStatus = txtStatus.Text;
             dtDate = dtpDate.Value;
             dtTime = dtpTime.Value;
 
@@ -194,13 +178,13 @@ namespace Stuport.Groups_Service
             //}
             
 
-        }
+        } //TODO
 
         private void dgvGroups_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvGroups.CurrentRow == null)
                 return;
-            strGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
+            intGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
             var serviceTypeName =  (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
             var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
@@ -213,19 +197,19 @@ namespace Stuport.Groups_Service
             cmbStaff.SelectedValue = PersonnelName.PersonnelId;
             dtpTime.Value = GroupTime;
             dtpDate.Value = GroupDate;
-            StatusSetter(GroupStaus);
-            txtVenue.Text = GroupVenue;
+            txtStatus.Text = GroupStaus;
+            txtVenue.Text = GroupVenue;  
+        } 
 
-            
-        }
-
-        private void StatusSetter(String status)
+        private bool StatusValidate(String status)
         {
-            if (status == "Active") { cmbStatus.SelectedValue = "Active"; }
-            else if (status == "Inactive") { cmbStatus.SelectedValue = "Inactive"; }
-            else if (status == "Full") { cmbStatus.SelectedValue = "Full"; }
-            else if (status == "Closed") { cmbStatus.SelectedValue = "Closed"; }
-        }
+            bool b = false;
+            if (status == "Active") { b = true; }
+            if (status == "Inactive") { b = true; }
+            if (status == "Full") { b = true; }
+            if (status == "Closed") { b = true; }
+            return b;
+        } 
 
         private bool Validate(string strVenue, string strStatus, DateTime dtDate)
         {
@@ -255,8 +239,13 @@ namespace Stuport.Groups_Service
                 bValid = false;
                 MessageBox.Show("Select a Personnel Member", "Input error");
             }
+            if (StatusValidate(strStatus)) 
+            {
+                bValid = false;
+                MessageBox.Show("Status must be: Active, Inactive, Full or Closed", "Input error");
+            }
             return (bValid);
-        }
+        } 
     
     }
 }

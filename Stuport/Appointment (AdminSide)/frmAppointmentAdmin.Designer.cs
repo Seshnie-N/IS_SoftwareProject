@@ -88,6 +88,7 @@
             this.btnRemove.TabIndex = 34;
             this.btnRemove.Text = "remove";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // lblService
             // 

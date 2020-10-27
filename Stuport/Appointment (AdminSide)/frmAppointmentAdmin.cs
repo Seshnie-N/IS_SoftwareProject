@@ -21,7 +21,6 @@ namespace Stuport.Appointment__AdminSide_
 
         public frmAppointmentAdmin()
         {
-
         try
             {
                 InitializeComponent();
@@ -51,12 +50,12 @@ namespace Stuport.Appointment__AdminSide_
         private void frmAppointmentAdmin_Load(object sender, EventArgs e)
         {
 
-        }
+        } //DO NOT TOUCH
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
 
-        }
+        } //TODO
 
         public void Filler()
         {
@@ -75,7 +74,7 @@ namespace Stuport.Appointment__AdminSide_
             }
             try
             {
-                AC.FillerService();
+                AC.FillerPersonnel();
 
                 cmbStaff.DisplayMember = "PersonnelFirstName";
                 cmbStaff.ValueMember = "PersonnelId";
@@ -105,5 +104,15 @@ namespace Stuport.Appointment__AdminSide_
             dtpTime.Value = GroupTime;
             dtpDate.Value = GroupDate;
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
+        } //TODO
+
+        private bool Validate()
+        {
+            return false;
+        } //TODO
     }
 }
