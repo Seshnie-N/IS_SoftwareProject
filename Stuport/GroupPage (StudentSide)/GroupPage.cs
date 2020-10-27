@@ -155,6 +155,8 @@ namespace Stuport
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            StudentAppointmentsHome sth = new StudentAppointmentsHome();
+            sth.Show();
             this.Close();
         }
 
