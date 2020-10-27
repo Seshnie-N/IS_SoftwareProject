@@ -10,10 +10,14 @@ using System.Windows.Forms;
 
 namespace Stuport.Login
 {
+
+
     public partial class Login : Form
     {
+
         public Login()
         {
+
             InitializeComponent();
         }
 
@@ -25,19 +29,58 @@ namespace Stuport.Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "s")
-            {
-                this.Hide();
-                StudentMenu studentMenu = new StudentMenu();
-                studentMenu.Show();
 
-            }
-            else if (cbxAdmin.Checked)
+            string username = txtUsername.Text;
+            string password = txtPassword.Text.Trim();
+            StudentController SC = new StudentController();
+
+            //Admin Login
+            if (cbxAdmin.Checked)
             {
+                /*if ((username.Equals("admin")) && (password.Equals("0000")))
+                {
+                    this.Hide();
+                    AdminMenu adminMenu = new AdminMenu();
+                    adminMenu.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect Admin Login Details");
+                }*/
+
                 this.Hide();
                 AdminMenu adminMenu = new AdminMenu();
                 adminMenu.Show();
+
+            }
+            else
+            {
+                //Student Login
+                if (SC.StudNumExists(username))
+                {
+                    if (SC.ValidLogin(username, password))
+                    {
+                        Global.Token = username;
+                        this.Hide();
+                        StudentMenu studentMenu = new StudentMenu();
+                        studentMenu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect Password Entered. Try Again");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Username/Student number not found. Try Again or create an account.");
+                }
             }
         }
+    }
+
+    static class Global
+    {
+        public static string Token;
     }
 }
