@@ -29,5 +29,12 @@ namespace Stuport
             MakeAppointment makeAppointment = new MakeAppointment();
             makeAppointment.ShowDialog();
         }
+
+        private void btnGroupSessions_Click(object sender, EventArgs e)
+        {
+            GroupPage groupPage = new GroupPage();
+            this.Hide();
+            groupPage.Show();
+        }
     }
 }
