@@ -40,13 +40,11 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblFName = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtStudentNo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.dgvStudentUpdate = new System.Windows.Forms.DataGridView();
             this.lblStudentNumber = new System.Windows.Forms.Label();
             this.txtStudentNumber = new System.Windows.Forms.TextBox();
+            this.lblStudents = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +124,6 @@
             this.lblLName.Size = new System.Drawing.Size(61, 13);
             this.lblLName.TabIndex = 14;
             this.lblLName.Text = "Last Name ";
-            this.lblLName.Click += new System.EventHandler(this.lblLName_Click);
             // 
             // txtEmail
             // 
@@ -151,31 +148,6 @@
             this.txtFName.Size = new System.Drawing.Size(204, 20);
             this.txtFName.TabIndex = 11;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(358, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(126, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Find Student Record";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // txtStudentNo
-            // 
-            this.txtStudentNo.Location = new System.Drawing.Point(148, 15);
-            this.txtStudentNo.Name = "txtStudentNo";
-            this.txtStudentNo.Size = new System.Drawing.Size(204, 20);
-            this.txtStudentNo.TabIndex = 22;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 13);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Enter Student Number";
-            // 
             // btnAddStudent
             // 
             this.btnAddStudent.Location = new System.Drawing.Point(620, 445);
@@ -195,6 +167,7 @@
             this.dgvStudentUpdate.Size = new System.Drawing.Size(753, 209);
             this.dgvStudentUpdate.TabIndex = 25;
             this.dgvStudentUpdate.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentUpdate_CellContentClick);
+            this.dgvStudentUpdate.SelectionChanged += new System.EventHandler(this.dgvStudentUpdate_SelectionChanged);
             // 
             // lblStudentNumber
             // 
@@ -212,18 +185,26 @@
             this.txtStudentNumber.Size = new System.Drawing.Size(204, 20);
             this.txtStudentNumber.TabIndex = 26;
             // 
+            // lblStudents
+            // 
+            this.lblStudents.AutoSize = true;
+            this.lblStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStudents.Location = new System.Drawing.Point(341, 27);
+            this.lblStudents.Name = "lblStudents";
+            this.lblStudents.Size = new System.Drawing.Size(90, 25);
+            this.lblStudents.TabIndex = 28;
+            this.lblStudents.Text = "Students";
+            // 
             // UpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 517);
+            this.Controls.Add(this.lblStudents);
             this.Controls.Add(this.lblStudentNumber);
             this.Controls.Add(this.txtStudentNumber);
             this.Controls.Add(this.dgvStudentUpdate);
             this.Controls.Add(this.btnAddStudent);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtStudentNo);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblPassword1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lblPhoneNo);
@@ -239,7 +220,6 @@
             this.Name = "UpdateStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateStudent";
-            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -259,12 +239,10 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblFName;
         private System.Windows.Forms.TextBox txtFName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtStudentNo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.DataGridView dgvStudentUpdate;
         private System.Windows.Forms.Label lblStudentNumber;
         private System.Windows.Forms.TextBox txtStudentNumber;
+        private System.Windows.Forms.Label lblStudents;
     }
 }

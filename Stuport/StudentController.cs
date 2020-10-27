@@ -10,8 +10,9 @@ using System.Configuration;
 
 namespace Stuport
 {
-    class StudentController
+    class StudentController 
     {
+        
         public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
         {
 
