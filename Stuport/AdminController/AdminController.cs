@@ -8,12 +8,13 @@ using Stuport.AdminController.Model;
 using Stuport.Groups_Service;
 using System.Data;
 using System.Drawing.Printing;
+using System.Configuration;
 
 namespace Stuport.AdminController
 {
     class AdminController
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= D:\ReposUni\IS_SoftwareProject\Stuport\StuportDatabase.accdb";
+        static string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
 
         public List<ServiceType> serviceTypesList { get; set; }
 
