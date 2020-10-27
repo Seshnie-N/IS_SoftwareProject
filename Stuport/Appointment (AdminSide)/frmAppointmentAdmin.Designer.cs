@@ -41,6 +41,10 @@
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblStaff = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.txtStudent = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblStudent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +68,7 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(17, 426);
+            this.btnBack.Location = new System.Drawing.Point(17, 440);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 32;
@@ -72,7 +76,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(719, 426);
+            this.btnEdit.Location = new System.Drawing.Point(718, 440);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 33;
@@ -82,7 +86,7 @@
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(637, 426);
+            this.btnRemove.Location = new System.Drawing.Point(637, 440);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(75, 23);
             this.btnRemove.TabIndex = 34;
@@ -157,11 +161,48 @@
             this.lblStaff.TabIndex = 39;
             this.lblStaff.Text = "Staff";
             // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(351, 400);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(230, 20);
+            this.txtStatus.TabIndex = 48;
+            // 
+            // txtStudent
+            // 
+            this.txtStudent.Location = new System.Drawing.Point(17, 400);
+            this.txtStudent.Name = "txtStudent";
+            this.txtStudent.ReadOnly = true;
+            this.txtStudent.Size = new System.Drawing.Size(229, 20);
+            this.txtStudent.TabIndex = 47;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Location = new System.Drawing.Point(348, 384);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblStatus.TabIndex = 46;
+            this.lblStatus.Text = "Status";
+            // 
+            // lblStudent
+            // 
+            this.lblStudent.AutoSize = true;
+            this.lblStudent.Location = new System.Drawing.Point(14, 384);
+            this.lblStudent.Name = "lblStudent";
+            this.lblStudent.Size = new System.Drawing.Size(44, 13);
+            this.lblStudent.TabIndex = 45;
+            this.lblStudent.Text = "Student";
+            // 
             // frmAppointmentAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(806, 461);
+            this.ClientSize = new System.Drawing.Size(806, 475);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtStudent);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblStudent);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.dtpTime);
@@ -199,5 +240,9 @@
         private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblStaff;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.TextBox txtStudent;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblStudent;
     }
 }

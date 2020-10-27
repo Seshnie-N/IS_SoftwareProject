@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Stuport.AdminController.Model;
 using Stuport.Groups_Service;
 using System.Data;
+using System.Drawing.Printing;
 
 namespace Stuport.AdminController
 {
@@ -28,19 +29,19 @@ namespace Stuport.AdminController
                    "ORDER BY Group_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
-        } //NEW FIELDS
+        } 
 
         public void RefreshGridAppointment(ref DataTable dt)
         {
             dt = new DataTable();
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
-            string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
-                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
-                   "ORDER BY Group_ID";
+            string query = $"SELECT [Appointment_ID], [Service_Description], [Personnel_ID], [Student_ID], [Appointment_Date], [Appointment_Time], [Appointment_Status]" +
+                   "FROM[Appointment]  LEFT OUTER JOIN [Service] on [Appointment].[Service_ID] =[Service].[Service_ID]" +
+                   "ORDER BY Appointment_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
-        } //NEW FIELDS
+        } 
 
         public void RefreshGridStudent(ref DataTable dt)
         {
@@ -50,7 +51,7 @@ namespace Stuport.AdminController
             string query = $"SELECT * FROM Student";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
-        } //NEW FIELDS
+        }
 
         public void FillerService()
         {
@@ -112,13 +113,13 @@ namespace Stuport.AdminController
                 };
                 if (!reader["Personnel_FirstName"].Equals(DBNull.Value))
                 {
-                    personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"]; 
+                    personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"];
                 }
                 personnelTypesList.Add(personnelType);
             }
             reader.Close();
             conn.Close();
-        } //CELLS
+        } 
 
         public void updateGroup()
         {
@@ -141,10 +142,16 @@ namespace Stuport.AdminController
 
         } //TODO
 
-        public void removeAppointment(int intGroupID)
+        public void removeAppointment(int AppointmentId)
         {
-
-        } //TODO
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM [Appointment] WHERE [Appointment_ID] = @1", conn);
+            cmd.Parameters.AddWithValue("@1", AppointmentId);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        } 
 
         public void addStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
         {
@@ -185,6 +192,34 @@ namespace Stuport.AdminController
             cmd.ExecuteNonQuery();
             conn.Close();
         } //SQL
+
+        public bool StudentExist(string StudentNum)
+        {
+            string StdNum = "";
+            OleDbConnection conn;
+            conn = new OleDbConnection(_path);
+            OleDbCommand cmd = conn.CreateCommand();
+            conn.Open();
+            cmd.CommandText = "Select Student_ID From Student Where Student_ID=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = "20907029" });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                StdNum = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+            cmd.Connection = conn;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            if (StdNum == StudentNum)
+                return (true);
+            else
+                return (false);
+        } 
 
     }
 }

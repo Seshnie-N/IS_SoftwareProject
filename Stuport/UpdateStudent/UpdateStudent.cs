@@ -46,17 +46,19 @@ namespace Stuport
             strContactNo = txtPhoneNo.Text;
 
             bool bVailid = validate();
-
             if (bVailid == false)
-            {
-                MessageBox.Show("Error");
                 return;
+            if (AC.StudentExist(strStuNumber))
+            {
+                MessageBox.Show("Student Already Exists", "Error");
             }
 
             AC.addStudent(strStuNumber,strFName,strLName,strPassword,strEmail,strContactNo);
 
-            MessageBox.Show("Update Successful");
-        } //VALUES
+            refreshGrid();
+            MessageBox.Show("Student Added");
+
+        }
 
         private bool validate()
         {
@@ -106,8 +108,7 @@ namespace Stuport
             txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtStudentNumber.ReadOnly = true;
-        } //CELLS
+        }
 
         private void btnUpdateStudenr_Click(object sender, EventArgs e)
         {
@@ -118,9 +119,18 @@ namespace Stuport
             strEmail = txtEmail.Text;
             strContactNo = txtPhoneNo.Text;
 
+            bool bVailid = validate();
+            if (bVailid == false)
+                return;
+            if (!(AC.StudentExist(strStuNumber)))
+            {
+                MessageBox.Show("Student Does not exsist", "Error");
+            }
+
             AC.updateStudent(strStuNumber, strFName, strLName, strPassword, strEmail, strContactNo);
+            refreshGrid();
 
             MessageBox.Show("Update Successful");
-        } //VALUES
+        } 
     }
 }

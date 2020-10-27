@@ -61,7 +61,7 @@ namespace Stuport.Groups_Service
             if (confirm == true)
             {
                 intGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
-                AC.removeAppointment(intGroupID);
+                AC.removeGroup(intGroupID);
                 RefreshGrid();
                 MessageBox.Show("Group has been removed");
             }
