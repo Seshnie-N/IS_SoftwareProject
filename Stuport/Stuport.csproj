@@ -53,6 +53,19 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminController\AdminController.cs" />
+    <Compile Include="AdminController\Model\PersonnelType.cs" />
+    <Compile Include="AdminController\Model\ServiceType.cs" />
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.Designer.cs">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment %28AdminSide%29\Model\PersonnelType.cs" />
+    <Compile Include="Appointment %28AdminSide%29\Model\ServiceType.cs" />
+    <Compile Include="Groups %28AdminSide%29\Model\PersonnelType.cs" />
+    <Compile Include="Groups %28AdminSide%29\Model\ServiceType.cs" />
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,11 +160,19 @@
     <Compile Include="UpdateStudent\UpdateStudent.Designer.cs">
       <DependentUpon>UpdateStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="_StuportDatabase_Updated_v2DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_StuportDatabase_Updated_v2DataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddStaff\AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminMenu\AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment %28AdminSide%29\frmAppointmentAdmin.resx">
+      <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>

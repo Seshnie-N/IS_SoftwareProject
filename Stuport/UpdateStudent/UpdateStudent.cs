@@ -13,20 +13,20 @@ namespace Stuport
 {
     public partial class UpdateStudent : Form
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source="+AppDomain.CurrentDomain.BaseDirectory+"StuportDatabase.accdb";
-        OleDbConnection conn = new OleDbConnection(_path);
-        
+        AdminController.AdminController AC = new AdminController.AdminController();
+
+        string strStuNumber;
+        string strFName;
+        string strLName;
+        string strPassword;
+        string strEmail;
+        string strContactNo;
 
         public UpdateStudent()
         {
             InitializeComponent();
             refreshGrid();
             
-        }
-
-        private void lblLName_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -38,38 +38,81 @@ namespace Stuport
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            
+            strStuNumber = txtStudentNumber.Text;
+            strFName = txtFName.Text;
+            strLName = txtLName.Text;
+            strPassword = txtPassword.Text;
+            strEmail = txtEmail.Text;
+            strContactNo = txtPhoneNo.Text;
+
+            bool bVailid = validate();
+            if (bVailid == false)
+                return;
+            if (AC.StudentExist(strStuNumber))
+            {
+                MessageBox.Show("Student Already Exists", "Error");
+                return;
+            }
+            if (!comfirmMessage("Add this student?")) { return; }
+            AC.addStudent(strStuNumber,strFName,strLName,strPassword,strEmail,strContactNo);
+
+            refreshGrid();
+            MessageBox.Show("Student Added");
+
         }
 
-        private void UpdateStudent_Load(object sender, EventArgs e)
+        private bool validate()
         {
-            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Student' table. You can move, or remove it, as needed.
-            string strStuNumber = txtStudentNumber.Text;
-            string strFName = txtFName.Text;
-            string strLName = txtLName.Text;
-            string strPassword = txtPassword.Text;
-            string strEmail = txtEmail.Text;
-            string strContactNo = txtPhoneNo.Text;
-
+            bool bValid = true;
+            if (String.IsNullOrEmpty(strStuNumber))
+            {
+                bValid = false;
+                MessageBox.Show("Student Number Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strFName))
+            {
+                bValid = false;
+                MessageBox.Show("First Name Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strLName))
+            {
+                bValid = false;
+                MessageBox.Show("Last Name Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strEmail))
+            {
+                bValid = false;
+                MessageBox.Show("Email Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strContactNo))
+            {
+                bValid = false;
+                MessageBox.Show("Contact number Cannot be Empty", "Input Error");
+            }
+            if (String.IsNullOrEmpty(strPassword))
+            {
+                bValid = false;
+                MessageBox.Show("Password Cannot be Empty", "Input Error");
+            }
+            if (IsDigitsOnly(strContactNo))
+            {
+                bValid = false;
+                MessageBox.Show("Contact number must only be digits form 0-9 ", "Input Error");
+            }
+            return bValid;
         }
 
         private void refreshGrid()
         {
             try
             {
-                conn.Open();
                 DataTable dt = new DataTable();
-                OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Student", conn);
-                da.Fill(dt);
+                AC.RefreshGridStudent(ref dt);
                 dgvStudentUpdate.DataSource = dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error", "Error Message: " + ex);
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
@@ -81,32 +124,68 @@ namespace Stuport
             txtEmail.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtPhoneNo.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[4].Value.ToString();
             txtPassword.Text = dgvStudentUpdate.Rows[e.RowIndex].Cells[5].Value.ToString();
-            txtStudentNumber.ReadOnly = true;
         }
 
         private void btnUpdateStudenr_Click(object sender, EventArgs e)
         {
-            string strStuNumber = txtStudentNumber.Text;
-            string strFName = txtFName.Text;
-            string strLName = txtLName.Text;
-            string strPassword = txtPassword.Text;
-            string strEmail = txtEmail.Text;
-            string strContactNo = txtPhoneNo.Text;
+            strStuNumber = txtStudentNumber.Text;
+            strFName = txtFName.Text;
+            strLName = txtLName.Text;
+            strPassword = txtPassword.Text;
+            strEmail = txtEmail.Text;
+            strContactNo = txtPhoneNo.Text;
 
-            conn.Open();
-            OleDbCommand cmd = new OleDbCommand("UPDATE Student SET Student_FirstName = @1, Student_LastName = @2," +
-                " Student_Email = @3, Student_Phone = @4, Student_Password = @5  WHERE Student_ID = @6", conn);
-            cmd.Parameters.AddWithValue("@1", strFName);
-            cmd.Parameters.AddWithValue("@2", strLName);
-            cmd.Parameters.AddWithValue("@3", strEmail);
-            cmd.Parameters.AddWithValue("@4", strContactNo);
-            cmd.Parameters.AddWithValue("@5", strPassword);
-            cmd.Parameters.AddWithValue("@6", strStuNumber);
+            bool bVailid = validate();
+            if (bVailid == false)
+                return;
+            if (!(AC.StudentExist(strStuNumber)))
+            {
+                MessageBox.Show("Student Does not exsist", "Error");
+                return;
+            }
+            if (!comfirmMessage("Update this student?")){ return; }
 
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            AC.updateStudent(strStuNumber, strFName, strLName, strPassword, strEmail, strContactNo);
             refreshGrid();
+
             MessageBox.Show("Update Successful");
+        }
+
+        bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9' || c == '+')
+                    return false;
+            }
+
+            return true;
+        }
+
+        private bool comfirmMessage(string message)
+        {
+            string caption = "Warning!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        private void dgvStudentUpdate_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
