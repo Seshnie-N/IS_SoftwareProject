@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Xml;
+using System.Globalization;
 
 namespace Stuport
 {
@@ -46,13 +47,14 @@ namespace Stuport
 
 
             con.Open();
-            string query = $"UPDATE [Appointment] SET [Appointment_Date] = @1, [Appointment_Time] = @2," +
-                "[Personnel_ID] = @3, [Service_ID] = @4, [Appointment_Status] = @5 WHERE [Student_ID] = @6";
+            string query = $"Insert into Appointment  ([Appointment_Date], [Appointment_Time]," +
+                "[Personnel_ID], [Service_ID], [Appointment_Status], [Student_ID]) VALUES(@1,@2,@3,@4,@5,@6)";
             OleDbCommand cmd = new OleDbCommand(query, con);
-            cmd.Parameters.AddWithValue("@1", Convert.ToDateTime(Date));
+          //  DateTime DateAppointment =DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            cmd.Parameters.AddWithValue("@1", Date);
             cmd.Parameters.AddWithValue("@2", Time);
-            cmd.Parameters.AddWithValue("@3", "00");
-            cmd.Parameters.AddWithValue("@4", ServiceType);
+            cmd.Parameters.AddWithValue("@3", 1);
+            cmd.Parameters.AddWithValue("@4", Convert.ToInt32(ServiceType));
             cmd.Parameters.AddWithValue("@5", "Requested");
             String StdNum = getStdNum();
             cmd.Parameters.AddWithValue("@6", StdNum );
