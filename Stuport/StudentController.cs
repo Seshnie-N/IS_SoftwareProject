@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using Stuport.Login;
+using System.Xml;
+using System.Globalization;
+using System.Configuration;
 
 namespace Stuport
 {
@@ -43,6 +46,32 @@ namespace Stuport
 
             con.Close();
 
+        }
+        public String RequestAppointment(String Date,String ServiceType,String Time)
+        {
+
+            //make placeholder 00 
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+
+
+
+            con.Open();
+            string query = $"Insert into Appointment  ([Appointment_Date], [Appointment_Time]," +
+                "[Personnel_ID], [Service_ID], [Appointment_Status], [Student_ID]) VALUES(@1,@2,@3,@4,@5,@6)";
+            OleDbCommand cmd = new OleDbCommand(query, con);
+          //  DateTime DateAppointment =DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            cmd.Parameters.AddWithValue("@1", Date);
+            cmd.Parameters.AddWithValue("@2", Time);
+            cmd.Parameters.AddWithValue("@3", 1);
+            cmd.Parameters.AddWithValue("@4", Convert.ToInt32(ServiceType));
+            cmd.Parameters.AddWithValue("@5", "Requested");
+            String StdNum = getStdNum();
+            cmd.Parameters.AddWithValue("@6", StdNum );
+            cmd.ExecuteNonQuery();
+            con.Close();
+            string output = "request received";
+            return output;
         }
 
         //getters
@@ -80,7 +109,7 @@ namespace Stuport
             string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
             OleDbConnection con = new OleDbConnection(connectionString);
 
-
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";

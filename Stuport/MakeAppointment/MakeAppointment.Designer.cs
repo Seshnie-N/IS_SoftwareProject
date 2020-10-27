@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbxServiceType = new System.Windows.Forms.ComboBox();
+            this.btnRequest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbxTimeSlot = new System.Windows.Forms.ComboBox();
+            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.serviceTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.ServiceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,11 +52,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Type of Service";
             // 
-            // monthCalendar1
+            // mcDate
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(47, 97);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.mcDate.Location = new System.Drawing.Point(47, 97);
+            this.mcDate.Name = "mcDate";
+            this.mcDate.TabIndex = 1;
             // 
             // label2
             // 
@@ -61,42 +66,27 @@
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Select Date";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox1
+            // cbxServiceType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(47, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cbxServiceType.DataSource = this.serviceBindingSource;
+            this.cbxServiceType.DisplayMember = "Service_Description";
+            this.cbxServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxServiceType.FormattingEnabled = true;
+            this.cbxServiceType.Location = new System.Drawing.Point(47, 36);
+            this.cbxServiceType.Name = "cbxServiceType";
+            this.cbxServiceType.Size = new System.Drawing.Size(227, 21);
+            this.cbxServiceType.TabIndex = 4;
             // 
-            // btnConfirm
+            // btnRequest
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(47, 322);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirm.TabIndex = 5;
-            this.btnConfirm.Text = "Confirm Appointment";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(47, 351);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 6;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker1.Location = new System.Drawing.Point(187, 285);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(87, 20);
-            this.dateTimePicker1.TabIndex = 7;
+            this.btnRequest.Location = new System.Drawing.Point(47, 322);
+            this.btnRequest.Name = "btnRequest";
+            this.btnRequest.Size = new System.Drawing.Size(127, 38);
+            this.btnRequest.TabIndex = 5;
+            this.btnRequest.Text = "Request Appointment";
+            this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
             // label3
             // 
@@ -107,21 +97,55 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Select Preferred Time Slot";
             // 
+            // cbxTimeSlot
+            // 
+            this.cbxTimeSlot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTimeSlot.FormattingEnabled = true;
+            this.cbxTimeSlot.Items.AddRange(new object[] {
+            "09:00-10:00",
+            "10:00-11:00",
+            "11:00-12:00",
+            "12:00-13:00",
+            "13:00-14:00",
+            "14:00-15:00",
+            "15:00-16:00",
+            "16:00-17:00"});
+            this.cbxTimeSlot.Location = new System.Drawing.Point(180, 291);
+            this.cbxTimeSlot.Name = "cbxTimeSlot";
+            this.cbxTimeSlot.Size = new System.Drawing.Size(94, 21);
+            this.cbxTimeSlot.TabIndex = 9;
+            // 
+            // stuportDatabaseDataSet
+            // 
+            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
+            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataMember = "Service";
+            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet;
+            // 
+            // serviceTableAdapter
+            // 
+            this.serviceTableAdapter.ClearBeforeFill = true;
+            // 
             // MakeAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 402);
+            this.Controls.Add(this.cbxTimeSlot);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnRequest);
+            this.Controls.Add(this.cbxServiceType);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.mcDate);
             this.Controls.Add(this.label1);
             this.Name = "MakeAppointment";
             this.Text = "MakeAppointment";
+            this.Load += new System.EventHandler(this.MakeAppointment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,12 +154,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mcDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbxServiceType;
+        private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbxTimeSlot;
+        private StuportDatabaseDataSet stuportDatabaseDataSet;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
+        private StuportDatabaseDataSetTableAdapters.ServiceTableAdapter serviceTableAdapter;
     }
 }
