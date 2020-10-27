@@ -26,7 +26,18 @@ namespace Stuport
             
             mcDate.MinDate = DateTime.Today;
             mcDate.MaxSelectionCount = 1;
-            
+            try
+            {
+                StudentController sc = new StudentController();
+
+                sc.ServicesFill();
+                cbxServiceType.DataSource = sc.serviceTypesList;
+
+            }
+            catch
+            {
+                MessageBox.Show("Error occured in services");
+            }
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
