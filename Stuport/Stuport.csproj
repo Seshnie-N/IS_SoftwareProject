@@ -115,17 +115,22 @@
     <Compile Include="StudentMenu\StudentMenu.Designer.cs">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentProfile\StudentProfile.cs" >
+    <Compile Include="StudentProfile\StudentProfile.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentProfile\StudentProfile.designer.cs">
       <DependentUpon>StudentProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentRegistration\StudentRegistration.cs" >
+    <Compile Include="StudentRegistration\StudentRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="StudentRegistration\StudentRegistration.Designer.cs">
       <DependentUpon>StudentRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StuportDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuportDatabaseDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="UpdateStaff\UpdateDetails.cs">
       <SubType>Form</SubType>
@@ -202,9 +207,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StuportDatabaseDataSet1.xsc">
+      <DependentUpon>StuportDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StuportDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StuportDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StuportDatabaseDataSet1.xss">
+      <DependentUpon>StuportDatabaseDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StuportDatabase.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

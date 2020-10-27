@@ -11,6 +11,7 @@ namespace Stuport
 {
     class StudentController
     {
+        public List<String> ServiceTypesList { get; set; }
         public void AddStudent(String StudNum,String FName, String LName, String Email, String Phone, String Password)
         {
 
@@ -60,40 +61,6 @@ namespace Stuport
             string output = "request received";
             return output;
         }
-
-        public void ServicesFill()
-        {
-            serviceTypesList = new List<ServiceType>();
-
-            OleDbConnection conn;
-            OleDbCommand dbCommand;
-
-            string query = "SELECT Service_ID, Service_Description FROM Service ORDER BY Service_Type";
-
-            conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
-            conn.Open();
-
-            dbCommand = conn.CreateCommand();
-
-            dbCommand.Parameters.Clear();
-            dbCommand.CommandText = query;
-
-            var reader = dbCommand.ExecuteReader();
-
-            while (reader.Read())
-            {
-                var serviceType = new ServiceType()
-                {
-                    ServiceId = (int)reader["Service_ID"],
-                };
-                if (!reader["Service_Description"].Equals(DBNull.Value))
-                    serviceType.ServiceTypeName = (string)reader["Service_Description"];
-                serviceTypesList.Add(serviceType);
-            }
-            reader.Close();
-            conn.Close();
-        }
-
 
         //getters
         public String getStdNum()

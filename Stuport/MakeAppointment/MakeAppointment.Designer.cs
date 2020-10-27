@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
@@ -35,6 +36,11 @@
             this.btnRequest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxTimeSlot = new System.Windows.Forms.ComboBox();
+            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.serviceTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.ServiceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,11 +69,10 @@
             // 
             // cbxServiceType
             // 
+            this.cbxServiceType.DataSource = this.serviceBindingSource;
+            this.cbxServiceType.DisplayMember = "Service_Description";
             this.cbxServiceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxServiceType.FormattingEnabled = true;
-            this.cbxServiceType.Items.AddRange(new object[] {
-            "Personal psychological services",
-            "Personal academic help"});
             this.cbxServiceType.Location = new System.Drawing.Point(47, 36);
             this.cbxServiceType.Name = "cbxServiceType";
             this.cbxServiceType.Size = new System.Drawing.Size(227, 21);
@@ -110,6 +115,20 @@
             this.cbxTimeSlot.Size = new System.Drawing.Size(94, 21);
             this.cbxTimeSlot.TabIndex = 9;
             // 
+            // stuportDatabaseDataSet
+            // 
+            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
+            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataMember = "Service";
+            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet;
+            // 
+            // serviceTableAdapter
+            // 
+            this.serviceTableAdapter.ClearBeforeFill = true;
+            // 
             // MakeAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +144,8 @@
             this.Name = "MakeAppointment";
             this.Text = "MakeAppointment";
             this.Load += new System.EventHandler(this.MakeAppointment_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +160,8 @@
         private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxTimeSlot;
+        private StuportDatabaseDataSet stuportDatabaseDataSet;
+        private System.Windows.Forms.BindingSource serviceBindingSource;
+        private StuportDatabaseDataSetTableAdapters.ServiceTableAdapter serviceTableAdapter;
     }
 }

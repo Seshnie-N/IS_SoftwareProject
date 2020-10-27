@@ -23,21 +23,11 @@ namespace Stuport
 
         private void MakeAppointment_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Service' table. You can move, or remove it, as needed.
+            this.serviceTableAdapter.Fill(this.stuportDatabaseDataSet.Service);
+
             mcDate.MinDate = DateTime.Today;
             mcDate.MaxSelectionCount = 1;
-            try
-            {
-                StudentController sc = new StudentController();
-
-                sc.ServicesFill();
-                cbxServiceType.DataSource = sc.serviceTypesList;
-
-            }
-            catch
-            {
-                MessageBox.Show("Error occured in services");
-            }
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
