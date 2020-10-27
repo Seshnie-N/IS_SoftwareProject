@@ -18,28 +18,14 @@ namespace Stuport.Groups_Service
 {
     public partial class Groups : Form
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\ReposUni\IS_SoftwareProject\Stuport\bin\Debug\StuportDatabase.accdb";
-        private OleDbConnection conn;
-        private OleDbCommand dbCommand;
-        private List<ServiceType> serviceTypesList;
-        private List<PersonnelType> personnelTypesList;
         AdminController.AdminController AC = new AdminController.AdminController();
-
-
-
-        //private robsDatabase controller;
         int strGroupID;
-
 
         public Groups()
         {
             try
             {
                 InitializeComponent();
-                conn = new OleDbConnection(_path);
-                conn.Open();
-                dbCommand = conn.CreateCommand();
-
                 RefreshGrid();
                 Filler();
             }
@@ -61,25 +47,6 @@ namespace Stuport.Groups_Service
             {
                 MessageBox.Show("Error Message: " + ex);
             }
-            //try
-            //{
-            //    //dt = new DataTable();
-            //    //string query = $"SELECT Group_ID,Service_Type,[Personnel].[Personnel_FirstName] , [Personnel].[Personnel_LastName]," +
-            //    //    " Group_Venue, Group_Time, Group_Date, Group_Status" +
-            //    //   "FROM(([Group]  LEFT OUTER JOIN[Service] on[Group].[Service_ID] =[Service].[Service_ID])" +
-            //    //    "LEFT OUTER JOIN[Personnel] on[Group].[Personnel_ID] =[Personnel].[Personnel_ID]) " +
-            //    //    "ORDER BY Group_ID";
-            //    string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
-            //       "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
-            //        "ORDER BY Group_ID";
-            //    var da = new OleDbDataAdapter(query, conn);
-            //    da.Fill(dt);
-            //    //dgvGroups.DataSource = dt;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error Message: " + ex);
-            //}
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -103,17 +70,17 @@ namespace Stuport.Groups_Service
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            bool confirm = comfirmMessage();
-            if (confirm == true)
-            {
-                conn.Open();
-                OleDbCommand cmd = new OleDbCommand("DELETE FROM [Group] WHERE Group_ID = @1", conn);
-                cmd.Parameters.AddWithValue("@1", strGroupID);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                RefreshGrid();
-                MessageBox.Show("Group has been removed");
-            }   
+            //bool confirm = comfirmMessage();
+            //if (confirm == true)
+            //{
+            //    conn.Open();
+            //    OleDbCommand cmd = new OleDbCommand("DELETE FROM [Group] WHERE Group_ID = @1", conn);
+            //    cmd.Parameters.AddWithValue("@1", strGroupID);
+            //    cmd.ExecuteNonQuery();
+            //    conn.Close();
+            //    RefreshGrid();
+            //    MessageBox.Show("Group has been removed");
+            //}   
         }
 
         private bool comfirmMessage()
@@ -142,30 +109,12 @@ namespace Stuport.Groups_Service
         public void Filler()
         {
             try
-            {
-                serviceTypesList = new List<ServiceType>();
-
-                string query = "SELECT Service_ID, Service_Type FROM Service ORDER BY Service_Type";
-                dbCommand.Parameters.Clear();
-                dbCommand.CommandText = query;
-
-                var reader = dbCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var serviceType = new ServiceType()
-                    {
-                        ServiceId = (int)reader["Service_ID"],
-                    };
-                    if (!reader["Service_Type"].Equals(DBNull.Value))
-                        serviceType.ServiceTypeName = (string)reader["Service_Type"];
-                    serviceTypesList.Add(serviceType);
-                }
-                reader.Close();
+            {                
+                AC.FillerService();
 
                 cmbService.DisplayMember = "ServiceTypeName";
                 cmbService.ValueMember = "ServiceId";
-                cmbService.DataSource = serviceTypesList;
+                cmbService.DataSource = AC.serviceTypesList;
                 cmbService.DropDownStyle = ComboBoxStyle.DropDown;
             }
             catch (Exception ex)
@@ -174,39 +123,16 @@ namespace Stuport.Groups_Service
             }
             try
             {
-                personnelTypesList = new List<PersonnelType>();
-
-                string query = "SELECT [Personnel_ID], [Personnel_FirstName], [Personnel_LastName] FROM [Personnel] ORDER BY [Personnel_FirstName]";
-                dbCommand.Parameters.Clear();
-                dbCommand.CommandText = query;
-
-                var reader = dbCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var personnelType = new PersonnelType()
-                    {
-                        PersonnelId = (int)reader["Personnel_ID"],
-                    };
-                    if (!reader["Personnel_FirstName"].Equals(DBNull.Value))
-                        personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"];
-                    personnelTypesList.Add(personnelType);
-                }
-                reader.Close();
+                AC.FillerPersonnel();
 
                 cmbStaff.DisplayMember = "PersonnelFirstName";
                 cmbStaff.ValueMember = "PersonnelId";
-                cmbStaff.DataSource = personnelTypesList;
+                cmbStaff.DataSource = AC.personnelTypesList;
                 cmbStaff.DropDownStyle = ComboBoxStyle.DropDown;
             }
             catch (Exception ex)
             {
-                // write exception info to log or anything else
                 MessageBox.Show("Error occured!" + ex);
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
@@ -222,7 +148,7 @@ namespace Stuport.Groups_Service
             var serviceId = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
             //var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
-            var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+            //var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
 
             strVenue = txtVenue.Text;
             strStatus = cmbStatus.SelectedItem.ToString();
@@ -244,28 +170,28 @@ namespace Stuport.Groups_Service
             if (confirm == false)
                 return;
 
-            try
-            {
-                conn.Open();
-                OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
-                    " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
-                cmd.Parameters.AddWithValue("@1", serviceId);
-                cmd.Parameters.AddWithValue("@2", PersonnelID);
-                cmd.Parameters.AddWithValue("@3", strVenue);
-                cmd.Parameters.AddWithValue("@4", dtTime);
-                cmd.Parameters.AddWithValue("@5", dtDate);
-                cmd.Parameters.AddWithValue("@6", strStatus);
-                cmd.Parameters.AddWithValue("@7", strGroupID);
+            //try
+            //{
+            //    conn.Open();
+            //    OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
+            //        " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
+            //    cmd.Parameters.AddWithValue("@1", serviceId);
+            //    cmd.Parameters.AddWithValue("@2", PersonnelID);
+            //    cmd.Parameters.AddWithValue("@3", strVenue);
+            //    cmd.Parameters.AddWithValue("@4", dtTime);
+            //    cmd.Parameters.AddWithValue("@5", dtDate);
+            //    cmd.Parameters.AddWithValue("@6", strStatus);
+            //    cmd.Parameters.AddWithValue("@7", strGroupID);
 
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                RefreshGrid();
-                MessageBox.Show("Update Successful");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("UpdateError! " + ex);
-            }
+            //    cmd.ExecuteNonQuery();
+            //    conn.Close();
+            //    RefreshGrid();
+            //    MessageBox.Show("Update Successful");
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("UpdateError! " + ex);
+            //}
             
 
         }
@@ -277,8 +203,8 @@ namespace Stuport.Groups_Service
             strGroupID = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[0].Value;
             var serviceTypeName =  (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
-            var serviceType = serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
-            var PersonnelName = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+            var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
+            var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
             var GroupVenue = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[3].Value;
             var GroupTime = (DateTime)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[4].Value;
             var GroupDate = (DateTime)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[5].Value;

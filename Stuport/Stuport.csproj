@@ -52,7 +52,9 @@
     <Compile Include="AddStaff\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminController.cs" />
+    <Compile Include="AdminController\AdminController.cs" />
+    <Compile Include="AdminController\Model\PersonnelType.cs" />
+    <Compile Include="AdminController\Model\ServiceType.cs" />
     <Compile Include="Appointment %28AdminSide%29\frmAppointmentAdmin.cs">
       <SubType>Form</SubType>
     </Compile>

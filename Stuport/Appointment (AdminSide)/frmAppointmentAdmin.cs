@@ -15,15 +15,9 @@ namespace Stuport.Appointment__AdminSide_
 {
     public partial class frmAppointmentAdmin : Form
     {
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\ReposUni\IS_SoftwareProject\Stuport\bin\Debug\StuportDatabase.accdb";
-        private OleDbConnection conn;
-        private OleDbCommand dbCommand;
-
-        private List<ServiceType> serviceTypesList;
-        private List<PersonnelType> personnelTypesList;
+        AdminController.AdminController AC = new AdminController.AdminController();
 
         string strAppointmentID;
-
 
         public frmAppointmentAdmin()
         {
@@ -31,10 +25,6 @@ namespace Stuport.Appointment__AdminSide_
         try
             {
                 InitializeComponent();
-                conn = new OleDbConnection(_path);
-                conn.Open();
-                dbCommand = conn.CreateCommand();
-
                 RefreshGrid();
                 Filler();
             }
@@ -48,17 +38,8 @@ namespace Stuport.Appointment__AdminSide_
         {
             try
             {
-                var dt = new DataTable();
-                //string query = $"SELECT Group_ID,Service_Type,[Personnel].[Personnel_FirstName] , [Personnel].[Personnel_LastName]," +
-                //    " Group_Venue, Group_Time, Group_Date, Group_Status" +
-                //   "FROM(([Group]  LEFT OUTER JOIN[Service] on[Group].[Service_ID] =[Service].[Service_ID])" +
-                //    "LEFT OUTER JOIN[Personnel] on[Group].[Personnel_ID] =[Personnel].[Personnel_ID]) " +
-                //    "ORDER BY Group_ID";
-                string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
-                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
-                    "ORDER BY Group_ID";
-                var da = new OleDbDataAdapter(query, conn);
-                da.Fill(dt);
+                DataTable dt = new DataTable();
+                AC.RefreshGridGroups(ref dt);
                 dgvAppointments.DataSource = dt;
             }
             catch (Exception ex)
@@ -81,29 +62,11 @@ namespace Stuport.Appointment__AdminSide_
         {
             try
             {
-                serviceTypesList = new List<ServiceType>();
-
-                string query = "SELECT Service_ID, Service_Type FROM Service ORDER BY Service_Type";
-                dbCommand.Parameters.Clear();
-                dbCommand.CommandText = query;
-
-                var reader = dbCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var serviceType = new ServiceType()
-                    {
-                        ServiceId = (int)reader["Service_ID"],
-                    };
-                    if (!reader["Service_Type"].Equals(DBNull.Value))
-                        serviceType.ServiceTypeName = (string)reader["Service_Type"];
-                    serviceTypesList.Add(serviceType);
-                }
-                reader.Close();
+                AC.FillerService();
 
                 cmbService.DisplayMember = "ServiceTypeName";
                 cmbService.ValueMember = "ServiceId";
-                cmbService.DataSource = serviceTypesList;
+                cmbService.DataSource = AC.serviceTypesList;
                 cmbService.DropDownStyle = ComboBoxStyle.DropDown;
             }
             catch (Exception ex)
@@ -112,39 +75,17 @@ namespace Stuport.Appointment__AdminSide_
             }
             try
             {
-                personnelTypesList = new List<PersonnelType>();
-
-                string query = "SELECT [Personnel_ID], [Personnel_FirstName], [Personnel_LastName] FROM [Personnel] ORDER BY [Personnel_FirstName]";
-                dbCommand.Parameters.Clear();
-                dbCommand.CommandText = query;
-
-                var reader = dbCommand.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    var personnelType = new PersonnelType()
-                    {
-                        PersonnelId = (int)reader["Personnel_ID"],
-                    };
-                    if (!reader["Personnel_FirstName"].Equals(DBNull.Value))
-                        personnelType.PersonnelFirstName = (string)reader["Personnel_FirstName"];
-                    personnelTypesList.Add(personnelType);
-                }
-                reader.Close();
+                AC.FillerService();
 
                 cmbStaff.DisplayMember = "PersonnelFirstName";
                 cmbStaff.ValueMember = "PersonnelId";
-                cmbStaff.DataSource = personnelTypesList;
+                cmbStaff.DataSource = AC.personnelTypesList;
                 cmbStaff.DropDownStyle = ComboBoxStyle.DropDown;
             }
             catch (Exception ex)
             {
                 // write exception info to log or anything else
                 MessageBox.Show("Error occured!" + ex);
-            }
-            finally
-            {
-                conn.Close();
             }
         }
 
@@ -155,8 +96,8 @@ namespace Stuport.Appointment__AdminSide_
             strAppointmentID = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
             var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[4].Value;
             var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[3].Value;
-            var serviceType = serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
-            var PersonnelName = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+            var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
+            var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
             var GroupTime = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
             var GroupDate = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
             cmbService.SelectedValue = serviceType.ServiceId;

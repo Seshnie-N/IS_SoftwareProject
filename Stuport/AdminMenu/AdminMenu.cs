@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Stuport.Appointment__AdminSide_;
 
 namespace Stuport
 {
@@ -38,6 +39,13 @@ namespace Stuport
             this.Hide();
             Groups_Service.Groups groups = new Groups_Service.Groups();
             groups.Show();
+        }
+
+        private void btnManageAppointments_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Appointment__AdminSide_.frmAppointmentAdmin Appointments = new Appointment__AdminSide_.frmAppointmentAdmin();
+            Appointments.Show();
         }
     }
 }

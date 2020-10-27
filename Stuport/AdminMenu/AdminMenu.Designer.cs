@@ -43,6 +43,7 @@
             this.btnManageAppointments.TabIndex = 1;
             this.btnManageAppointments.Text = "Manage Appointments";
             this.btnManageAppointments.UseVisualStyleBackColor = true;
+            this.btnManageAppointments.Click += new System.EventHandler(this.btnManageAppointments_Click);
             // 
             // btnManageGroups
             // 
