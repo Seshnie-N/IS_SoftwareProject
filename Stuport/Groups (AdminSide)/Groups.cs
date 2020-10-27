@@ -202,7 +202,11 @@ namespace Stuport.Groups_Service
                 MessageBox.Show("Select a Personnel Member", "Input error");
             }
             return (bValid);
-        } 
-    
+        }
+
+        private void DgvGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

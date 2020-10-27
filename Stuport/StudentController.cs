@@ -11,6 +11,7 @@ using Stuport.Login;
 using System.Xml;
 using System.Globalization;
 using System.Configuration;
+using System.Data;
 
 namespace Stuport
 {
@@ -47,6 +48,27 @@ namespace Stuport
             con.Close();
 
         }
+
+
+        public void RefreshGridAppointment(ref DataTable dt)
+        {
+            dt = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            conn = new OleDbConnection(connectionString);
+
+            string query = $"SELECT [Appointment_ID], [Service_Description], [Appointment_Date], [Appointment_Time] " +
+                   "FROM [Appointment] inner join Service on Service.Service_ID = Appointment.Service_ID WHERE Appointment.Student_ID = ? ORDER BY Appointment_ID ";
+            
+            OleDbDataAdapter da = new OleDbDataAdapter(query, conn);
+            da.SelectCommand.Parameters.Add("?", OleDbType.VarChar, 15).Value = Global.Token;
+                conn.Open();
+                da.Fill(dt);
+       
+            conn.Close();
+
+        }
+
         public String RequestAppointment(String Date,String ServiceType,String Time)
         {
 
@@ -75,7 +97,7 @@ namespace Stuport
         }
 
         //getters
-        public String getStdNum(String username)
+        public String getStdNum()
         {
             String stdnum = "";
 
@@ -108,9 +130,8 @@ namespace Stuport
             String fname = "";
             string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
             OleDbConnection con = new OleDbConnection(connectionString);
-
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
             OleDbCommand cmd = con.CreateCommand();
+
             con.Open();
             cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
@@ -312,11 +333,27 @@ namespace Stuport
             }
         }
 
+
+        public void CancelAppointment(int AppointmentID)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Delete From Appointment where Appointment_ID = ?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.Integer) { Value = AppointmentID });
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
         public bool ValidLogin(string StudNum, string password)
         {
             string PassCheck = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Password From Student Where Student_ID=?";

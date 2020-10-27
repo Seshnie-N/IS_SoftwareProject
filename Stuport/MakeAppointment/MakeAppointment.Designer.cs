@@ -36,10 +36,10 @@
             this.btnRequest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxTimeSlot = new System.Windows.Forms.ComboBox();
-            this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
+            this.stuportDatabaseDataSet2 = new Stuport.StuportDatabaseDataSet2();
             this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.serviceTableAdapter = new Stuport.StuportDatabaseDataSetTableAdapters.ServiceTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
+            this.serviceTableAdapter = new Stuport.StuportDatabaseDataSet2TableAdapters.ServiceTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,15 +115,15 @@
             this.cbxTimeSlot.Size = new System.Drawing.Size(94, 21);
             this.cbxTimeSlot.TabIndex = 9;
             // 
-            // stuportDatabaseDataSet
+            // stuportDatabaseDataSet2
             // 
-            this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
-            this.stuportDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.stuportDatabaseDataSet2.DataSetName = "StuportDatabaseDataSet2";
+            this.stuportDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // serviceBindingSource
             // 
             this.serviceBindingSource.DataMember = "Service";
-            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet;
+            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet2;
             // 
             // serviceTableAdapter
             // 
@@ -144,7 +144,7 @@
             this.Name = "MakeAppointment";
             this.Text = "MakeAppointment";
             this.Load += new System.EventHandler(this.MakeAppointment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -160,8 +160,8 @@
         private System.Windows.Forms.Button btnRequest;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbxTimeSlot;
-        private StuportDatabaseDataSet stuportDatabaseDataSet;
+        private StuportDatabaseDataSet2 stuportDatabaseDataSet2;
         private System.Windows.Forms.BindingSource serviceBindingSource;
-        private StuportDatabaseDataSetTableAdapters.ServiceTableAdapter serviceTableAdapter;
+        private StuportDatabaseDataSet2TableAdapters.ServiceTableAdapter serviceTableAdapter;
     }
 }

@@ -23,8 +23,8 @@ namespace Stuport
 
         private void MakeAppointment_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Service' table. You can move, or remove it, as needed.
-            this.serviceTableAdapter.Fill(this.stuportDatabaseDataSet.Service);
+            // TODO: This line of code loads data into the 'stuportDatabaseDataSet2.Service' table. You can move, or remove it, as needed.
+            this.serviceTableAdapter.Fill(this.stuportDatabaseDataSet2.Service);
 
             mcDate.MinDate = DateTime.Today;
             mcDate.MaxSelectionCount = 1;
