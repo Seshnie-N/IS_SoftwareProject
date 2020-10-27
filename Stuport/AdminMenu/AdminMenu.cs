@@ -1,4 +1,4 @@
-﻿using Stuport.Groups;
+﻿using Stuport.Groups_Service;
 using Stuport.Login;
 using System;
 using System.Collections.Generic;
@@ -36,7 +36,7 @@ namespace Stuport
         private void btnManageGroups_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Groups.Groups groups = new Groups.Groups();
+            Groups_Service.Groups groups = new Groups_Service.Groups();
             groups.Show();
         }
     }

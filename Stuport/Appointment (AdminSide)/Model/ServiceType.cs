@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stuport.Appointment.Model
+namespace Stuport.Appointment_Service.Model
 {
     class ServiceType
     {

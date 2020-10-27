@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stuport.Groups__AdminSide_.Model
+namespace Stuport.Groups_Personnel.Model
 {
     class PersonnelType
     {

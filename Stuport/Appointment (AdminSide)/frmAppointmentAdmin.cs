@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Stuport.Appointment.Model;
-using Stuport.Appointment_personne1.Model;
+using Stuport.Appointment_Service.Model;
+using Stuport.Appointment_personnel.Model;
 
 namespace Stuport.Appointment__AdminSide_
 {

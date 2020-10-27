@@ -10,10 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Stuport.Groups.Model;
-using Stuport.Groups__AdminSide_.Model;
+using Stuport.Groups_Service.Model;
+using Stuport.Groups_Personnel.Model;
+using Stuport.AdminController;
 
-namespace Stuport.Groups
+namespace Stuport.Groups_Service
 {
     public partial class Groups : Form
     {
@@ -22,6 +23,7 @@ namespace Stuport.Groups
         private OleDbCommand dbCommand;
         private List<ServiceType> serviceTypesList;
         private List<PersonnelType> personnelTypesList;
+        AdminController.AdminController AC = new AdminController.AdminController();
 
 
 
@@ -50,24 +52,34 @@ namespace Stuport.Groups
         public void RefreshGrid()
         {
             try
-            {
-                var dt = new DataTable();
-                //string query = $"SELECT Group_ID,Service_Type,[Personnel].[Personnel_FirstName] , [Personnel].[Personnel_LastName]," +
-                //    " Group_Venue, Group_Time, Group_Date, Group_Status" +
-                //   "FROM(([Group]  LEFT OUTER JOIN[Service] on[Group].[Service_ID] =[Service].[Service_ID])" +
-                //    "LEFT OUTER JOIN[Personnel] on[Group].[Personnel_ID] =[Personnel].[Personnel_ID]) " +
-                //    "ORDER BY Group_ID";
-                string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
-                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
-                    "ORDER BY Group_ID";
-                var da = new OleDbDataAdapter(query, conn);
-                da.Fill(dt);
+            {    
+                DataTable dt = new DataTable();
+                AC.RefreshGridGroups(ref dt);
                 dgvGroups.DataSource = dt;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error Message: " + ex);
             }
+            //try
+            //{
+            //    //dt = new DataTable();
+            //    //string query = $"SELECT Group_ID,Service_Type,[Personnel].[Personnel_FirstName] , [Personnel].[Personnel_LastName]," +
+            //    //    " Group_Venue, Group_Time, Group_Date, Group_Status" +
+            //    //   "FROM(([Group]  LEFT OUTER JOIN[Service] on[Group].[Service_ID] =[Service].[Service_ID])" +
+            //    //    "LEFT OUTER JOIN[Personnel] on[Group].[Personnel_ID] =[Personnel].[Personnel_ID]) " +
+            //    //    "ORDER BY Group_ID";
+            //    string query = $"SELECT [Group_ID], [Service_Type], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status]" +
+            //       "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] =[Service].[Service_ID]" +
+            //        "ORDER BY Group_ID";
+            //    var da = new OleDbDataAdapter(query, conn);
+            //    da.Fill(dt);
+            //    //dgvGroups.DataSource = dt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error Message: " + ex);
+            //}
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -209,13 +221,17 @@ namespace Stuport.Groups
                 return;
             var serviceId = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
             var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
-            var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
+            //var serviceID = serviceTypesList.FirstOrDefault(s => s.ServiceId == serviceId);
             var PersonnelID = personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
 
             strVenue = txtVenue.Text;
             strStatus = cmbStatus.SelectedItem.ToString();
             dtDate = dtpDate.Value;
             dtTime = dtpTime.Value;
+
+            bool b = Validate(strVenue, strStatus, dtDate);
+            if (b == false)
+                return;
 
             //MessageBox.Show("service: " + strService);
             MessageBox.Show("Venue: " + strVenue);
@@ -224,21 +240,33 @@ namespace Stuport.Groups
             MessageBox.Show("Date: " + dtDate.ToString());
             MessageBox.Show("status: " + strStatus);
 
-            conn.Open();
-            OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
-                " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
-            cmd.Parameters.AddWithValue("@1", serviceId);
-            cmd.Parameters.AddWithValue("@2", PersonnelID);
-            cmd.Parameters.AddWithValue("@3", strVenue);
-            cmd.Parameters.AddWithValue("@4", dtTime);
-            cmd.Parameters.AddWithValue("@5", dtDate);
-            cmd.Parameters.AddWithValue("@6", strStatus);
-            cmd.Parameters.AddWithValue("@7", strGroupID);
+            bool confirm = comfirmMessage();
+            if (confirm == false)
+                return;
 
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            RefreshGrid();
-            MessageBox.Show("Update Successful");
+            try
+            {
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("UPDATE Group SET Service_ID = @1, Personel_ID = @2," +
+                    " Group_Venue = @3, Group_Time = @4, Group_Date = @5, Group_Status = @6  WHERE Group_ID = @7", conn); //Link foregin key
+                cmd.Parameters.AddWithValue("@1", serviceId);
+                cmd.Parameters.AddWithValue("@2", PersonnelID);
+                cmd.Parameters.AddWithValue("@3", strVenue);
+                cmd.Parameters.AddWithValue("@4", dtTime);
+                cmd.Parameters.AddWithValue("@5", dtDate);
+                cmd.Parameters.AddWithValue("@6", strStatus);
+                cmd.Parameters.AddWithValue("@7", strGroupID);
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                RefreshGrid();
+                MessageBox.Show("Update Successful");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UpdateError! " + ex);
+            }
+            
 
         }
 
@@ -271,6 +299,37 @@ namespace Stuport.Groups
             else if (status == "Inactive") { cmbStatus.SelectedValue = "Inactive"; }
             else if (status == "Full") { cmbStatus.SelectedValue = "Full"; }
             else if (status == "Closed") { cmbStatus.SelectedValue = "Closed"; }
+        }
+
+        private bool Validate(string strVenue, string strStatus, DateTime dtDate)
+        {
+            bool bValid = true;
+            if (String.IsNullOrEmpty(strVenue))
+            {
+                bValid = false;
+                MessageBox.Show("Venue cannot be empty","Input Error");
+            }
+            if (String.IsNullOrEmpty(strStatus))
+            {
+                bValid = false;
+                MessageBox.Show("Select a meeting status","Input Error");
+            }
+            if (dtDate <= DateTime.Now)
+            {
+                bValid = false;
+                MessageBox.Show("Date must be in the future","Input error");
+            }
+            if (cmbService.SelectedIndex == 0)
+            {
+                bValid = false;
+                MessageBox.Show("Select a Servise Type", "Input error");
+            }
+            if (cmbStaff.SelectedIndex == 0)
+            {
+                bValid = false;
+                MessageBox.Show("Select a Personnel Member", "Input error");
+            }
+            return (bValid);
         }
     
     }

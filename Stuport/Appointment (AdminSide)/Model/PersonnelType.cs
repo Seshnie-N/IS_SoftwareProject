@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stuport.Appointment_personne1.Model
+namespace Stuport.Appointment_personnel.Model
 {
     class PersonnelType
     {

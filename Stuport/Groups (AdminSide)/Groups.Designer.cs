@@ -1,4 +1,4 @@
-﻿namespace Stuport.Groups
+﻿namespace Stuport.Groups_Service
 {
     partial class Groups
     {

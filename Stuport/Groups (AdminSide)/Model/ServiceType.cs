@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stuport.Groups.Model
+namespace Stuport.Groups_Service.Model
 {
     class ServiceType
     {
