@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Data.OleDb;
-
+using System.Xml;
 
 namespace Stuport
 {
@@ -39,6 +39,26 @@ namespace Stuport
         public String RequestAppointment(String Date,String ServiceType,String Time)
         {
 
+            //make placeholder 00 
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+
+
+
+            con.Open();
+            string query = $"UPDATE [Appointment] SET [Appointment_Date] = @1, [Appointment_Time] = @2," +
+                "[Personnel_ID] = @3, [Service_ID] = @4, [Appointment_Status] = @5 WHERE [Student_ID] = @6";
+            OleDbCommand cmd = new OleDbCommand(query, con);
+            cmd.Parameters.AddWithValue("@1", Convert.ToDateTime(Date));
+            cmd.Parameters.AddWithValue("@2", Time);
+            cmd.Parameters.AddWithValue("@3", "00");
+            cmd.Parameters.AddWithValue("@4", ServiceType);
+            cmd.Parameters.AddWithValue("@5", "Requested");
+            String StdNum = getStdNum();
+            cmd.Parameters.AddWithValue("@6", StdNum );
+            cmd.ExecuteNonQuery();
+            con.Close();
+            string output = "request received";
+            return output;
         }
 
         //getters

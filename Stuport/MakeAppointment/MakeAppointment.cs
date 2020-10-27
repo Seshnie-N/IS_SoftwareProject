@@ -61,7 +61,7 @@ namespace Stuport
                 MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 StudentController sc = new StudentController();
-                sc.RequestAppointment()
+                MessageBox.Show(sc.RequestAppointment(date, ServiceType, time));
                 
 
             }
