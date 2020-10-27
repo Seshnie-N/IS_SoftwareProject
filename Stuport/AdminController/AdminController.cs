@@ -26,7 +26,7 @@ namespace Stuport.AdminController
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
             string query = $"SELECT [Group_ID], [Service_Description], [Personnel_ID], [Group_Venue], [Group_Time], [Group_Date], [Group_Status], [Std_Counter]" +
-                   "FROM[Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] = [Service].[Service_ID]" +
+                   "FROM [Group]  LEFT OUTER JOIN [Service] on [Group].[Service_ID] = [Service].[Service_ID]" +
                    "ORDER BY Group_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);
@@ -38,7 +38,7 @@ namespace Stuport.AdminController
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
             string query = $"SELECT [Appointment_ID], [Service_Description], [Personnel_ID], [Student_ID], [Appointment_Date], [Appointment_Time], [Appointment_Status]" +
-                   "FROM[Appointment]  LEFT OUTER JOIN [Service] on [Appointment].[Service_ID] =[Service].[Service_ID]" +
+                   "FROM [Appointment]  LEFT OUTER JOIN [Service] on [Appointment].[Service_ID] =[Service].[Service_ID]" +
                    "ORDER BY Appointment_ID";
             var da = new OleDbDataAdapter(query, conn);
             da.Fill(dt);

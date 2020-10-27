@@ -24,7 +24,7 @@ namespace Stuport
         String stdLname = "";
         String stdEmail = "";
         String stdPhone = "";
-        String username = Login.Global.Token;
+        String username = Global.Token;
 
         static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb";
         OleDbConnection conn = new OleDbConnection(_path);

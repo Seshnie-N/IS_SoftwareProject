@@ -24,6 +24,8 @@ namespace Stuport
         {
             // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Personnel' table. You can move, or remove it, as needed.
             this.personnelTableAdapter.Fill(this.stuportDatabaseDataSet.Personnel);
+            // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Personnel' table. You can move, or remove it, as needed.
+            this.personnelTableAdapter.Fill(this.stuportDatabaseDataSet.Personnel);
             // TODO: This line of code loads data into the 'stuportDatabaseDataSet.Staff' table. You can move, or remove it, as needed.
 
 

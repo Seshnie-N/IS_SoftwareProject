@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Stuport.Login
-{ 
-   
+{
+
     public partial class Login : Form
     {
         public Login()
@@ -35,7 +35,7 @@ namespace Stuport.Login
             //Admin Login
             if (cbxAdmin.Checked)
             {
-                if ((username.Equals("admin"))&&(password.Equals("0000")))
+                if ((username.Equals("admin")) && (password.Equals("0000")))
                 {
                     this.Hide();
                     AdminMenu adminMenu = new AdminMenu();
@@ -72,6 +72,6 @@ namespace Stuport.Login
             }
         }
 
-        
+
     }
 }

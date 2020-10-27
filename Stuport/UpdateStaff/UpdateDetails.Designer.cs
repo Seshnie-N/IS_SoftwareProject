@@ -134,7 +134,7 @@
             this.cmbxType.FormattingEnabled = true;
             this.cmbxType.Items.AddRange(new object[] {
             "Academic",
-            "Personal"});
+            "Counsellor"});
             this.cmbxType.Location = new System.Drawing.Point(230, 208);
             this.cmbxType.Name = "cmbxType";
             this.cmbxType.Size = new System.Drawing.Size(100, 21);

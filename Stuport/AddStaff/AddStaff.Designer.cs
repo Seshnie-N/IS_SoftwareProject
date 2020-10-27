@@ -154,8 +154,8 @@
             this.cmbxType.DisplayMember = "Academiv";
             this.cmbxType.FormattingEnabled = true;
             this.cmbxType.Items.AddRange(new object[] {
-            "Academic",
-            "Personal"});
+            "Counsellor",
+            "Academic"});
             this.cmbxType.Location = new System.Drawing.Point(256, 213);
             this.cmbxType.Name = "cmbxType";
             this.cmbxType.Size = new System.Drawing.Size(100, 21);

@@ -14,7 +14,7 @@ namespace Stuport
 {
     public partial class GroupPage : Form
     {
-        string username = Login.Global.Token;
+        string username =Global.Token;
 
         static string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         OleDbConnection conn = new OleDbConnection(_path);
