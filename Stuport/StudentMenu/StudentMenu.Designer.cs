@@ -31,10 +31,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.btnOtherServices = new System.Windows.Forms.Button();
-            this.btnAppointments = new System.Windows.Forms.Button();
             this.minimizelbl = new System.Windows.Forms.Label();
             this.exitlbl = new System.Windows.Forms.Label();
+            this.btnOtherServices = new System.Windows.Forms.Button();
+            this.btnAppointments = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -64,7 +64,7 @@
             // btnProfile
             // 
             this.btnProfile.BackColor = System.Drawing.Color.White;
-            this.btnProfile.BackgroundImage = global::Stuport.Properties.Resources.ProfileBtn;
+            this.btnProfile.BackgroundImage = global::Stuport.Properties.Resources.ProfileBtn1;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnProfile.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProfile.ForeColor = System.Drawing.Color.Black;
@@ -75,33 +75,6 @@
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // btnOtherServices
-            // 
-            this.btnOtherServices.BackColor = System.Drawing.Color.White;
-            this.btnOtherServices.BackgroundImage = global::Stuport.Properties.Resources.OtherServiceBtn;
-            this.btnOtherServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnOtherServices.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOtherServices.ForeColor = System.Drawing.Color.Black;
-            this.btnOtherServices.Location = new System.Drawing.Point(150, 259);
-            this.btnOtherServices.Name = "btnOtherServices";
-            this.btnOtherServices.Size = new System.Drawing.Size(190, 70);
-            this.btnOtherServices.TabIndex = 1;
-            this.btnOtherServices.UseVisualStyleBackColor = false;
-            // 
-            // btnAppointments
-            // 
-            this.btnAppointments.BackColor = System.Drawing.Color.White;
-            this.btnAppointments.BackgroundImage = global::Stuport.Properties.Resources.AppointmentBtn;
-            this.btnAppointments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAppointments.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppointments.ForeColor = System.Drawing.Color.Black;
-            this.btnAppointments.Location = new System.Drawing.Point(150, 125);
-            this.btnAppointments.Name = "btnAppointments";
-            this.btnAppointments.Size = new System.Drawing.Size(190, 70);
-            this.btnAppointments.TabIndex = 0;
-            this.btnAppointments.UseVisualStyleBackColor = false;
-            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // minimizelbl
             // 
@@ -128,6 +101,33 @@
             this.exitlbl.TabIndex = 14;
             this.exitlbl.Text = "X";
             this.exitlbl.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // btnOtherServices
+            // 
+            this.btnOtherServices.BackColor = System.Drawing.Color.White;
+            this.btnOtherServices.BackgroundImage = global::Stuport.Properties.Resources.OtherServiceBtn1;
+            this.btnOtherServices.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnOtherServices.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOtherServices.ForeColor = System.Drawing.Color.Black;
+            this.btnOtherServices.Location = new System.Drawing.Point(150, 259);
+            this.btnOtherServices.Name = "btnOtherServices";
+            this.btnOtherServices.Size = new System.Drawing.Size(190, 70);
+            this.btnOtherServices.TabIndex = 1;
+            this.btnOtherServices.UseVisualStyleBackColor = false;
+            // 
+            // btnAppointments
+            // 
+            this.btnAppointments.BackColor = System.Drawing.Color.White;
+            this.btnAppointments.BackgroundImage = global::Stuport.Properties.Resources.AppointmentBtn;
+            this.btnAppointments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAppointments.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppointments.ForeColor = System.Drawing.Color.Black;
+            this.btnAppointments.Location = new System.Drawing.Point(150, 125);
+            this.btnAppointments.Name = "btnAppointments";
+            this.btnAppointments.Size = new System.Drawing.Size(190, 70);
+            this.btnAppointments.TabIndex = 0;
+            this.btnAppointments.UseVisualStyleBackColor = false;
+            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // StudentMenu
             // 
