@@ -143,7 +143,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mcDate);
             this.Controls.Add(this.label1);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "MakeAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Make Appointment";

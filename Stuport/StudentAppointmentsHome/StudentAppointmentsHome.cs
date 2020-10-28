@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Stuport
 {
 
-    public partial class StudentAppointmentsHome : DevExpress.XtraEditors.XtraForm
+    public partial class StudentAppointmentsHome : Form
     {
 
         StudentController sC = new StudentController();

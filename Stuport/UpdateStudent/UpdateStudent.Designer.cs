@@ -224,10 +224,10 @@
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.btnUpdateStudenr);
             this.Controls.Add(this.btnBack);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "UpdateStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Student";
+            this.Load += new System.EventHandler(this.UpdateStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentUpdate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

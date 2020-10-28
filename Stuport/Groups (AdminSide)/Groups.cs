@@ -16,7 +16,7 @@ using Stuport.AdminController;
 
 namespace Stuport.Groups_Service
 {
-    public partial class Groups : DevExpress.XtraEditors.XtraForm
+    public partial class Groups : Form
     {
         AdminController.AdminController AC = new AdminController.AdminController();
         int intGroupID;
@@ -205,6 +205,11 @@ namespace Stuport.Groups_Service
         }
 
         private void DgvGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Groups_Load(object sender, EventArgs e)
         {
 
         }

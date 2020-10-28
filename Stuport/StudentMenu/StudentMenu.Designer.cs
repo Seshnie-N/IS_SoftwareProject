@@ -110,7 +110,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOtherServices);
             this.Controls.Add(this.btnAppointments);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StudentMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

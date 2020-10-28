@@ -87,7 +87,6 @@
             this.Controls.Add(this.residencebtn);
             this.Controls.Add(this.financialbtn);
             this.Controls.Add(this.msHLbl);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "Other_Services";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "More Services";

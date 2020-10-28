@@ -179,10 +179,10 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblUpdateDetails);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "UpdateDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Details";
+            this.Load += new System.EventHandler(this.UpdateDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

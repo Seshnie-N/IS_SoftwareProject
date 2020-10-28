@@ -112,10 +112,10 @@
             this.Controls.Add(this.btnManageStaff);
             this.Controls.Add(this.btnManageGroups);
             this.Controls.Add(this.btnManageAppointments);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Menu";
+            this.Load += new System.EventHandler(this.AdminMenu_Load);
             this.ResumeLayout(false);
 
         }

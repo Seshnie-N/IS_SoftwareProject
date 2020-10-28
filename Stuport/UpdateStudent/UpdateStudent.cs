@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class UpdateStudent : DevExpress.XtraEditors.XtraForm
+    public partial class UpdateStudent : Form
     {
         AdminController.AdminController AC = new AdminController.AdminController();
 
@@ -184,6 +184,11 @@ namespace Stuport
         }
 
         private void dgvStudentUpdate_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateStudent_Load(object sender, EventArgs e)
         {
 
         }

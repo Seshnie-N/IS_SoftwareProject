@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class StudentRegistration : DevExpress.XtraEditors.XtraForm
+    public partial class StudentRegistration : Form
     {
         public StudentRegistration()
         {

@@ -13,7 +13,7 @@ using Stuport.Appointment__AdminSide_;
 
 namespace Stuport
 {
-    public partial class AdminMenu : DevExpress.XtraEditors.XtraForm
+    public partial class AdminMenu : Form
     {
         public AdminMenu()
         {
@@ -54,6 +54,11 @@ namespace Stuport
             this.Hide();
             StaffPage staffPage = new StaffPage();
             staffPage.Show();
+        }
+
+        private void AdminMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

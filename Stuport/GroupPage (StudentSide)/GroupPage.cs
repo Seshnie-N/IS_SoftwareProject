@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class GroupPage : DevExpress.XtraEditors.XtraForm
+    public partial class GroupPage : Form
     {
         string username =Global.Token;
 

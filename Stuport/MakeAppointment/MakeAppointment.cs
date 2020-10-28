@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class MakeAppointment : DevExpress.XtraEditors.XtraForm
+    public partial class MakeAppointment : Form
     {
         public MakeAppointment()
         {

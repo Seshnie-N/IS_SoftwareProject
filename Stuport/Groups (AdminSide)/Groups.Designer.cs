@@ -224,10 +224,10 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvGroups);
             this.Controls.Add(this.lblGroups);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "Groups";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Groups";
+            this.Load += new System.EventHandler(this.Groups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

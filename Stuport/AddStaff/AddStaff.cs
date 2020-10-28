@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class AddStaff : DevExpress.XtraEditors.XtraForm
+    public partial class AddStaff : Form
     {
         StaffPage sp = (StaffPage)Application.OpenForms["StaffPage"];
         public AddStaff()

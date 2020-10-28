@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class Other_Services : DevExpress.XtraEditors.XtraForm
+    public partial class Other_Services : Form
     {
         public Other_Services()
         {

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class StudentMenu : DevExpress.XtraEditors.XtraForm
+    public partial class StudentMenu : Form
     {
         public StudentMenu()
         {

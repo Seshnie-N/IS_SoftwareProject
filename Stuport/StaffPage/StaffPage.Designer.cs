@@ -187,7 +187,7 @@
             this.Controls.Add(this.btnAddStaff);
             this.Controls.Add(this.StaffTableGridView);
             this.Controls.Add(this.StaffLabel);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
+         
             this.Name = "StaffPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff Page";

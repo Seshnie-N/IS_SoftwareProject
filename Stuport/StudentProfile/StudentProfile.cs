@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Configuration;
 
 namespace Stuport
 {
-    public partial class StudentProfile : DevExpress.XtraEditors.XtraForm
+    public partial class StudentProfile : Form
     {
         public StudentProfile()
         {
@@ -25,8 +26,8 @@ namespace Stuport
         String stdEmail = "";
         String stdPhone = "";
         String username = Global.Token;
-
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb";
+       
+        static string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         OleDbConnection conn = new OleDbConnection(_path);
 
         private void StudentProfile_Load(object sender, EventArgs e)

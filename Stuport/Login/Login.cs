@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Stuport.Login
 {
 
-    public partial class Login : DevExpress.XtraEditors.XtraForm
+    public partial class Login :Form
     {
         public Login()
         {

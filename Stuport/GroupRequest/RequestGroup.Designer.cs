@@ -110,7 +110,6 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.cmbService);
             this.Controls.Add(this.lblService);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "RequestGroup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Group";

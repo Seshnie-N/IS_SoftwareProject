@@ -223,7 +223,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvAppointments);
             this.Controls.Add(this.lblAppointment);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "frmAppointmentAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin Appointments";

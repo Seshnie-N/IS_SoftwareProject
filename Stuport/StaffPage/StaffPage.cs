@@ -12,7 +12,7 @@ using System.Configuration;
 
 namespace Stuport
 {
-    public partial class StaffPage : DevExpress.XtraEditors.XtraForm
+    public partial class StaffPage : Form
     {
         int staffID =0;
         public StaffPage()

@@ -202,7 +202,6 @@
             this.Controls.Add(this.fnlbl);
             this.Controls.Add(this.stdnumlbl);
             this.Controls.Add(this.titlelbl);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StudentProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Profile";

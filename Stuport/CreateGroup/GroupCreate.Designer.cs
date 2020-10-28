@@ -100,10 +100,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "GroupCreate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Group";
+            this.Load += new System.EventHandler(this.GroupCreate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

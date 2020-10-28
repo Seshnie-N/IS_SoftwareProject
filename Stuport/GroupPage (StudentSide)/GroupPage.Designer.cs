@@ -168,7 +168,6 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgvGroups);
             this.Controls.Add(this.lblGroups);
-            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "GroupPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GroupPage";

@@ -13,7 +13,7 @@ using System.Configuration;
 namespace Stuport
 {
 
-    public partial class UpdateDetails : DevExpress.XtraEditors.XtraForm
+    public partial class UpdateDetails : Form
     {
         public int staffID;
         String staffFName = "";
@@ -204,6 +204,11 @@ namespace Stuport
         }
 
         private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateDetails_Load(object sender, EventArgs e)
         {
 
         }

@@ -13,7 +13,7 @@ using Stuport.Appointment_personnel.Model;
 
 namespace Stuport.Appointment__AdminSide_
 {
-    public partial class frmAppointmentAdmin : DevExpress.XtraEditors.XtraForm
+    public partial class frmAppointmentAdmin : Form
     {
         AdminController.AdminController AC = new AdminController.AdminController();
 
