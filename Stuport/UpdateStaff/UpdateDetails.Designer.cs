@@ -185,7 +185,7 @@
             this.minimizelbl.AutoSize = true;
             this.minimizelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.minimizelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.minimizelbl.Location = new System.Drawing.Point(332, 9);
+            this.minimizelbl.Location = new System.Drawing.Point(338, 9);
             this.minimizelbl.Name = "minimizelbl";
             this.minimizelbl.Size = new System.Drawing.Size(16, 17);
             this.minimizelbl.TabIndex = 24;
@@ -197,7 +197,7 @@
             this.exitlbl.AutoSize = true;
             this.exitlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.exitlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.exitlbl.Location = new System.Drawing.Point(354, 9);
+            this.exitlbl.Location = new System.Drawing.Point(360, 9);
             this.exitlbl.Name = "exitlbl";
             this.exitlbl.Size = new System.Drawing.Size(17, 17);
             this.exitlbl.TabIndex = 23;
