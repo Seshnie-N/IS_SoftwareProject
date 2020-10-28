@@ -32,7 +32,7 @@ namespace Stuport
         private void StudentProfile_Load(object sender, EventArgs e)
         {
 
-            stdNum = SC.getStdNum(username);
+            stdNum = SC.getStdNum();
             stdnumtb.Text = stdNum;
 
             stdFname = SC.getFname(username);

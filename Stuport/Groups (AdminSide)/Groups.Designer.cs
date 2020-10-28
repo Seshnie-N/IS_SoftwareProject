@@ -65,6 +65,7 @@
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.Size = new System.Drawing.Size(776, 212);
             this.dgvGroups.TabIndex = 8;
+            this.dgvGroups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGroups_CellContentClick);
             this.dgvGroups.SelectionChanged += new System.EventHandler(this.dgvGroups_SelectionChanged);
             // 
             // btnBack

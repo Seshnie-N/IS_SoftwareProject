@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using Stuport.Login;
+using System.Xml;
+using System.Globalization;
+using System.Configuration;
+using System.Data;
 
 namespace Stuport
 {
@@ -45,8 +49,55 @@ namespace Stuport
 
         }
 
+
+        public void RefreshGridAppointment(ref DataTable dt)
+        {
+            dt = new DataTable();
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            conn = new OleDbConnection(connectionString);
+
+            string query = $"SELECT [Appointment_ID], [Service_Description], [Appointment_Date], [Appointment_Time] " +
+                   "FROM [Appointment] inner join Service on Service.Service_ID = Appointment.Service_ID WHERE Appointment.Student_ID = ? ORDER BY Appointment_ID ";
+            
+            OleDbDataAdapter da = new OleDbDataAdapter(query, conn);
+            da.SelectCommand.Parameters.Add("?", OleDbType.VarChar, 15).Value = Global.Token;
+                conn.Open();
+                da.Fill(dt);
+       
+            conn.Close();
+
+        }
+
+        public String RequestAppointment(String Date,String ServiceType,String Time)
+        {
+
+            //make placeholder 00 
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+
+
+
+            con.Open();
+            string query = $"Insert into Appointment  ([Appointment_Date], [Appointment_Time]," +
+                "[Personnel_ID], [Service_ID], [Appointment_Status], [Student_ID]) VALUES(@1,@2,@3,@4,@5,@6)";
+            OleDbCommand cmd = new OleDbCommand(query, con);
+          //  DateTime DateAppointment =DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            cmd.Parameters.AddWithValue("@1", Date);
+            cmd.Parameters.AddWithValue("@2", Time);
+            cmd.Parameters.AddWithValue("@3", 1);
+            cmd.Parameters.AddWithValue("@4", Convert.ToInt32(ServiceType));
+            cmd.Parameters.AddWithValue("@5", "Requested");
+            String StdNum = getStdNum();
+            cmd.Parameters.AddWithValue("@6", StdNum );
+            cmd.ExecuteNonQuery();
+            con.Close();
+            string output = "request received";
+            return output;
+        }
+
         //getters
-        public String getStdNum(String username)
+        public String getStdNum()
         {
             String stdnum = "";
 
@@ -79,9 +130,8 @@ namespace Stuport
             String fname = "";
             string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
             OleDbConnection con = new OleDbConnection(connectionString);
-
-
             OleDbCommand cmd = con.CreateCommand();
+
             con.Open();
             cmd.CommandText = "Select Student_FirstName From Student Where Student_ID=?";
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = Global.Token });
@@ -283,11 +333,27 @@ namespace Stuport
             }
         }
 
+
+        public void CancelAppointment(int AppointmentID)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Delete From Appointment where Appointment_ID = ?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.Integer) { Value = AppointmentID });
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
         public bool ValidLogin(string StudNum, string password)
         {
             string PassCheck = "";
 
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb");
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
             OleDbCommand cmd = con.CreateCommand();
             con.Open();
             cmd.CommandText = "Select Student_Password From Student Where Student_ID=?";

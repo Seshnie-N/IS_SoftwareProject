@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StuportDatabaseDataSet2" targetNamespace="http://tempuri.org/StuportDatabaseDataSet2.xsd" xmlns:mstns="http://tempuri.org/StuportDatabaseDataSet2.xsd" xmlns="http://tempuri.org/StuportDatabaseDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="conString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="conString (Settings)" PropertyReference="ApplicationSettings.Stuport.Properties.Settings.GlobalReference.Default.conString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ServiceTableAdapter" GeneratorDataComponentClassName="ServiceTableAdapter" Name="Service" UserDataComponentName="ServiceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="conString (Settings)" DbObjectName="Service" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Service_Description FROM Service</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Service_Description" DataSetColumn="Service_Description" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StuportDatabaseDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="StuportDatabaseDataSet2" msprop:Generator_UserDSName="StuportDatabaseDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Service" msprop:Generator_TableClassName="ServiceDataTable" msprop:Generator_TableVarName="tableService" msprop:Generator_TablePropName="Service" msprop:Generator_RowDeletingName="ServiceRowDeleting" msprop:Generator_RowChangingName="ServiceRowChanging" msprop:Generator_RowEvHandlerName="ServiceRowChangeEventHandler" msprop:Generator_RowDeletedName="ServiceRowDeleted" msprop:Generator_UserTableName="Service" msprop:Generator_RowChangedName="ServiceRowChanged" msprop:Generator_RowEvArgName="ServiceRowChangeEvent" msprop:Generator_RowClassName="ServiceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Service_Description" msprop:Generator_ColumnVarNameInTable="columnService_Description" msprop:Generator_ColumnPropNameInRow="Service_Description" msprop:Generator_ColumnPropNameInTable="Service_DescriptionColumn" msprop:Generator_UserColumnName="Service_Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnNewAppointment = new System.Windows.Forms.Button();
             this.bntCancelAppointment = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvAppointment = new System.Windows.Forms.DataGridView();
             this.lblAppointments = new System.Windows.Forms.Label();
             this.btnGroupSessions = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.stuportDatabaseDataSet3 = new Stuport.StuportDatabaseDataSet3();
+            this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.appointmentTableAdapter = new Stuport.StuportDatabaseDataSet3TableAdapters.AppointmentTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewAppointment
             // 
-            this.btnNewAppointment.Location = new System.Drawing.Point(665, 452);
+            this.btnNewAppointment.Location = new System.Drawing.Point(665, 316);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(123, 23);
             this.btnNewAppointment.TabIndex = 0;
@@ -49,16 +55,17 @@
             // 
             // bntCancelAppointment
             // 
-            this.bntCancelAppointment.Location = new System.Drawing.Point(523, 452);
+            this.bntCancelAppointment.Location = new System.Drawing.Point(523, 316);
             this.bntCancelAppointment.Name = "bntCancelAppointment";
             this.bntCancelAppointment.Size = new System.Drawing.Size(123, 23);
             this.bntCancelAppointment.TabIndex = 1;
             this.bntCancelAppointment.Text = "Cancel Appointment Appointment";
             this.bntCancelAppointment.UseVisualStyleBackColor = true;
+            this.bntCancelAppointment.Click += new System.EventHandler(this.BntCancelAppointment_Click);
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(12, 452);
+            this.btnBack.Location = new System.Drawing.Point(12, 316);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(123, 23);
             this.btnBack.TabIndex = 2;
@@ -66,19 +73,22 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // dataGridView1
+            // dgvAppointment
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 358);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointment.Location = new System.Drawing.Point(191, 67);
+            this.dgvAppointment.Name = "dgvAppointment";
+            this.dgvAppointment.Size = new System.Drawing.Size(446, 210);
+            this.dgvAppointment.TabIndex = 3;
+            this.dgvAppointment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAppointment_CellContentClick);
             // 
             // lblAppointments
             // 
             this.lblAppointments.AutoSize = true;
             this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointments.Location = new System.Drawing.Point(300, 9);
+            this.lblAppointments.Location = new System.Drawing.Point(327, 9);
             this.lblAppointments.Name = "lblAppointments";
             this.lblAppointments.Size = new System.Drawing.Size(180, 31);
             this.lblAppointments.TabIndex = 4;
@@ -86,7 +96,7 @@
             // 
             // btnGroupSessions
             // 
-            this.btnGroupSessions.Location = new System.Drawing.Point(394, 452);
+            this.btnGroupSessions.Location = new System.Drawing.Point(394, 316);
             this.btnGroupSessions.Name = "btnGroupSessions";
             this.btnGroupSessions.Size = new System.Drawing.Size(123, 23);
             this.btnGroupSessions.TabIndex = 5;
@@ -94,20 +104,37 @@
             this.btnGroupSessions.UseVisualStyleBackColor = true;
             this.btnGroupSessions.Click += new System.EventHandler(this.btnGroupSessions_Click);
             // 
+            // stuportDatabaseDataSet3
+            // 
+            this.stuportDatabaseDataSet3.DataSetName = "StuportDatabaseDataSet3";
+            this.stuportDatabaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // appointmentBindingSource
+            // 
+            this.appointmentBindingSource.DataMember = "Appointment";
+            this.appointmentBindingSource.DataSource = this.stuportDatabaseDataSet3;
+            // 
+            // appointmentTableAdapter
+            // 
+            this.appointmentTableAdapter.ClearBeforeFill = true;
+            // 
             // StudentAppointmentsHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 487);
+            this.ClientSize = new System.Drawing.Size(807, 352);
             this.Controls.Add(this.btnGroupSessions);
             this.Controls.Add(this.lblAppointments);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvAppointment);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bntCancelAppointment);
             this.Controls.Add(this.btnNewAppointment);
             this.Name = "StudentAppointmentsHome";
             this.Text = "AppointmentsHome";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.StudentAppointmentsHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,8 +145,11 @@
         private System.Windows.Forms.Button btnNewAppointment;
         private System.Windows.Forms.Button bntCancelAppointment;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAppointment;
         private System.Windows.Forms.Label lblAppointments;
         private System.Windows.Forms.Button btnGroupSessions;
+        private StuportDatabaseDataSet3 stuportDatabaseDataSet3;
+        private System.Windows.Forms.BindingSource appointmentBindingSource;
+        private StuportDatabaseDataSet3TableAdapters.AppointmentTableAdapter appointmentTableAdapter;
     }
 }
