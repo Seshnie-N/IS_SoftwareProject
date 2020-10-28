@@ -83,7 +83,7 @@
             this.lblAppointments.AutoSize = true;
             this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppointments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(113)))), ((int)(((byte)(128)))));
-            this.lblAppointments.Location = new System.Drawing.Point(246, 27);
+            this.lblAppointments.Location = new System.Drawing.Point(240, 29);
             this.lblAppointments.Name = "lblAppointments";
             this.lblAppointments.Size = new System.Drawing.Size(257, 31);
             this.lblAppointments.TabIndex = 4;
