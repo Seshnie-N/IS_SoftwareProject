@@ -278,6 +278,16 @@ namespace Stuport
         {
 
         }
+
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }
