@@ -53,5 +53,11 @@ namespace Stuport
             StaffPage staffPage = new StaffPage();
             staffPage.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StuportReport report = new StuportReport();
+            report.Show();
+        }
     }
 }
