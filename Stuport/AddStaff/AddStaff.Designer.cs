@@ -192,6 +192,7 @@
             this.minimizelbl.Size = new System.Drawing.Size(16, 17);
             this.minimizelbl.TabIndex = 18;
             this.minimizelbl.Text = "_";
+            this.minimizelbl.Click += new System.EventHandler(this.minimizelbl_Click);
             // 
             // exitlbl
             // 
@@ -203,6 +204,7 @@
             this.exitlbl.Size = new System.Drawing.Size(17, 17);
             this.exitlbl.TabIndex = 17;
             this.exitlbl.Text = "X";
+            this.exitlbl.Click += new System.EventHandler(this.exitlbl_Click);
             // 
             // AddStaff
             // 
