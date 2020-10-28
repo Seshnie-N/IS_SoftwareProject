@@ -72,6 +72,14 @@ namespace Stuport.Login
             }
         }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }
