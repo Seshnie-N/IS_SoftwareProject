@@ -153,7 +153,7 @@ namespace Stuport.AdminController
             conn.Close();
         } 
 
-        public void updateAppointment(int AppointmentId, int ServiceId, int PersonnelId, DateTime Date, DateTime Time, string Status, string Student)
+        public void updateAppointment(int AppointmentId, int ServiceId, int PersonnelId, DateTime Date, string Time, string Status, string Student)
         {
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
