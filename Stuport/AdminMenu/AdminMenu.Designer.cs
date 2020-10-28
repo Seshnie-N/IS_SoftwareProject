@@ -69,22 +69,24 @@
             this.minimizelbl.AutoSize = true;
             this.minimizelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.minimizelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.minimizelbl.Location = new System.Drawing.Point(520, 9);
+            this.minimizelbl.Location = new System.Drawing.Point(525, 9);
             this.minimizelbl.Name = "minimizelbl";
             this.minimizelbl.Size = new System.Drawing.Size(16, 17);
             this.minimizelbl.TabIndex = 16;
             this.minimizelbl.Text = "_";
+            this.minimizelbl.Click += new System.EventHandler(this.minimizelbl_Click);
             // 
             // exitlbl
             // 
             this.exitlbl.AutoSize = true;
             this.exitlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.exitlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.exitlbl.Location = new System.Drawing.Point(542, 9);
+            this.exitlbl.Location = new System.Drawing.Point(547, 9);
             this.exitlbl.Name = "exitlbl";
             this.exitlbl.Size = new System.Drawing.Size(17, 17);
             this.exitlbl.TabIndex = 15;
             this.exitlbl.Text = "X";
+            this.exitlbl.Click += new System.EventHandler(this.exitlbl_Click);
             // 
             // button1
             // 

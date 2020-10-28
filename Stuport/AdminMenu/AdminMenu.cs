@@ -61,5 +61,15 @@ namespace Stuport
             StuportReport report = new StuportReport();
             report.Show();
         }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized();
+        }
     }
 }
