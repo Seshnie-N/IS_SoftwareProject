@@ -134,6 +134,7 @@ namespace Stuport
             // 
             this.txtPassword.Location = new System.Drawing.Point(88, 346);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(204, 20);
             this.txtPassword.TabIndex = 6;
             this.ttHints.SetToolTip(this.txtPassword, "Password must be 8 or more characters. Must contain an uppercase character and a " +
@@ -152,6 +153,7 @@ namespace Stuport
             // 
             this.txtPasswordConf.Location = new System.Drawing.Point(88, 399);
             this.txtPasswordConf.Name = "txtPasswordConf";
+            this.txtPasswordConf.PasswordChar = '*';
             this.txtPasswordConf.Size = new System.Drawing.Size(204, 20);
             this.txtPasswordConf.TabIndex = 7;
             // 
@@ -202,7 +204,7 @@ namespace Stuport
             this.txtPhone.Mask = "000 000 0000";
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(204, 20);
-            this.txtPhone.TabIndex = 16;
+            this.txtPhone.TabIndex = 5;
             this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
             // 

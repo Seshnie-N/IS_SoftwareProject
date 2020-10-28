@@ -9,6 +9,7 @@ using Stuport.Groups_Service;
 using System.Data;
 using System.Drawing.Printing;
 using System.Configuration;
+using System.Security.Cryptography;
 
 namespace Stuport.AdminController
 {
@@ -183,6 +184,7 @@ namespace Stuport.AdminController
 
         public void addStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
         {
+            String HashedPassword = strPassword.Sha256();
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
             OleDbCommand cmd = conn.CreateCommand();
@@ -195,7 +197,7 @@ namespace Stuport.AdminController
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = strLName });
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 100) { Value = strEmail });
             cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 10) { Value = strContactNo });
-            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = strPassword });
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = HashedPassword });
 
             conn.Open();
             cmd.Connection = conn;
@@ -205,6 +207,7 @@ namespace Stuport.AdminController
 
         public void updateStudent(string strStuNumber, string strFName, string strLName, string strPassword, string strEmail, string strContactNo)
         {
+            String HashedPassword = strPassword.Sha256();
             OleDbConnection conn;
             conn = new OleDbConnection(_path);
             conn.Open();
@@ -215,7 +218,7 @@ namespace Stuport.AdminController
             cmd.Parameters.AddWithValue("@2", strLName);
             cmd.Parameters.AddWithValue("@3", strEmail);
             cmd.Parameters.AddWithValue("@4", strContactNo);
-            cmd.Parameters.AddWithValue("@5", strPassword);
+            cmd.Parameters.AddWithValue("@5", HashedPassword);
             cmd.Parameters.AddWithValue("@6", strStuNumber);
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -250,4 +253,31 @@ namespace Stuport.AdminController
         } 
 
     }
+
+    public static class HashExtensions
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="input">The input.<param>
+        /// <returns>A hash</returns>
+        public static string Sha256(this string input)
+        {
+            if (!string.IsNullOrEmpty(input))
+            {
+                using (var sha = SHA256.Create())
+                {
+                    var bytes = Encoding.UTF8.GetBytes(input);
+                    var hash = sha.ComputeHash(bytes);
+
+                    return Convert.ToBase64String(hash);
+                }
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+    }
+
 }

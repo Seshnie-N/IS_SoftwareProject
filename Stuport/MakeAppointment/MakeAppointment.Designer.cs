@@ -33,14 +33,14 @@
             this.mcDate = new System.Windows.Forms.MonthCalendar();
             this.label2 = new System.Windows.Forms.Label();
             this.cbxServiceType = new System.Windows.Forms.ComboBox();
+            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stuportDatabaseDataSet2 = new Stuport.StuportDatabaseDataSet2();
             this.btnRequest = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbxTimeSlot = new System.Windows.Forms.ComboBox();
-            this.stuportDatabaseDataSet2 = new Stuport.StuportDatabaseDataSet2();
-            this.serviceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.serviceTableAdapter = new Stuport.StuportDatabaseDataSet2TableAdapters.ServiceTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,9 +78,19 @@
             this.cbxServiceType.Size = new System.Drawing.Size(227, 21);
             this.cbxServiceType.TabIndex = 4;
             // 
+            // serviceBindingSource
+            // 
+            this.serviceBindingSource.DataMember = "Service";
+            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet2;
+            // 
+            // stuportDatabaseDataSet2
+            // 
+            this.stuportDatabaseDataSet2.DataSetName = "StuportDatabaseDataSet2";
+            this.stuportDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnRequest
             // 
-            this.btnRequest.Location = new System.Drawing.Point(47, 322);
+            this.btnRequest.Location = new System.Drawing.Point(97, 343);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(127, 38);
             this.btnRequest.TabIndex = 5;
@@ -110,20 +120,10 @@
             "14:00-15:00",
             "15:00-16:00",
             "16:00-17:00"});
-            this.cbxTimeSlot.Location = new System.Drawing.Point(180, 291);
+            this.cbxTimeSlot.Location = new System.Drawing.Point(180, 283);
             this.cbxTimeSlot.Name = "cbxTimeSlot";
             this.cbxTimeSlot.Size = new System.Drawing.Size(94, 21);
             this.cbxTimeSlot.TabIndex = 9;
-            // 
-            // stuportDatabaseDataSet2
-            // 
-            this.stuportDatabaseDataSet2.DataSetName = "StuportDatabaseDataSet2";
-            this.stuportDatabaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // serviceBindingSource
-            // 
-            this.serviceBindingSource.DataMember = "Service";
-            this.serviceBindingSource.DataSource = this.stuportDatabaseDataSet2;
             // 
             // serviceTableAdapter
             // 
@@ -144,8 +144,8 @@
             this.Name = "MakeAppointment";
             this.Text = "MakeAppointment";
             this.Load += new System.EventHandler(this.MakeAppointment_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

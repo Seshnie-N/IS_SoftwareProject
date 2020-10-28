@@ -85,7 +85,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(300, 48);
             this.button1.TabIndex = 9;
-            this.button1.Text = "create";
+            this.button1.Text = "Create";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // GroupCreate

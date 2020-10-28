@@ -42,10 +42,6 @@ namespace Stuport
             
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void BtnAddStaff_Click(object sender, EventArgs e)
         {
@@ -65,7 +61,7 @@ namespace Stuport
                 MessageBox.Show("Please Select A Single Row");
             }
            
-            if (staffID>0)
+            if (staffID>1)
             {
             Form UpdateStaff = new UpdateDetails(staffID);
             UpdateStaff.ShowDialog();
@@ -80,14 +76,15 @@ namespace Stuport
 
         }
 
-        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
+
+
+        private void BtnBack_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.Show();
         }
     }
 }

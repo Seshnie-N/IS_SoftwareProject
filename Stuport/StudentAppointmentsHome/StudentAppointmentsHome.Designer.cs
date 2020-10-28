@@ -45,7 +45,7 @@
             // 
             // btnNewAppointment
             // 
-            this.btnNewAppointment.Location = new System.Drawing.Point(665, 316);
+            this.btnNewAppointment.Location = new System.Drawing.Point(672, 316);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(123, 23);
             this.btnNewAppointment.TabIndex = 0;

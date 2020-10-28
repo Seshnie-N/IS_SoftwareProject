@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Stuport.Login;
 using System.Xml;
 using System.Globalization;
-using System.Configuration;
 using System.Data;
 
 namespace Stuport
