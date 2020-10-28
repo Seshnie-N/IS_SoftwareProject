@@ -346,12 +346,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="weeklyReportbtn.png" />
     <None Include="Resources\IMG_20201027_190658_804-removebg-preview.jpg" />
     <None Include="LoginBG.png" />
     <None Include="Product.png" />
     <None Include="AppointmentsBtn.png" />
     <None Include="OtherServicesBtn.png" />
     <None Include="ProfileBtn.png" />
+    <None Include="manageAppointmentsBtn.png" />
+    <None Include="ManageStudentsBtn.png" />
+    <None Include="manageGroupsBtn.png" />
+    <None Include="manageStaffBtn.png" />
     <Content Include="StuportDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
