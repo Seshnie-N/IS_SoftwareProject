@@ -63,6 +63,16 @@ namespace Stuport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AppointmentsBtn {
+            get {
+                object obj = ResourceManager.GetObject("AppointmentsBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_20201027_190658_804_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("IMG_20201027_190658_804-removebg-preview", resourceCulture);
@@ -83,9 +93,29 @@ namespace Stuport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OtherServicesBtn {
+            get {
+                object obj = ResourceManager.GetObject("OtherServicesBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Product {
             get {
                 object obj = ResourceManager.GetObject("Product", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ProfileBtn {
+            get {
+                object obj = ResourceManager.GetObject("ProfileBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

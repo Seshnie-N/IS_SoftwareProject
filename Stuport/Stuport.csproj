@@ -349,6 +349,9 @@
     <None Include="Resources\IMG_20201027_190658_804-removebg-preview.jpg" />
     <None Include="LoginBG.png" />
     <None Include="Product.png" />
+    <None Include="AppointmentsBtn.png" />
+    <None Include="OtherServicesBtn.png" />
+    <None Include="ProfileBtn.png" />
     <Content Include="StuportDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
