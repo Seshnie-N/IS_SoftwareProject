@@ -56,7 +56,7 @@
             // 
             this.txtUsername.Location = new System.Drawing.Point(443, 93);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(162, 20);
+            this.txtUsername.Size = new System.Drawing.Size(157, 20);
             this.txtUsername.TabIndex = 1;
             // 
             // label2
@@ -75,14 +75,14 @@
             this.txtPassword.Location = new System.Drawing.Point(443, 157);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(162, 20);
+            this.txtPassword.Size = new System.Drawing.Size(157, 20);
             this.txtPassword.TabIndex = 2;
             // 
             // cbxAdmin
             // 
             this.cbxAdmin.AutoSize = true;
             this.cbxAdmin.ForeColor = System.Drawing.Color.White;
-            this.cbxAdmin.Location = new System.Drawing.Point(443, 208);
+            this.cbxAdmin.Location = new System.Drawing.Point(443, 207);
             this.cbxAdmin.Name = "cbxAdmin";
             this.cbxAdmin.Size = new System.Drawing.Size(61, 17);
             this.cbxAdmin.TabIndex = 3;
@@ -93,10 +93,11 @@
             // 
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Century Gothic", 8.25F);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(443, 292);
+            this.btnRegister.Location = new System.Drawing.Point(443, 304);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(157, 23);
+            this.btnRegister.Size = new System.Drawing.Size(157, 34);
             this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -104,13 +105,14 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(443, 252);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(157, 23);
+            this.btnLogin.Size = new System.Drawing.Size(157, 34);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = false;

@@ -38,6 +38,8 @@
             this.stuportDatabaseDataSet3 = new Stuport.StuportDatabaseDataSet3();
             this.appointmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.appointmentTableAdapter = new Stuport.StuportDatabaseDataSet3TableAdapters.AppointmentTableAdapter();
+            this.minimizelbl = new System.Windows.Forms.Label();
+            this.exitlbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentBindingSource)).BeginInit();
@@ -45,8 +47,11 @@
             // 
             // btnNewAppointment
             // 
+            this.btnNewAppointment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewAppointment.Location = new System.Drawing.Point(672, 316);
+            this.btnNewAppointment.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.btnNewAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.btnNewAppointment.Location = new System.Drawing.Point(672, 334);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(123, 23);
             this.btnNewAppointment.TabIndex = 0;
@@ -56,8 +61,11 @@
             // 
             // bntCancelAppointment
             // 
+            this.bntCancelAppointment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.bntCancelAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntCancelAppointment.Location = new System.Drawing.Point(543, 316);
+            this.bntCancelAppointment.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCancelAppointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.bntCancelAppointment.Location = new System.Drawing.Point(536, 334);
             this.bntCancelAppointment.Name = "bntCancelAppointment";
             this.bntCancelAppointment.Size = new System.Drawing.Size(123, 23);
             this.bntCancelAppointment.TabIndex = 1;
@@ -67,12 +75,15 @@
             // 
             // btnBack
             // 
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBack.Location = new System.Drawing.Point(12, 316);
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.btnBack.Location = new System.Drawing.Point(12, 334);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(123, 23);
+            this.btnBack.Size = new System.Drawing.Size(30, 30);
             this.btnBack.TabIndex = 2;
-            this.btnBack.Text = "Back";
+            this.btnBack.Text = "<--";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
@@ -82,30 +93,35 @@
             this.dgvAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointment.Location = new System.Drawing.Point(191, 67);
+            this.dgvAppointment.GridColor = System.Drawing.Color.White;
+            this.dgvAppointment.Location = new System.Drawing.Point(182, 86);
             this.dgvAppointment.Name = "dgvAppointment";
-            this.dgvAppointment.Size = new System.Drawing.Size(446, 210);
+            this.dgvAppointment.Size = new System.Drawing.Size(446, 197);
             this.dgvAppointment.TabIndex = 3;
             this.dgvAppointment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvAppointment_CellContentClick);
             // 
             // lblAppointments
             // 
             this.lblAppointments.AutoSize = true;
-            this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointments.Location = new System.Drawing.Point(333, 9);
+            this.lblAppointments.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.lblAppointments.Location = new System.Drawing.Point(321, 25);
             this.lblAppointments.Name = "lblAppointments";
-            this.lblAppointments.Size = new System.Drawing.Size(180, 31);
+            this.lblAppointments.Size = new System.Drawing.Size(200, 33);
             this.lblAppointments.TabIndex = 4;
             this.lblAppointments.Text = "Appointments";
             // 
             // btnGroupSessions
             // 
+            this.btnGroupSessions.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnGroupSessions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroupSessions.Location = new System.Drawing.Point(401, 316);
+            this.btnGroupSessions.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGroupSessions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.btnGroupSessions.Location = new System.Drawing.Point(401, 334);
             this.btnGroupSessions.Name = "btnGroupSessions";
             this.btnGroupSessions.Size = new System.Drawing.Size(123, 23);
             this.btnGroupSessions.TabIndex = 5;
-            this.btnGroupSessions.Text = "View Group Sessions";
+            this.btnGroupSessions.Text = "Group Sessions";
             this.btnGroupSessions.UseVisualStyleBackColor = true;
             this.btnGroupSessions.Click += new System.EventHandler(this.btnGroupSessions_Click);
             // 
@@ -123,17 +139,45 @@
             // 
             this.appointmentTableAdapter.ClearBeforeFill = true;
             // 
+            // minimizelbl
+            // 
+            this.minimizelbl.AutoSize = true;
+            this.minimizelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.minimizelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.minimizelbl.Location = new System.Drawing.Point(756, 9);
+            this.minimizelbl.Name = "minimizelbl";
+            this.minimizelbl.Size = new System.Drawing.Size(16, 17);
+            this.minimizelbl.TabIndex = 12;
+            this.minimizelbl.Text = "_";
+            this.minimizelbl.Click += new System.EventHandler(this.minimizelbl_Click);
+            // 
+            // exitlbl
+            // 
+            this.exitlbl.AutoSize = true;
+            this.exitlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.exitlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.exitlbl.Location = new System.Drawing.Point(778, 9);
+            this.exitlbl.Name = "exitlbl";
+            this.exitlbl.Size = new System.Drawing.Size(17, 17);
+            this.exitlbl.TabIndex = 11;
+            this.exitlbl.Text = "X";
+            this.exitlbl.Click += new System.EventHandler(this.exitlbl_Click);
+            // 
             // StudentAppointmentsHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 352);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
+            this.ClientSize = new System.Drawing.Size(807, 376);
+            this.Controls.Add(this.minimizelbl);
+            this.Controls.Add(this.exitlbl);
             this.Controls.Add(this.btnGroupSessions);
             this.Controls.Add(this.lblAppointments);
             this.Controls.Add(this.dgvAppointment);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bntCancelAppointment);
             this.Controls.Add(this.btnNewAppointment);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentAppointmentsHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Appointments";
@@ -157,5 +201,7 @@
         private StuportDatabaseDataSet3 stuportDatabaseDataSet3;
         private System.Windows.Forms.BindingSource appointmentBindingSource;
         private StuportDatabaseDataSet3TableAdapters.AppointmentTableAdapter appointmentTableAdapter;
+        private System.Windows.Forms.Label minimizelbl;
+        private System.Windows.Forms.Label exitlbl;
     }
 }
