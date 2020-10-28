@@ -329,6 +329,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Login.png" />
+    <None Include="AppointmentBtn.png" />
+    <None Include="OtherServiceBtn.png" />
+    <None Include="ProfileBtn.png" />
     <Content Include="StuportDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
