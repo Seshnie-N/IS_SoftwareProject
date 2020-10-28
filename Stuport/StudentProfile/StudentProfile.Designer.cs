@@ -42,10 +42,8 @@
             this.phnumtb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.backbtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.stuportDatabaseDataSet = new Stuport.StuportDatabaseDataSet();
             this.stuportDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -160,14 +158,6 @@
             this.backbtn.UseVisualStyleBackColor = true;
             this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(316, 75);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(359, 150);
-            this.dataGridView1.TabIndex = 13;
-            // 
             // stuportDatabaseDataSet
             // 
             this.stuportDatabaseDataSet.DataSetName = "StuportDatabaseDataSet";
@@ -183,7 +173,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 349);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.backbtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.phnumtb);
@@ -200,7 +189,6 @@
             this.Name = "StudentProfile";
             this.Text = "StudentProfile";
             this.Load += new System.EventHandler(this.StudentProfile_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -223,7 +211,6 @@
         private System.Windows.Forms.TextBox phnumtb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button backbtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource stuportDatabaseDataSetBindingSource;
         private StuportDatabaseDataSet stuportDatabaseDataSet;
     }

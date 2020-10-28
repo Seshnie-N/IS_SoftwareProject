@@ -333,6 +333,7 @@
     <None Include="ProfileBtn.png" />
     <None Include="Resources\appointbtn.bmp" />
     <None Include="AppointmentBtn.png" />
+    <None Include="backArrow.png" />
     <Content Include="StuportDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
