@@ -38,13 +38,13 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.cmbStaff = new System.Windows.Forms.ComboBox();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblStaff = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtStudent = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblStudent = new System.Windows.Forms.Label();
+            this.txtTime = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,10 +61,11 @@
             // dgvAppointments
             // 
             this.dgvAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointments.Location = new System.Drawing.Point(17, 37);
+            this.dgvAppointments.Location = new System.Drawing.Point(18, 37);
             this.dgvAppointments.Name = "dgvAppointments";
             this.dgvAppointments.Size = new System.Drawing.Size(776, 212);
             this.dgvAppointments.TabIndex = 31;
+            this.dgvAppointments.SelectionChanged += new System.EventHandler(this.dgvAppointments_SelectionChanged);
             // 
             // btnBack
             // 
@@ -136,14 +137,6 @@
             this.cmbStaff.Size = new System.Drawing.Size(227, 21);
             this.cmbStaff.TabIndex = 40;
             // 
-            // dtpTime
-            // 
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpTime.Location = new System.Drawing.Point(351, 304);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(227, 20);
-            this.dtpTime.TabIndex = 42;
-            // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
@@ -195,18 +188,25 @@
             this.lblStudent.TabIndex = 45;
             this.lblStudent.Text = "Student";
             // 
+            // txtTime
+            // 
+            this.txtTime.Location = new System.Drawing.Point(354, 303);
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(224, 20);
+            this.txtTime.TabIndex = 49;
+            // 
             // frmAppointmentAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(806, 475);
+            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtStudent);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblStudent);
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.cmbStaff);
             this.Controls.Add(this.lblStaff);
             this.Controls.Add(this.lblDate);
@@ -238,12 +238,12 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ComboBox cmbStaff;
-        private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblStaff;
         private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtStudent;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblStudent;
+        private System.Windows.Forms.TextBox txtTime;
     }
 }

@@ -57,7 +57,7 @@ namespace Stuport.Appointment__AdminSide_
             string strStudent;
             string strStatus;
             DateTime dtDate;
-            DateTime dtTime;
+            string strTime;
 
             if (dgvAppointments.CurrentRow == null)
                 return;
@@ -70,7 +70,7 @@ namespace Stuport.Appointment__AdminSide_
             strStudent = txtStudent.Text;
             strStatus = txtStatus.Text;
             dtDate = dtpDate.Value;
-            dtTime = dtpTime.Value;
+            strTime = txtTime.Text;
 
             bool b = Validate(strStatus, dtDate);
             if (b == false)
@@ -80,7 +80,7 @@ namespace Stuport.Appointment__AdminSide_
             if (confirm == false)
                 return;
 
-            AC.updateAppointment(intAppointmentID, id, personnelId, dtDate, dtTime, strStatus, strStudent);
+            AC.updateAppointment(intAppointmentID, id, personnelId, dtDate, strTime, strStatus, strStudent);
             RefreshGrid();
 
             MessageBox.Show("Appointment Updated", "Success!");
@@ -117,26 +117,26 @@ namespace Stuport.Appointment__AdminSide_
             }
         }
 
-        private void dgvAppointments_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvAppointments.CurrentRow == null)
-                return;
-            intAppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
-            var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
-            var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
-            var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
-            var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
-            var StudentNumber = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
-            var GroupTime = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[5].Value;
-            var GroupDate = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[4].Value;
-            var GroupStaus = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[6].Value;
-            cmbService.SelectedValue = serviceType.ServiceId;
-            cmbStaff.SelectedValue = PersonnelName.PersonnelId;
-            dtpTime.Value = GroupTime;
-            dtpDate.Value = GroupDate;
-            txtStatus.Text = GroupStaus;
-            txtStudent.Text = StudentNumber;
-        }
+        //private void dgvAppointments_SelectionChanged(object sender, EventArgs e)
+        //{
+        //    if (dgvAppointments.CurrentRow == null)
+        //        return;
+        //    intAppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
+        //    var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
+        //    var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
+        //    var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
+        //    var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+        //    var StudentNumber = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[3].Value;
+        //    var GroupTime = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[5].Value;
+        //    var GroupDate = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[4].Value;
+        //    var GroupStaus = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[6].Value;
+        //    cmbService.SelectedValue = serviceType.ServiceId;
+        //    cmbStaff.SelectedValue = PersonnelName.PersonnelId;
+        //    txtTime.Text = GroupTime;
+        //    dtpDate.Value = GroupDate;
+        //    txtStatus.Text = GroupStaus;
+        //    txtStudent.Text = StudentNumber;
+        //}
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
@@ -202,5 +202,47 @@ namespace Stuport.Appointment__AdminSide_
             AdminMenu adminMenu = new AdminMenu();
             adminMenu.Show();
         }
+
+        private void dgvAppointments_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvAppointments.CurrentRow == null)
+                return;
+            intAppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
+            var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
+            var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
+            var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
+            var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+            var StudentNumber = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[3].Value;
+            var GroupTime = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[5].Value;
+            var GroupDate = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[4].Value;
+            var GroupStaus = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[6].Value;
+            cmbService.SelectedValue = serviceType.ServiceId;
+            cmbStaff.SelectedValue = PersonnelName.PersonnelId;
+            txtTime.Text = GroupTime;
+            dtpDate.Value = GroupDate;
+            txtStatus.Text = GroupStaus;
+            txtStudent.Text = StudentNumber;
+        }
+
+        //private void dgvAppointments_SelectionChanged_1(object sender, EventArgs e)
+        //{
+        //    if (dgvAppointments.CurrentRow == null)
+        //        return;
+        //    intAppointmentID = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[0].Value;
+        //    var serviceTypeName = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
+        //    var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
+        //    var serviceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceTypeName);
+        //    var PersonnelName = AC.personnelTypesList.FirstOrDefault(s => s.PersonnelId == personnelId);
+        //    var StudentNumber = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[3].Value;
+        //    var GroupTime = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[5].Value;
+        //    var GroupDate = (DateTime)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[4].Value;
+        //    var GroupStaus = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[6].Value;
+        //    cmbService.SelectedValue = serviceType.ServiceId;
+        //    cmbStaff.SelectedValue = PersonnelName.PersonnelId;
+        //    txtTime.Text = GroupTime;
+        //    dtpDate.Value = GroupDate;
+        //    txtStatus.Text = GroupStaus;
+        //    txtStudent.Text = StudentNumber;
+        //}
     }
 }
