@@ -384,6 +384,80 @@ namespace Stuport
 
         }
 
+        public bool AdminExists(String username)
+        {
+
+            String chckAdmin = "";
+
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Admin_FirstName From Admin Where Admin_FirstName=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = username });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                chckAdmin = reader.GetString(0);
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+            if (!chckAdmin.Equals(""))
+            {
+                Console.WriteLine(false);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine(false);
+                return false;
+            }
+
+        }
+
+        public bool ValidAdmin(string username, string password)
+        {
+            string PassCheck = "";
+
+            string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            OleDbConnection con = new OleDbConnection(connectionString);
+            OleDbCommand cmd = con.CreateCommand();
+            con.Open();
+            cmd.CommandText = "Select Admin_Password From Admin Where Admin_FirstName=?";
+            cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = username });
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                PassCheck = reader.GetString(0).Trim();
+            }
+            // always call Close when done reading.
+            reader.Close();
+
+            cmd.Connection = con;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            if (PassCheck.Equals(password))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
 
     public static class HashExtensions

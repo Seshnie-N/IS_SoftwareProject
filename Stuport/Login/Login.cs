@@ -35,7 +35,7 @@ namespace Stuport.Login
             //Admin Login
             if (cbxAdmin.Checked)
             {
-                if ((username.Equals("admin")) && (password.Equals("0000")))
+                /*if ((username.Equals("admin")) && (password.Equals("0000")))
                 {
                     this.Hide();
                     AdminMenu adminMenu = new AdminMenu();
@@ -44,8 +44,24 @@ namespace Stuport.Login
                 else
                 {
                     MessageBox.Show("Incorrect Admin Login Details");
+                }*/
+                if (SC.AdminExists(username))
+                {
+                    if (SC.ValidAdmin(username, password))
+                    {
+                        this.Hide();
+                        AdminMenu adminMenu = new AdminMenu();
+                        adminMenu.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect Password Entered. Try Again");
+                    }
                 }
-
+                else
+                {
+                    MessageBox.Show("No such Administrator exists");
+                }
             }
             else
             {
