@@ -136,10 +136,11 @@
             this.btnRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.btnRequest.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRequest.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.btnRequest.Location = new System.Drawing.Point(128, 381);
+            this.btnRequest.Location = new System.Drawing.Point(116, 382);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(127, 26);
+            this.btnRequest.Size = new System.Drawing.Size(137, 26);
             this.btnRequest.TabIndex = 5;
             this.btnRequest.Text = "Request Appointment";
             this.btnRequest.UseVisualStyleBackColor = false;
@@ -150,7 +151,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.label4.Location = new System.Drawing.Point(80, 15);
+            this.label4.Location = new System.Drawing.Point(78, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(224, 25);
             this.label4.TabIndex = 10;
