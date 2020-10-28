@@ -93,6 +93,46 @@ namespace Stuport.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ManageAppointmentBtn {
+            get {
+                object obj = ResourceManager.GetObject("ManageAppointmentBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageGroupsBtn {
+            get {
+                object obj = ResourceManager.GetObject("ManageGroupsBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageStaffBtn {
+            get {
+                object obj = ResourceManager.GetObject("ManageStaffBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageStudentsBtn {
+            get {
+                object obj = ResourceManager.GetObject("ManageStudentsBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OtherServiceBtn1 {
             get {
                 object obj = ResourceManager.GetObject("OtherServiceBtn1", resourceCulture);
@@ -106,6 +146,16 @@ namespace Stuport.Properties {
         internal static System.Drawing.Bitmap ProfileBtn1 {
             get {
                 object obj = ResourceManager.GetObject("ProfileBtn1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WeeklyReportBtn {
+            get {
+                object obj = ResourceManager.GetObject("WeeklyReportBtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
