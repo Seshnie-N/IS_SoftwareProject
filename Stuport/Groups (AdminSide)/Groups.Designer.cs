@@ -55,7 +55,7 @@
             this.lblGroups.AutoSize = true;
             this.lblGroups.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGroups.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(113)))), ((int)(((byte)(128)))));
-            this.lblGroups.Location = new System.Drawing.Point(349, 20);
+            this.lblGroups.Location = new System.Drawing.Point(336, 20);
             this.lblGroups.Name = "lblGroups";
             this.lblGroups.Size = new System.Drawing.Size(144, 33);
             this.lblGroups.TabIndex = 7;
