@@ -28,7 +28,7 @@
             // 
             // lblGroups
             // 
-            this.lblGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.lblGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGroups.AutoSize = true;
             this.lblGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -42,7 +42,9 @@
             // 
             this.dgvGroups.AllowUserToAddRows = false;
             this.dgvGroups.AllowUserToDeleteRows = false;
-            this.dgvGroups.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroups.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvGroups.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroups.Location = new System.Drawing.Point(24, 47);
             this.dgvGroups.Name = "dgvGroups";
@@ -53,7 +55,8 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(24, 419);
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Location = new System.Drawing.Point(24, 432);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(76, 23);
             this.btnBack.TabIndex = 8;
@@ -64,6 +67,7 @@
             // btnJoinGroup
             // 
             this.btnJoinGroup.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
+            this.btnJoinGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnJoinGroup.Location = new System.Drawing.Point(692, 208);
             this.btnJoinGroup.Name = "btnJoinGroup";
             this.btnJoinGroup.Size = new System.Drawing.Size(76, 23);
@@ -74,7 +78,8 @@
             // 
             // bntRequestGroup
             // 
-            this.bntRequestGroup.Location = new System.Drawing.Point(610, 432);
+            this.bntRequestGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntRequestGroup.Location = new System.Drawing.Point(616, 428);
             this.bntRequestGroup.Name = "bntRequestGroup";
             this.bntRequestGroup.Size = new System.Drawing.Size(158, 23);
             this.bntRequestGroup.TabIndex = 11;
@@ -84,7 +89,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -96,7 +101,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -110,7 +115,9 @@
             // 
             this.dgvActiveGroups.AllowUserToAddRows = false;
             this.dgvActiveGroups.AllowUserToDeleteRows = false;
-            this.dgvActiveGroups.BackgroundColor = System.Drawing.Color.White;
+            this.dgvActiveGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvActiveGroups.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvActiveGroups.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvActiveGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActiveGroups.Location = new System.Drawing.Point(560, 47);
             this.dgvActiveGroups.Name = "dgvActiveGroups";
@@ -123,7 +130,9 @@
             // 
             this.dgvRequestGroup.AllowUserToAddRows = false;
             this.dgvRequestGroup.AllowUserToDeleteRows = false;
-            this.dgvRequestGroup.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRequestGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRequestGroup.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvRequestGroup.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvRequestGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRequestGroup.Location = new System.Drawing.Point(560, 272);
             this.dgvRequestGroup.Name = "dgvRequestGroup";
@@ -135,12 +144,14 @@
             // btnGroupDetails
             // 
             this.btnGroupDetails.AccessibleRole = System.Windows.Forms.AccessibleRole.Table;
+            this.btnGroupDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupDetails.Location = new System.Drawing.Point(610, 208);
             this.btnGroupDetails.Name = "btnGroupDetails";
             this.btnGroupDetails.Size = new System.Drawing.Size(76, 23);
             this.btnGroupDetails.TabIndex = 16;
             this.btnGroupDetails.Text = "Details";
             this.btnGroupDetails.UseVisualStyleBackColor = true;
+            this.btnGroupDetails.Click += new System.EventHandler(this.BtnGroupDetails_Click);
             // 
             // GroupPage
             // 

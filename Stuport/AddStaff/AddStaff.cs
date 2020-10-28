@@ -38,8 +38,33 @@ namespace Stuport
             Close();
         }
 
+
+        private bool comfirmMessage(string message)
+        {
+            string caption = "Warning!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
+
+          
+
             bool Validation = true;
             bool EmailValidation = true;
             bool PhoneValidation = true;
@@ -97,10 +122,15 @@ namespace Stuport
             //Add Student;
             if (Validation)
             {
+                bool confirm = comfirmMessage("Are you sure you want to add this person?");
+                if (confirm)
+                {
                 SC.AddStaff(Fname, Lname, Email, Phone, Type);
-                MessageBox.Show("Registered Successfully");
+                MessageBox.Show("Added Staff Successfully");
                 sp.loaddata();
                 Close();
+                }
+
             }
             else
             {

@@ -161,9 +161,15 @@ namespace Stuport
 
             if (Validation)
             {
-                 MessageBox.Show("Update Successful");
+
+                bool confirm = comfirmMessage("Are you sure?");
+                if (confirm)
+                {
+                    MessageBox.Show("Update Successful");
                 sp.loaddata();
                 Close();
+                }
+
             }
 
 
@@ -176,7 +182,33 @@ namespace Stuport
             Close();
         }
 
+        private bool comfirmMessage(string message)
+        {
+            string caption = "Warning!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         private void TextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateDetails_Load(object sender, EventArgs e)
         {
 
         }

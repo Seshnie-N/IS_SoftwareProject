@@ -48,5 +48,12 @@ namespace Stuport
             Login.Login login = new Login.Login();
             login.Show();
         }
+
+        private void BtnOtherServices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Other_Services os = new Other_Services();
+            os.Show();
+        }
     }
 }

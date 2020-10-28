@@ -48,7 +48,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Location = new System.Drawing.Point(52, 183);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 13);
+            this.lblPhone.Size = new System.Drawing.Size(77, 13);
             this.lblPhone.TabIndex = 19;
             this.lblPhone.Text = "Phone Number";
             // 
@@ -65,7 +65,7 @@
             // 
             this.txtPhone.Location = new System.Drawing.Point(230, 180);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.Size = new System.Drawing.Size(100, 21);
             this.txtPhone.TabIndex = 3;
             this.txtPhone.TextChanged += new System.EventHandler(this.TextBox3_TextChanged);
             // 
@@ -73,14 +73,14 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(230, 151);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(100, 21);
             this.txtEmail.TabIndex = 2;
             // 
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(230, 125);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.Size = new System.Drawing.Size(100, 21);
             this.txtLastName.TabIndex = 1;
             // 
             // lblLastName
@@ -88,7 +88,7 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.Location = new System.Drawing.Point(52, 128);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(57, 13);
             this.lblLastName.TabIndex = 16;
             this.lblLastName.Text = "Last Name";
             // 
@@ -96,7 +96,7 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(230, 99);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(100, 21);
             this.txtFirstName.TabIndex = 0;
             // 
             // lblFirstName
@@ -104,13 +104,14 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Location = new System.Drawing.Point(52, 102);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(58, 13);
             this.lblFirstName.TabIndex = 17;
             this.lblFirstName.Text = "First Name";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(241, 265);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(255, 265);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 6;
@@ -120,7 +121,8 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(67, 265);
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(56, 265);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 5;
@@ -178,7 +180,9 @@
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblUpdateDetails);
             this.Name = "UpdateDetails";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update Details";
+            this.Load += new System.EventHandler(this.UpdateDetails_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

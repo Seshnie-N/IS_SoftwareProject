@@ -38,6 +38,7 @@
             // 
             // btnManageAppointments
             // 
+            this.btnManageAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageAppointments.Location = new System.Drawing.Point(85, 54);
             this.btnManageAppointments.Name = "btnManageAppointments";
             this.btnManageAppointments.Size = new System.Drawing.Size(165, 36);
@@ -48,6 +49,7 @@
             // 
             // btnManageGroups
             // 
+            this.btnManageGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageGroups.Location = new System.Drawing.Point(85, 112);
             this.btnManageGroups.Name = "btnManageGroups";
             this.btnManageGroups.Size = new System.Drawing.Size(165, 36);
@@ -58,6 +60,7 @@
             // 
             // btnManageStaff
             // 
+            this.btnManageStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageStaff.Location = new System.Drawing.Point(85, 171);
             this.btnManageStaff.Name = "btnManageStaff";
             this.btnManageStaff.Size = new System.Drawing.Size(165, 36);
@@ -68,6 +71,7 @@
             // 
             // btnManageStudents
             // 
+            this.btnManageStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageStudents.Location = new System.Drawing.Point(85, 229);
             this.btnManageStudents.Name = "btnManageStudents";
             this.btnManageStudents.Size = new System.Drawing.Size(165, 36);
@@ -78,6 +82,7 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Location = new System.Drawing.Point(12, 308);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
@@ -88,6 +93,7 @@
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(214, 308);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
@@ -109,7 +115,8 @@
             this.Controls.Add(this.btnManageAppointments);
             this.Name = "AdminMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminMenu";
+            this.Text = "Admin Menu";
+            this.Load += new System.EventHandler(this.AdminMenu_Load);
             this.ResumeLayout(false);
 
         }

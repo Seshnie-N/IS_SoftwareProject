@@ -208,5 +208,10 @@ namespace Stuport.Groups_Service
         {
 
         }
+
+        private void Groups_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

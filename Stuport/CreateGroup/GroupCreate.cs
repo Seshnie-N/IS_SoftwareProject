@@ -16,5 +16,10 @@ namespace Stuport.CreateGroup
         {
             InitializeComponent();
         }
+
+        private void GroupCreate_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

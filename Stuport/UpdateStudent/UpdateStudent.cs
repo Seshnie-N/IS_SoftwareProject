@@ -94,10 +94,10 @@ namespace Stuport
                 bValid = false;
                 MessageBox.Show("Password Cannot be Empty", "Input Error");
             }
-            if (IsDigitsOnly(strContactNo))
+            if (!IsDigitsOnly(strContactNo) || strContactNo.Length!=10)
             {
                 bValid = false;
-                MessageBox.Show("Contact number must only be digits form 0-9 ", "Input Error");
+                MessageBox.Show("Contact number must be 10 digits from 0-9  ", "Input Error");
             }
             return bValid;
         }
@@ -155,7 +155,7 @@ namespace Stuport
         {
             foreach (char c in str)
             {
-                if (c < '0' || c > '9' || c == '+')
+                if (c < '0' || c > '9')
                     return false;
             }
 
@@ -184,6 +184,11 @@ namespace Stuport
         }
 
         private void dgvStudentUpdate_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateStudent_Load(object sender, EventArgs e)
         {
 
         }

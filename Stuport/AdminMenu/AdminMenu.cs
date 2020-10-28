@@ -50,6 +50,8 @@ namespace Stuport
 
         private void BtnManageStaff_Click(object sender, EventArgs e)
         {
+
+            this.Hide();
             StaffPage staffPage = new StaffPage();
             staffPage.Show();
         }

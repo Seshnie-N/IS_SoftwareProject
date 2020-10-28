@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Configuration;
 
 namespace Stuport
 {
@@ -25,8 +26,8 @@ namespace Stuport
         String stdEmail = "";
         String stdPhone = "";
         String username = Global.Token;
-
-        static string _path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + AppDomain.CurrentDomain.BaseDirectory + "StuportDatabase.accdb";
+       
+        static string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
         OleDbConnection conn = new OleDbConnection(_path);
 
         private void StudentProfile_Load(object sender, EventArgs e)
@@ -51,10 +52,10 @@ namespace Stuport
 
 
         private void backbtn_Click(object sender, EventArgs e)
-        {
+        {   this.Hide();
             StudentMenu stdmenu = new StudentMenu();
             stdmenu.Show();
-            this.Hide();
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
