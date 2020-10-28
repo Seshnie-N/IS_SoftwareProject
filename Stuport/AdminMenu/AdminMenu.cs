@@ -69,7 +69,7 @@ namespace Stuport
 
         private void minimizelbl_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized();
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
