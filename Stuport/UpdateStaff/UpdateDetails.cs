@@ -13,7 +13,7 @@ using System.Configuration;
 namespace Stuport
 {
 
-    public partial class UpdateDetails : Form
+    public partial class UpdateDetails : DevExpress.XtraEditors.XtraForm
     {
         public int staffID;
         String staffFName = "";

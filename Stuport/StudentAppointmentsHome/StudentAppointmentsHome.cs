@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    
-    public partial class StudentAppointmentsHome : Form
+
+    public partial class StudentAppointmentsHome : DevExpress.XtraEditors.XtraForm
     {
 
         StudentController sC = new StudentController();
@@ -82,9 +82,42 @@ namespace Stuport
 
             if (AppointmentID > 0)
             {
-               sC.CancelAppointment(AppointmentID);
+
+                bool confirm = comfirmMessage("Are you sure you want to cancel your appointment?");
+                if (confirm)
+                {
+                    sC.CancelAppointment(AppointmentID);
                 RefreshGrid();
+                    MessageBox.Show("Appointment Cancelled", "Cancelled");
+                }
+
             }
         }
+
+
+        private bool comfirmMessage(string message)
+        {
+            string caption = "Warning!";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
     }
+
+
+
 }

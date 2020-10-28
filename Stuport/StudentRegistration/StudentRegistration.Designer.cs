@@ -50,55 +50,56 @@ namespace Stuport
             this.lblStudNum = new System.Windows.Forms.Label();
             this.txtStudNum = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.MaskedTextBox();
+            this.lblLogin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 44);
+            this.label1.Location = new System.Drawing.Point(32, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 13);
+            this.label1.Size = new System.Drawing.Size(323, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Please Enter The Following Details To Create A #Stuport Account ";
             // 
             // txtFName
             // 
-            this.txtFName.Location = new System.Drawing.Point(88, 148);
+            this.txtFName.Location = new System.Drawing.Point(85, 188);
             this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(204, 20);
+            this.txtFName.Size = new System.Drawing.Size(204, 21);
             this.txtFName.TabIndex = 2;
             this.ttHints.SetToolTip(this.txtFName, "Enter Legal First Name. No Nicknames");
             // 
             // lblFName
             // 
             this.lblFName.AutoSize = true;
-            this.lblFName.Location = new System.Drawing.Point(85, 132);
+            this.lblFName.Location = new System.Drawing.Point(82, 172);
             this.lblFName.Name = "lblFName";
-            this.lblFName.Size = new System.Drawing.Size(57, 13);
+            this.lblFName.Size = new System.Drawing.Size(58, 13);
             this.lblFName.TabIndex = 0;
             this.lblFName.Text = "First Name";
             // 
             // lblLName
             // 
             this.lblLName.AutoSize = true;
-            this.lblLName.Location = new System.Drawing.Point(85, 181);
+            this.lblLName.Location = new System.Drawing.Point(82, 221);
             this.lblLName.Name = "lblLName";
-            this.lblLName.Size = new System.Drawing.Size(61, 13);
+            this.lblLName.Size = new System.Drawing.Size(60, 13);
             this.lblLName.TabIndex = 4;
             this.lblLName.Text = "Last Name ";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(88, 248);
+            this.txtEmail.Location = new System.Drawing.Point(85, 288);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(204, 20);
+            this.txtEmail.Size = new System.Drawing.Size(204, 21);
             this.txtEmail.TabIndex = 4;
             this.ttHints.SetToolTip(this.txtEmail, "Enter a Valid Email Address");
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(85, 232);
+            this.lblEmail.Location = new System.Drawing.Point(82, 272);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(73, 13);
             this.lblEmail.TabIndex = 6;
@@ -106,25 +107,25 @@ namespace Stuport
             // 
             // txtLName
             // 
-            this.txtLName.Location = new System.Drawing.Point(88, 197);
+            this.txtLName.Location = new System.Drawing.Point(85, 237);
             this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(204, 20);
+            this.txtLName.Size = new System.Drawing.Size(204, 21);
             this.txtLName.TabIndex = 3;
             this.ttHints.SetToolTip(this.txtLName, "Enter Last Name ");
             // 
             // lblPhoneNo
             // 
             this.lblPhoneNo.AutoSize = true;
-            this.lblPhoneNo.Location = new System.Drawing.Point(85, 280);
+            this.lblPhoneNo.Location = new System.Drawing.Point(82, 320);
             this.lblPhoneNo.Name = "lblPhoneNo";
-            this.lblPhoneNo.Size = new System.Drawing.Size(84, 13);
+            this.lblPhoneNo.Size = new System.Drawing.Size(85, 13);
             this.lblPhoneNo.TabIndex = 8;
             this.lblPhoneNo.Text = "Contact Number";
             // 
             // lblPassword1
             // 
             this.lblPassword1.AutoSize = true;
-            this.lblPassword1.Location = new System.Drawing.Point(85, 330);
+            this.lblPassword1.Location = new System.Drawing.Point(82, 370);
             this.lblPassword1.Name = "lblPassword1";
             this.lblPassword1.Size = new System.Drawing.Size(53, 13);
             this.lblPassword1.TabIndex = 10;
@@ -132,10 +133,10 @@ namespace Stuport
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(88, 346);
+            this.txtPassword.Location = new System.Drawing.Point(85, 386);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(204, 20);
+            this.txtPassword.Size = new System.Drawing.Size(204, 21);
             this.txtPassword.TabIndex = 6;
             this.ttHints.SetToolTip(this.txtPassword, "Password must be 8 or more characters. Must contain an uppercase character and a " +
         "lowercase character.");
@@ -143,23 +144,24 @@ namespace Stuport
             // lblPassword2
             // 
             this.lblPassword2.AutoSize = true;
-            this.lblPassword2.Location = new System.Drawing.Point(85, 383);
+            this.lblPassword2.Location = new System.Drawing.Point(82, 423);
             this.lblPassword2.Name = "lblPassword2";
-            this.lblPassword2.Size = new System.Drawing.Size(91, 13);
+            this.lblPassword2.Size = new System.Drawing.Size(93, 13);
             this.lblPassword2.TabIndex = 12;
             this.lblPassword2.Text = "Confirm Password";
             // 
             // txtPasswordConf
             // 
-            this.txtPasswordConf.Location = new System.Drawing.Point(88, 399);
+            this.txtPasswordConf.Location = new System.Drawing.Point(85, 439);
             this.txtPasswordConf.Name = "txtPasswordConf";
             this.txtPasswordConf.PasswordChar = '*';
-            this.txtPasswordConf.Size = new System.Drawing.Size(204, 20);
+            this.txtPasswordConf.Size = new System.Drawing.Size(204, 21);
             this.txtPasswordConf.TabIndex = 7;
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(137, 439);
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Location = new System.Drawing.Point(134, 479);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(100, 23);
             this.btnRegister.TabIndex = 8;
@@ -169,7 +171,8 @@ namespace Stuport
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(137, 468);
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Location = new System.Drawing.Point(134, 508);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(100, 23);
             this.btnCancel.TabIndex = 14;
@@ -185,34 +188,47 @@ namespace Stuport
             // 
             this.lblStudNum.AutoSize = true;
             this.lblStudNum.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblStudNum.Location = new System.Drawing.Point(85, 80);
+            this.lblStudNum.Location = new System.Drawing.Point(82, 120);
             this.lblStudNum.Name = "lblStudNum";
-            this.lblStudNum.Size = new System.Drawing.Size(84, 13);
+            this.lblStudNum.Size = new System.Drawing.Size(85, 13);
             this.lblStudNum.TabIndex = 15;
             this.lblStudNum.Text = "Student Number";
             // 
             // txtStudNum
             // 
-            this.txtStudNum.Location = new System.Drawing.Point(88, 97);
+            this.txtStudNum.Location = new System.Drawing.Point(85, 137);
             this.txtStudNum.Name = "txtStudNum";
-            this.txtStudNum.Size = new System.Drawing.Size(204, 20);
+            this.txtStudNum.Size = new System.Drawing.Size(204, 21);
             this.txtStudNum.TabIndex = 1;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(88, 296);
+            this.txtPhone.Location = new System.Drawing.Point(85, 336);
             this.txtPhone.Mask = "000 000 0000";
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(204, 20);
+            this.txtPhone.Size = new System.Drawing.Size(204, 21);
             this.txtPhone.TabIndex = 5;
             this.txtPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtPhone.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.MaskedTextBox1_MaskInputRejected);
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.lblLogin.Location = new System.Drawing.Point(139, 24);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(112, 33);
+            this.lblLogin.TabIndex = 16;
+            this.lblLogin.Text = "Register";
+            this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StudentRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(388, 508);
+            this.ClientSize = new System.Drawing.Size(388, 567);
+            this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtStudNum);
             this.Controls.Add(this.lblStudNum);
@@ -264,5 +280,6 @@ namespace Stuport
         private System.Windows.Forms.Label lblStudNum;
         private System.Windows.Forms.TextBox txtStudNum;
         private System.Windows.Forms.MaskedTextBox txtPhone;
+        private Label lblLogin;
     }
 }

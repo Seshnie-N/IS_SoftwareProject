@@ -45,6 +45,7 @@
             // 
             // btnNewAppointment
             // 
+            this.btnNewAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewAppointment.Location = new System.Drawing.Point(672, 316);
             this.btnNewAppointment.Name = "btnNewAppointment";
             this.btnNewAppointment.Size = new System.Drawing.Size(123, 23);
@@ -55,7 +56,8 @@
             // 
             // bntCancelAppointment
             // 
-            this.bntCancelAppointment.Location = new System.Drawing.Point(523, 316);
+            this.bntCancelAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntCancelAppointment.Location = new System.Drawing.Point(543, 316);
             this.bntCancelAppointment.Name = "bntCancelAppointment";
             this.bntCancelAppointment.Size = new System.Drawing.Size(123, 23);
             this.bntCancelAppointment.TabIndex = 1;
@@ -65,6 +67,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Location = new System.Drawing.Point(12, 316);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(123, 23);
@@ -75,8 +78,9 @@
             // 
             // dgvAppointment
             // 
-            this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvAppointment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAppointment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAppointment.Location = new System.Drawing.Point(191, 67);
             this.dgvAppointment.Name = "dgvAppointment";
@@ -88,7 +92,7 @@
             // 
             this.lblAppointments.AutoSize = true;
             this.lblAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppointments.Location = new System.Drawing.Point(327, 9);
+            this.lblAppointments.Location = new System.Drawing.Point(333, 9);
             this.lblAppointments.Name = "lblAppointments";
             this.lblAppointments.Size = new System.Drawing.Size(180, 31);
             this.lblAppointments.TabIndex = 4;
@@ -96,7 +100,8 @@
             // 
             // btnGroupSessions
             // 
-            this.btnGroupSessions.Location = new System.Drawing.Point(394, 316);
+            this.btnGroupSessions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGroupSessions.Location = new System.Drawing.Point(401, 316);
             this.btnGroupSessions.Name = "btnGroupSessions";
             this.btnGroupSessions.Size = new System.Drawing.Size(123, 23);
             this.btnGroupSessions.TabIndex = 5;
@@ -129,8 +134,10 @@
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.bntCancelAppointment);
             this.Controls.Add(this.btnNewAppointment);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StudentAppointmentsHome";
-            this.Text = "AppointmentsHome";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Student Appointments";
             this.Load += new System.EventHandler(this.StudentAppointmentsHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet3)).EndInit();

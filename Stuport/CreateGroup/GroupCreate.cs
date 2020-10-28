@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport.CreateGroup
 {
-    public partial class GroupCreate : Form
+    public partial class GroupCreate : DevExpress.XtraEditors.XtraForm
     {
         public GroupCreate()
         {

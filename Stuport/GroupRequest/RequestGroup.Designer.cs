@@ -42,7 +42,7 @@
             this.lblService.AutoSize = true;
             this.lblService.Location = new System.Drawing.Point(35, 23);
             this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(115, 13);
+            this.lblService.Size = new System.Drawing.Size(114, 13);
             this.lblService.TabIndex = 2;
             this.lblService.Text = "Select Type of Service";
             // 
@@ -60,7 +60,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Location = new System.Drawing.Point(35, 84);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(63, 13);
+            this.lblDate.Size = new System.Drawing.Size(62, 13);
             this.lblDate.TabIndex = 7;
             this.lblDate.Text = "Select Date";
             // 
@@ -75,11 +75,12 @@
             this.txtErrorMessage.Location = new System.Drawing.Point(38, 291);
             this.txtErrorMessage.Name = "txtErrorMessage";
             this.txtErrorMessage.ReadOnly = true;
-            this.txtErrorMessage.Size = new System.Drawing.Size(227, 20);
+            this.txtErrorMessage.Size = new System.Drawing.Size(227, 21);
             this.txtErrorMessage.TabIndex = 14;
             // 
             // btnConfirm
             // 
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Location = new System.Drawing.Point(38, 367);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
@@ -89,6 +90,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(190, 367);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -108,8 +110,10 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.cmbService);
             this.Controls.Add(this.lblService);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "RequestGroup";
-            this.Text = "RequestGroup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Request Group";
             this.ResumeLayout(false);
             this.PerformLayout();
 

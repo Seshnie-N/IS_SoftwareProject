@@ -81,7 +81,6 @@ namespace Stuport
             string query = $"Insert into Appointment  ([Appointment_Date], [Appointment_Time]," +
                 "[Personnel_ID], [Service_ID], [Appointment_Status], [Student_ID]) VALUES(@1,@2,@3,@4,@5,@6)";
             OleDbCommand cmd = new OleDbCommand(query, con);
-          //  DateTime DateAppointment =DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             cmd.Parameters.AddWithValue("@1", Date);
             cmd.Parameters.AddWithValue("@2", Time);
             cmd.Parameters.AddWithValue("@3", 1);
@@ -91,7 +90,7 @@ namespace Stuport
             cmd.Parameters.AddWithValue("@6", StdNum );
             cmd.ExecuteNonQuery();
             con.Close();
-            string output = "request received";
+            string output = "Request Received";
             return output;
         }
 

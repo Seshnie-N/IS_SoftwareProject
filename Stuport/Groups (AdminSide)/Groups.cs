@@ -16,7 +16,7 @@ using Stuport.AdminController;
 
 namespace Stuport.Groups_Service
 {
-    public partial class Groups : Form
+    public partial class Groups : DevExpress.XtraEditors.XtraForm
     {
         AdminController.AdminController AC = new AdminController.AdminController();
         int intGroupID;

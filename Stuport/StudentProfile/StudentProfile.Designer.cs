@@ -65,7 +65,7 @@
             this.stdnumlbl.AutoSize = true;
             this.stdnumlbl.Location = new System.Drawing.Point(42, 75);
             this.stdnumlbl.Name = "stdnumlbl";
-            this.stdnumlbl.Size = new System.Drawing.Size(67, 13);
+            this.stdnumlbl.Size = new System.Drawing.Size(69, 13);
             this.stdnumlbl.TabIndex = 1;
             this.stdnumlbl.Text = "Student No.:";
             // 
@@ -74,7 +74,7 @@
             this.fnlbl.AutoSize = true;
             this.fnlbl.Location = new System.Drawing.Point(42, 114);
             this.fnlbl.Name = "fnlbl";
-            this.fnlbl.Size = new System.Drawing.Size(57, 13);
+            this.fnlbl.Size = new System.Drawing.Size(58, 13);
             this.fnlbl.TabIndex = 2;
             this.fnlbl.Text = "First Name";
             // 
@@ -83,7 +83,7 @@
             this.lnlbl.AutoSize = true;
             this.lnlbl.Location = new System.Drawing.Point(42, 149);
             this.lnlbl.Name = "lnlbl";
-            this.lnlbl.Size = new System.Drawing.Size(58, 13);
+            this.lnlbl.Size = new System.Drawing.Size(57, 13);
             this.lnlbl.TabIndex = 3;
             this.lnlbl.Text = "Last Name";
             // 
@@ -92,7 +92,7 @@
             this.emaillbl.AutoSize = true;
             this.emaillbl.Location = new System.Drawing.Point(42, 184);
             this.emaillbl.Name = "emaillbl";
-            this.emaillbl.Size = new System.Drawing.Size(32, 13);
+            this.emaillbl.Size = new System.Drawing.Size(31, 13);
             this.emaillbl.TabIndex = 4;
             this.emaillbl.Text = "Email";
             // 
@@ -109,40 +109,41 @@
             // 
             this.stdnumtb.Location = new System.Drawing.Point(173, 67);
             this.stdnumtb.Name = "stdnumtb";
-            this.stdnumtb.Size = new System.Drawing.Size(100, 20);
+            this.stdnumtb.Size = new System.Drawing.Size(100, 21);
             this.stdnumtb.TabIndex = 6;
             // 
             // fntb
             // 
             this.fntb.Location = new System.Drawing.Point(173, 107);
             this.fntb.Name = "fntb";
-            this.fntb.Size = new System.Drawing.Size(100, 20);
+            this.fntb.Size = new System.Drawing.Size(100, 21);
             this.fntb.TabIndex = 7;
             // 
             // lntb
             // 
             this.lntb.Location = new System.Drawing.Point(173, 142);
             this.lntb.Name = "lntb";
-            this.lntb.Size = new System.Drawing.Size(100, 20);
+            this.lntb.Size = new System.Drawing.Size(100, 21);
             this.lntb.TabIndex = 8;
             // 
             // emailtb
             // 
             this.emailtb.Location = new System.Drawing.Point(173, 177);
             this.emailtb.Name = "emailtb";
-            this.emailtb.Size = new System.Drawing.Size(100, 20);
+            this.emailtb.Size = new System.Drawing.Size(100, 21);
             this.emailtb.TabIndex = 9;
             // 
             // phnumtb
             // 
             this.phnumtb.Location = new System.Drawing.Point(173, 215);
             this.phnumtb.Name = "phnumtb";
-            this.phnumtb.Size = new System.Drawing.Size(100, 20);
+            this.phnumtb.Size = new System.Drawing.Size(100, 21);
             this.phnumtb.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(178, 314);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(580, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 11;
@@ -152,6 +153,7 @@
             // 
             // backbtn
             // 
+            this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backbtn.Location = new System.Drawing.Point(45, 314);
             this.backbtn.Name = "backbtn";
             this.backbtn.Size = new System.Drawing.Size(95, 23);
@@ -162,6 +164,9 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(316, 75);
             this.dataGridView1.Name = "dataGridView1";
@@ -197,8 +202,10 @@
             this.Controls.Add(this.fnlbl);
             this.Controls.Add(this.stdnumlbl);
             this.Controls.Add(this.titlelbl);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StudentProfile";
-            this.Text = "StudentProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Student Profile";
             this.Load += new System.EventHandler(this.StudentProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).EndInit();

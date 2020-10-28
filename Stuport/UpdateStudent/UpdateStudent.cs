@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class UpdateStudent : Form
+    public partial class UpdateStudent : DevExpress.XtraEditors.XtraForm
     {
         AdminController.AdminController AC = new AdminController.AdminController();
 

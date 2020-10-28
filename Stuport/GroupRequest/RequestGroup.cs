@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport.GroupRequest
 {
-    public partial class RequestGroup : Form
+    public partial class RequestGroup : DevExpress.XtraEditors.XtraForm
     {
         public RequestGroup()
         {

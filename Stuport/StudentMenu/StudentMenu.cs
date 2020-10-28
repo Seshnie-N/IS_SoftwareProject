@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class StudentMenu : Form
+    public partial class StudentMenu : DevExpress.XtraEditors.XtraForm
     {
         public StudentMenu()
         {
@@ -47,6 +47,13 @@ namespace Stuport
             this.Close();
             Login.Login login = new Login.Login();
             login.Show();
+        }
+
+        private void BtnOtherServices_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Other_Services os = new Other_Services();
+            os.Show();
         }
     }
 }

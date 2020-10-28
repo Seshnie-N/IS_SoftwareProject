@@ -66,6 +66,9 @@
             // StaffTableGridView
             // 
             this.StaffTableGridView.AutoGenerateColumns = false;
+            this.StaffTableGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.StaffTableGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.StaffTableGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.StaffTableGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.StaffTableGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -139,6 +142,7 @@
             // 
             // btnAddStaff
             // 
+            this.btnAddStaff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStaff.Location = new System.Drawing.Point(545, 315);
             this.btnAddStaff.Name = "btnAddStaff";
             this.btnAddStaff.Size = new System.Drawing.Size(85, 33);
@@ -149,11 +153,12 @@
             // 
             // btnUpdateDetails
             // 
+            this.btnUpdateDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateDetails.Location = new System.Drawing.Point(636, 315);
             this.btnUpdateDetails.Name = "btnUpdateDetails";
             this.btnUpdateDetails.Size = new System.Drawing.Size(85, 33);
             this.btnUpdateDetails.TabIndex = 3;
-            this.btnUpdateDetails.Text = "Update Details";
+            this.btnUpdateDetails.Text = "Update";
             this.btnUpdateDetails.UseVisualStyleBackColor = true;
             this.btnUpdateDetails.Click += new System.EventHandler(this.BtnUpdateDetails_Click);
             // 
@@ -163,6 +168,7 @@
             // 
             // btnBack
             // 
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Location = new System.Drawing.Point(76, 315);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(85, 33);
@@ -175,13 +181,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 383);
+            this.ClientSize = new System.Drawing.Size(794, 367);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnUpdateDetails);
             this.Controls.Add(this.btnAddStaff);
             this.Controls.Add(this.StaffTableGridView);
             this.Controls.Add(this.StaffLabel);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StaffPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff Page";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StaffTableGridView)).EndInit();

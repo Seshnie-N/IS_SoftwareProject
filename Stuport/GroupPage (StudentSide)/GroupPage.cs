@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class GroupPage : Form
+    public partial class GroupPage : DevExpress.XtraEditors.XtraForm
     {
         string username =Global.Token;
 
@@ -272,6 +272,11 @@ namespace Stuport
         {
             groupID2 = dgvRequestGroup.Rows[e.RowIndex].Cells[0].Value.ToString();
             Console.WriteLine(groupID2);
+        }
+
+        private void BtnGroupDetails_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Stuport
 {
-    public partial class MakeAppointment : Form
+    public partial class MakeAppointment : DevExpress.XtraEditors.XtraForm
     {
         public MakeAppointment()
         {
@@ -63,8 +63,8 @@ namespace Stuport
                 MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes))
             {
                 StudentController sc = new StudentController();
-                MessageBox.Show(sc.RequestAppointment(input, ServiceType, time));
-                
+                MessageBox.Show(sc.RequestAppointment(input, ServiceType, time), "Success");
+                this.serviceTableAdapter.Fill(this.stuportDatabaseDataSet2.Service);
 
             }
             

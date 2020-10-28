@@ -40,7 +40,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(168, 75);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 20);
+            this.textBox1.Size = new System.Drawing.Size(218, 21);
             this.textBox1.TabIndex = 5;
             // 
             // label1
@@ -81,7 +81,8 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(86, 255);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(107, 258);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(300, 48);
             this.button1.TabIndex = 9;
@@ -99,8 +100,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "GroupCreate";
-            this.Text = "GroupCreate";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Create Group";
             this.ResumeLayout(false);
             this.PerformLayout();
 

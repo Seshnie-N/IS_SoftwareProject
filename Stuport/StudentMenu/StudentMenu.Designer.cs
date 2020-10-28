@@ -38,22 +38,25 @@
             // 
             // btnAppointments
             // 
+            this.btnAppointments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAppointments.Location = new System.Drawing.Point(61, 102);
             this.btnAppointments.Name = "btnAppointments";
             this.btnAppointments.Size = new System.Drawing.Size(165, 36);
-            this.btnAppointments.TabIndex = 0;
+            this.btnAppointments.TabIndex = 1;
             this.btnAppointments.Text = "Appointments";
             this.btnAppointments.UseVisualStyleBackColor = true;
             this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // btnOtherServices
             // 
+            this.btnOtherServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOtherServices.Location = new System.Drawing.Point(61, 156);
             this.btnOtherServices.Name = "btnOtherServices";
             this.btnOtherServices.Size = new System.Drawing.Size(165, 36);
-            this.btnOtherServices.TabIndex = 1;
+            this.btnOtherServices.TabIndex = 2;
             this.btnOtherServices.Text = "Other Services";
             this.btnOtherServices.UseVisualStyleBackColor = true;
+            this.btnOtherServices.Click += new System.EventHandler(this.BtnOtherServices_Click);
             // 
             // label1
             // 
@@ -76,20 +79,22 @@
             // 
             // btnLogout
             // 
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Location = new System.Drawing.Point(12, 275);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabIndex = 4;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnProfile
             // 
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Location = new System.Drawing.Point(61, 212);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(165, 36);
-            this.btnProfile.TabIndex = 6;
+            this.btnProfile.TabIndex = 3;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
@@ -105,6 +110,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOtherServices);
             this.Controls.Add(this.btnAppointments);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "StudentMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

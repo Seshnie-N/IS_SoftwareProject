@@ -11,7 +11,7 @@ using System.Data.OleDb;
 
 namespace Stuport
 {
-    public partial class StudentProfile : Form
+    public partial class StudentProfile : DevExpress.XtraEditors.XtraForm
     {
         public StudentProfile()
         {
@@ -51,10 +51,10 @@ namespace Stuport
 
 
         private void backbtn_Click(object sender, EventArgs e)
-        {
+        {   this.Hide();
             StudentMenu stdmenu = new StudentMenu();
             stdmenu.Show();
-            this.Hide();
+         
         }
 
         private void button1_Click(object sender, EventArgs e)

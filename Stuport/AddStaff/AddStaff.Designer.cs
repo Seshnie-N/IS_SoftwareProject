@@ -47,7 +47,7 @@
             // 
             this.txtLastName.Location = new System.Drawing.Point(256, 129);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 20);
+            this.txtLastName.Size = new System.Drawing.Size(100, 21);
             this.txtLastName.TabIndex = 1;
             this.txtLastName.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
@@ -55,14 +55,14 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(256, 155);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(100, 21);
             this.txtEmail.TabIndex = 2;
             // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(256, 184);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.Size = new System.Drawing.Size(100, 21);
             this.txtPhone.TabIndex = 3;
             this.txtPhone.TextChanged += new System.EventHandler(this.TextBox3_TextChanged_1);
             // 
@@ -70,7 +70,7 @@
             // 
             this.txtFirstName.Location = new System.Drawing.Point(256, 103);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(100, 21);
             this.txtFirstName.TabIndex = 0;
             // 
             // lblLastName
@@ -78,7 +78,7 @@
             this.lblLastName.AutoSize = true;
             this.lblLastName.Location = new System.Drawing.Point(78, 132);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(58, 13);
+            this.lblLastName.Size = new System.Drawing.Size(57, 13);
             this.lblLastName.TabIndex = 5;
             this.lblLastName.Text = "Last Name";
             this.lblLastName.Click += new System.EventHandler(this.Label1_Click);
@@ -88,7 +88,7 @@
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Location = new System.Drawing.Point(78, 106);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(57, 13);
+            this.lblFirstName.Size = new System.Drawing.Size(58, 13);
             this.lblFirstName.TabIndex = 7;
             this.lblFirstName.Text = "First Name";
             // 
@@ -106,7 +106,7 @@
             this.lblPhone.AutoSize = true;
             this.lblPhone.Location = new System.Drawing.Point(78, 187);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(78, 13);
+            this.lblPhone.Size = new System.Drawing.Size(77, 13);
             this.lblPhone.TabIndex = 9;
             this.lblPhone.Text = "Phone Number";
             // 
@@ -121,6 +121,7 @@
             // 
             // btnConfirm
             // 
+            this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Location = new System.Drawing.Point(82, 277);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(75, 23);
@@ -131,6 +132,7 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Location = new System.Drawing.Point(256, 277);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -165,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 334);
+            this.ClientSize = new System.Drawing.Size(433, 334);
             this.Controls.Add(this.cmbxType);
             this.Controls.Add(this.lblAddStaff);
             this.Controls.Add(this.btnCancel);
@@ -179,7 +181,9 @@
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtLastName);
+            this.IconOptions.Image = global::Stuport.Properties.Resources.IMG_20201027_190658_804_removebg_preview;
             this.Name = "AddStaff";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Staff";
             this.Load += new System.EventHandler(this.AddStaff_Load);
             this.ResumeLayout(false);
