@@ -55,7 +55,7 @@
             this.titlelbl.AutoSize = true;
             this.titlelbl.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titlelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.titlelbl.Location = new System.Drawing.Point(89, 18);
+            this.titlelbl.Location = new System.Drawing.Point(104, 16);
             this.titlelbl.Name = "titlelbl";
             this.titlelbl.Size = new System.Drawing.Size(137, 33);
             this.titlelbl.TabIndex = 0;
@@ -120,35 +120,35 @@
             // 
             this.stdnumtb.Location = new System.Drawing.Point(173, 67);
             this.stdnumtb.Name = "stdnumtb";
-            this.stdnumtb.Size = new System.Drawing.Size(100, 20);
+            this.stdnumtb.Size = new System.Drawing.Size(126, 20);
             this.stdnumtb.TabIndex = 6;
             // 
             // fntb
             // 
             this.fntb.Location = new System.Drawing.Point(173, 107);
             this.fntb.Name = "fntb";
-            this.fntb.Size = new System.Drawing.Size(100, 20);
+            this.fntb.Size = new System.Drawing.Size(126, 20);
             this.fntb.TabIndex = 7;
             // 
             // lntb
             // 
             this.lntb.Location = new System.Drawing.Point(173, 142);
             this.lntb.Name = "lntb";
-            this.lntb.Size = new System.Drawing.Size(100, 20);
+            this.lntb.Size = new System.Drawing.Size(126, 20);
             this.lntb.TabIndex = 8;
             // 
             // emailtb
             // 
             this.emailtb.Location = new System.Drawing.Point(173, 177);
             this.emailtb.Name = "emailtb";
-            this.emailtb.Size = new System.Drawing.Size(100, 20);
+            this.emailtb.Size = new System.Drawing.Size(126, 20);
             this.emailtb.TabIndex = 9;
             // 
             // phnumtb
             // 
             this.phnumtb.Location = new System.Drawing.Point(173, 215);
             this.phnumtb.Name = "phnumtb";
-            this.phnumtb.Size = new System.Drawing.Size(100, 20);
+            this.phnumtb.Size = new System.Drawing.Size(126, 20);
             this.phnumtb.TabIndex = 10;
             // 
             // button1
@@ -157,7 +157,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(110, 270);
+            this.button1.Location = new System.Drawing.Point(125, 266);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 11;
@@ -193,7 +193,7 @@
             this.minimizelbl.AutoSize = true;
             this.minimizelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.minimizelbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.minimizelbl.Location = new System.Drawing.Point(268, 9);
+            this.minimizelbl.Location = new System.Drawing.Point(292, 7);
             this.minimizelbl.Name = "minimizelbl";
             this.minimizelbl.Size = new System.Drawing.Size(16, 17);
             this.minimizelbl.TabIndex = 14;
@@ -205,7 +205,7 @@
             this.exitlbl.AutoSize = true;
             this.exitlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.exitlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
-            this.exitlbl.Location = new System.Drawing.Point(290, 9);
+            this.exitlbl.Location = new System.Drawing.Point(314, 7);
             this.exitlbl.Name = "exitlbl";
             this.exitlbl.Size = new System.Drawing.Size(17, 17);
             this.exitlbl.TabIndex = 13;
@@ -217,7 +217,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(319, 327);
+            this.ClientSize = new System.Drawing.Size(339, 327);
             this.Controls.Add(this.minimizelbl);
             this.Controls.Add(this.exitlbl);
             this.Controls.Add(this.backbtn);
