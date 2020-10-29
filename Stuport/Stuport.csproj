@@ -135,6 +135,12 @@
     <Compile Include="StudentAppointmentsHome\StudentAppointmentsHome.Designer.cs">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentGroupDetails\StudentGroupDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentGroupDetails\StudentGroupDetails.Designer.cs">
+      <DependentUpon>StudentGroupDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentMenu\StudentMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentAppointmentsHome\StudentAppointmentsHome.resx">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentGroupDetails\StudentGroupDetails.resx">
+      <DependentUpon>StudentGroupDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
       <DependentUpon>StudentMenu.cs</DependentUpon>

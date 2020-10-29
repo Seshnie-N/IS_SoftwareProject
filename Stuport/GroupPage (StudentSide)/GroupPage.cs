@@ -289,6 +289,7 @@ namespace Stuport
             groupID1 = dgvActiveGroups.Rows[e.RowIndex].Cells[0].Value.ToString();
             activeGroupName = dgvActiveGroups.Rows[e.RowIndex].Cells[1].Value.ToString();
             //Console.WriteLine(groupID);
+            Globe.activeGroupID = groupID1;
         }
 
         private void dgvRequestGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -299,7 +300,8 @@ namespace Stuport
 
         private void BtnGroupDetails_Click(object sender, EventArgs e)
         {
-
+            StudentGroupDetails sgd = new StudentGroupDetails();
+            sgd.Show();
         }
 
         private void minimizelbl_Click(object sender, EventArgs e)
