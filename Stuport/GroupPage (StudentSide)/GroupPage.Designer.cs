@@ -192,6 +192,7 @@
             this.leaveGroupbtn.TabIndex = 18;
             this.leaveGroupbtn.Text = "Leave Group";
             this.leaveGroupbtn.UseVisualStyleBackColor = true;
+            this.leaveGroupbtn.Click += new System.EventHandler(this.leaveGroupbtn_Click);
             // 
             // minimizelbl
             // 
