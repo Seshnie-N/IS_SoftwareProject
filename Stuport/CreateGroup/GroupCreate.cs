@@ -21,5 +21,20 @@ namespace Stuport.CreateGroup
         {
 
         }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

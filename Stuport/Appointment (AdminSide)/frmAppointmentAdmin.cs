@@ -223,5 +223,15 @@ namespace Stuport.Appointment__AdminSide_
             txtStatus.Text = GroupStaus;
             txtStudent.Text = StudentNumber;
         }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }

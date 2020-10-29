@@ -20,6 +20,11 @@ namespace Stuport
         public static string Token;
     }
 
+    static class Globe
+    {
+        public static string activeGroupID;
+    }
+
     class StudentController
     {
         public void AddStudent(String StudNum, String FName, String LName, String Email, String Phone, String Password)

@@ -72,5 +72,22 @@ namespace Stuport
             
             
         }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            StudentAppointmentsHome stah = new StudentAppointmentsHome();
+            this.Close();
+            stah.Show();
+        }
     }
 }

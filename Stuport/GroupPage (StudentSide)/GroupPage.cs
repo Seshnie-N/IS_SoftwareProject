@@ -25,6 +25,8 @@ namespace Stuport
         String groupCounter;
         int counter;
         String updatedCounter;
+        String groupID3;
+        String GroupName;
 
         public GroupPage()
         {
@@ -38,6 +40,26 @@ namespace Stuport
         private bool confirmMessage()
         {
             string message = "Are you sure you want join the " + activeGroupName + " group";
+            string caption = "Confirmation";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, message, caption, buttons,
+                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.RightAlign);
+
+            if (result == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private bool confirmMessage2()
+        {
+            string message = "Are you sure you want leave the " + GroupName + " group";
             string caption = "Confirmation";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
@@ -85,7 +107,7 @@ namespace Stuport
                 OleDbConnection con = new OleDbConnection(connectionString);
                 OleDbCommand cmd = con.CreateCommand();
                 con.Open();
-                cmd.CommandText = "SELECT Service_Description AS [Group Topic], Personnel_FirstName & ' ' & Personnel_LastName as Iinvigilator,Group_Venue as Venue,Group_Time & '  ' & Group_Date AS[Date - Time] FROM[Group], Service, Personnel, StudentGroup WHERE Group.Service_ID = Service.Service_ID And Group.Personnel_ID = Personnel.Personnel_ID And Group.Group_ID = StudentGroup.Group_ID And StudentGroup.Student_ID =?";
+                cmd.CommandText = "SELECT StudentGroup.Group_ID AS [Group Number], Service_Description AS [Group Topic], Personnel_FirstName & ' ' & Personnel_LastName as Iinvigilator,Group_Venue as Venue,Group_Time & '  ' & Group_Date AS[Date - Time] FROM [Group], Service, Personnel, StudentGroup WHERE Group.Service_ID = Service.Service_ID And Group.Personnel_ID = Personnel.Personnel_ID And Group.Group_ID = StudentGroup.Group_ID And StudentGroup.Student_ID =?";
                 cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = username });
 
                 OleDbDataReader reader = cmd.ExecuteReader();
@@ -163,7 +185,8 @@ namespace Stuport
 
         private void dgvGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            groupID3 = dgvGroups.Rows[e.RowIndex].Cells[0].Value.ToString();
+            GroupName = dgvGroups.Rows[e.RowIndex].Cells[1].Value.ToString();
         }
 
         private void btnJoinGroup_Click(object sender, EventArgs e)
@@ -266,6 +289,7 @@ namespace Stuport
             groupID1 = dgvActiveGroups.Rows[e.RowIndex].Cells[0].Value.ToString();
             activeGroupName = dgvActiveGroups.Rows[e.RowIndex].Cells[1].Value.ToString();
             //Console.WriteLine(groupID);
+            Globe.activeGroupID = groupID1;
         }
 
         private void dgvRequestGroup_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -276,7 +300,47 @@ namespace Stuport
 
         private void BtnGroupDetails_Click(object sender, EventArgs e)
         {
+            StudentGroupDetails sgd = new StudentGroupDetails();
+            sgd.Show();
+        }
 
+        private void minimizelbl_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void exitlbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void leaveGroupbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                bool cfnmsg = confirmMessage2();
+                if (cfnmsg == true)
+                {
+                    string connectionString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                    OleDbConnection con = new OleDbConnection(connectionString); OleDbCommand cmd = con.CreateCommand();
+
+                    int gID = Convert.ToInt32(groupID3);
+
+                    cmd.CommandText = "Delete from StudentGroup Where Student_ID =? AND Group_ID =?";
+                    cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 15) { Value = username });
+                    cmd.Parameters.Add(new OleDbParameter("?", OleDbType.VarChar, 50) { Value = gID });
+
+                    con.Open();
+                    cmd.Connection = con;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 

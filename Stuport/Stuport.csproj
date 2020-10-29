@@ -135,6 +135,12 @@
     <Compile Include="StudentAppointmentsHome\StudentAppointmentsHome.Designer.cs">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentGroupDetails\StudentGroupDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentGroupDetails\StudentGroupDetails.Designer.cs">
+      <DependentUpon>StudentGroupDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentMenu\StudentMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     <EmbeddedResource Include="StudentAppointmentsHome\StudentAppointmentsHome.resx">
       <DependentUpon>StudentAppointmentsHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentGroupDetails\StudentGroupDetails.resx">
+      <DependentUpon>StudentGroupDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentMenu\StudentMenu.resx">
       <DependentUpon>StudentMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,7 +355,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="weeklyReportbtn.png" />
     <None Include="Resources\IMG_20201027_190658_804-removebg-preview.jpg" />
+    <None Include="LoginBG.png" />
+    <None Include="Product.png" />
+    <None Include="AppointmentsBtn.png" />
+    <None Include="OtherServicesBtn.png" />
+    <None Include="ProfileBtn.png" />
+    <None Include="manageAppointmentsBtn.png" />
+    <None Include="ManageStudentsBtn.png" />
+    <None Include="manageGroupsBtn.png" />
+    <None Include="manageStaffBtn.png" />
     <Content Include="StuportDatabase.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
