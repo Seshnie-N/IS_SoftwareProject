@@ -141,7 +141,7 @@ namespace Stuport.Groups_Service
             if (b == false)
                 return;
 
-            bool confirm = comfirmMessage("Are you sure you want to update this group!");
+            bool confirm = comfirmMessage("Are you sure you want to update this record!");
             if (confirm == false)
                 return;
 
