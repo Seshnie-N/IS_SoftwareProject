@@ -51,10 +51,10 @@
             this.dgvGroups.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvGroups.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroups.Location = new System.Drawing.Point(25, 148);
+            this.dgvGroups.Location = new System.Drawing.Point(10, 148);
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.ReadOnly = true;
-            this.dgvGroups.Size = new System.Drawing.Size(503, 184);
+            this.dgvGroups.Size = new System.Drawing.Size(544, 184);
             this.dgvGroups.TabIndex = 7;
             this.dgvGroups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroups_CellContentClick);
             // 
