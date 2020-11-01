@@ -57,8 +57,8 @@ namespace Stuport
         {
             String staffFNameCMP, staffLNameCMP, staffPhoneCMP, staffEmailCMP, staffTypeCMP;
             bool Validation = true;
-            bool EmailValidation = true;
-            bool PhoneValidation = true;
+            //bool EmailValidation = true;
+            //bool PhoneValidation = true;
             bool PresenceCheckValidation = true;
             staffFNameCMP = txtFirstName.Text;
             staffLNameCMP = txtLastName.Text;

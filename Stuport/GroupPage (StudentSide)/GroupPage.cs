@@ -22,9 +22,9 @@ namespace Stuport
         String activeGroupName;
         String groupID1;
         String groupID2;
-        String groupCounter;
-        int counter;
-        String updatedCounter;
+        //String groupCounter;
+        //int counter;
+        //String updatedCounter;
         String groupID3;
         String GroupName;
 
@@ -214,7 +214,7 @@ namespace Stuport
                     con.Close();
                 }
             }
-            catch (Exception ex)
+            catch //(Exception ex)
             {
                 warningMessage();
             }
@@ -245,7 +245,7 @@ namespace Stuport
 
                 con.Close();
             }
-            catch (Exception exc)
+            catch //(Exception exc)
             {
                 requestchk = false;
                 MessageBox.Show("You Have Already Requested for this group");

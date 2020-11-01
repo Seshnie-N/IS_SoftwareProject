@@ -461,6 +461,30 @@ namespace Stuport
 
         }
 
+        public void ChangePassword(string studNo, string pass)
+        {
+            string passw = HashExtensions.Sha256(pass);
+
+            try
+            {
+                string _path = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                OleDbConnection conn = new OleDbConnection(_path);
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand("UPDATE Student SET Student_Password = @1 WHERE Student_ID = @2", conn);
+                cmd.Parameters.AddWithValue("@1", passw);
+                cmd.Parameters.AddWithValue("@2", studNo);
+
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                MessageBox.Show("Password changed.");
+            }
+            catch
+            {
+                MessageBox.Show("An error occured. Password was not changed.");
+            }
+            
+        }
+
     }
 
     public static class HashExtensions

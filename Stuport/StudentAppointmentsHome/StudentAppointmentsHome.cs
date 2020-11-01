@@ -77,7 +77,7 @@ namespace Stuport
             }
             else
             {
-                MessageBox.Show("Please Select A Single Row");
+                MessageBox.Show("Please Select An Entire Row (Select row using row cursor on left side of table)");
             }
 
             if (AppointmentID > 0)

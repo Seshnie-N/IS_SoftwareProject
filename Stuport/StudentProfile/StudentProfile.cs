@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Configuration;
+using Stuport.ChangePassword;
 
 namespace Stuport
 {
@@ -90,6 +91,13 @@ namespace Stuport
         private void minimizelbl_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePass change = new ChangePass();
+            change.ShowDialog();
+
         }
     }
 }

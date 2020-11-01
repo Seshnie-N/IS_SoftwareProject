@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Appointment %28AdminSide%29\Model\PersonnelType.cs" />
     <Compile Include="Appointment %28AdminSide%29\Model\ServiceType.cs" />
+    <Compile Include="ChangePassword\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePassword\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Groups %28AdminSide%29\Model\PersonnelType.cs" />
     <Compile Include="Groups %28AdminSide%29\Model\ServiceType.cs" />
     <Compile Include="Login\Login.cs">
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Appointment %28AdminSide%29\frmAppointmentAdmin.resx">
       <DependentUpon>frmAppointmentAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateGroup\GroupCreate.resx">
       <DependentUpon>GroupCreate.cs</DependentUpon>
