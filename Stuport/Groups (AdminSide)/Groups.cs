@@ -20,6 +20,7 @@ namespace Stuport.Groups_Service
     {
         AdminController.AdminController AC = new AdminController.AdminController();
         int intGroupID;
+
         public Groups()
         {
             try
@@ -127,10 +128,9 @@ namespace Stuport.Groups_Service
 
             if (dgvGroups.CurrentRow == null)
                 return;
-            var serviceType = (string)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[1].Value;
-            var personnelId = (int)dgvGroups.Rows[dgvGroups.CurrentRow.Index].Cells[2].Value;
-            var ServiceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceType);
-            var Serviceid = (int)ServiceType.ServiceId;
+
+            var serviceType = (int)cmbService.SelectedValue;
+            var personnelId = (int)cmbStaff.SelectedValue;
             
             strVenue = txtVenue.Text;
             strStatus = txtStatus.Text;
@@ -145,11 +145,11 @@ namespace Stuport.Groups_Service
             if (confirm == false)
                 return;
 
-            AC.updateGroup(intGroupID, Serviceid, personnelId, dtDate, dtTime, strStatus, strVenue);
+            AC.updateGroup(intGroupID, serviceType , personnelId, dtDate, dtTime, strStatus, strVenue);
             RefreshGrid();
             MessageBox.Show("Group Updated Successfully", "Success");
 
-        } //TODO
+        }  //Service ID and Personnel ID not updating
 
         private void dgvGroups_SelectionChanged(object sender, EventArgs e)
         {
@@ -171,7 +171,6 @@ namespace Stuport.Groups_Service
             txtStatus.Text = GroupStaus;
             txtVenue.Text = GroupVenue;  
         } 
-
 
         private bool Validate(string strVenue, string strStatus, DateTime dtDate)
         {

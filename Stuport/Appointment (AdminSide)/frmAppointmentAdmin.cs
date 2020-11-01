@@ -50,7 +50,7 @@ namespace Stuport.Appointment__AdminSide_
         private void frmAppointmentAdmin_Load(object sender, EventArgs e)
         {
 
-        } //DO NOT TOUCH
+        } 
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -61,12 +61,8 @@ namespace Stuport.Appointment__AdminSide_
 
             if (dgvAppointments.CurrentRow == null)
                 return;
-            var serviceType = (string)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[1].Value;
-            var personnelId = (int)dgvAppointments.Rows[dgvAppointments.CurrentRow.Index].Cells[2].Value;
-            var ServiceType = AC.serviceTypesList.FirstOrDefault(s => s.ServiceTypeName == serviceType);
-            var id = (int)ServiceType.ServiceId;
-
-
+            var serviceType = (int)cmbService.SelectedValue;
+            var personnelId = (int)cmbStaff.SelectedValue;
             strStudent = txtStudent.Text;
             strStatus = txtStatus.Text;
             dtDate = dtpDate.Value;
@@ -80,11 +76,11 @@ namespace Stuport.Appointment__AdminSide_
             if (confirm == false)
                 return;
 
-            AC.updateAppointment(intAppointmentID, id, personnelId, dtDate, strTime, strStatus, strStudent);
+            AC.updateAppointment(intAppointmentID, serviceType, personnelId, dtDate, strTime, strStatus, strStudent);
             RefreshGrid();
 
             MessageBox.Show("Appointment Updated", "Success!");
-        } 
+        }  //Service ID and Personnel ID not updating
 
         public void Filler()
         {
