@@ -58,7 +58,7 @@ namespace Stuport
                 staffID = (int)row[0].Cells[0].Value;
             }
             else {
-                MessageBox.Show("Please Select A Single Row");
+                MessageBox.Show("Please Select An Entire Row (Click on row cursor on the left of the record)");
             }
            
             if (staffID>1)

@@ -46,6 +46,7 @@
             this.stuportDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.minimizelbl = new System.Windows.Forms.Label();
             this.exitlbl = new System.Windows.Forms.Label();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stuportDatabaseDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -157,7 +158,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(125, 266);
+            this.button1.Location = new System.Drawing.Point(204, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 23);
             this.button1.TabIndex = 11;
@@ -170,7 +171,7 @@
             this.backbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
             this.backbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
             this.backbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backbtn.Location = new System.Drawing.Point(12, 285);
+            this.backbtn.Location = new System.Drawing.Point(12, 320);
             this.backbtn.Name = "backbtn";
             this.backbtn.Size = new System.Drawing.Size(30, 30);
             this.backbtn.TabIndex = 12;
@@ -212,12 +213,27 @@
             this.exitlbl.Text = "X";
             this.exitlbl.Click += new System.EventHandler(this.exitlbl_Click);
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
+            this.btnChangePassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(75)))), ((int)(((byte)(85)))));
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(173, 256);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(126, 23);
+            this.btnChangePassword.TabIndex = 15;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // StudentProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(7)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(339, 327);
+            this.ClientSize = new System.Drawing.Size(339, 362);
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.minimizelbl);
             this.Controls.Add(this.exitlbl);
             this.Controls.Add(this.backbtn);
@@ -265,5 +281,6 @@
         private StuportDatabaseDataSet stuportDatabaseDataSet;
         private System.Windows.Forms.Label minimizelbl;
         private System.Windows.Forms.Label exitlbl;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }
